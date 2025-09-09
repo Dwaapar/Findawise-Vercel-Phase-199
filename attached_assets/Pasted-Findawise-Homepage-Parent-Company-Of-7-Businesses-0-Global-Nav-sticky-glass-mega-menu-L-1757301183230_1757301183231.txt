@@ -1,0 +1,111 @@
+Findawise — Homepage (Parent Company Of 7 Businesses)
+0) Global Nav (sticky, glass, mega-menu)
+
+Left: Findawise logo
+Center: Companies ▾ · Empire OS · Solutions · Case Studies · Pricing · Blog
+Right: Search ▢ · Sign in · Book a 72h Pilot (primary)
+
+Mega-menu: “Companies”
+
+7 tiles (each is a company): Automation Services, Workflow Store, Digital Assets, AI Agents, Affiliate Hub, Decision Platform, Services (Tools).
+
+Each tile = icon → one-liner → 2 bullets → CTA. Keep simple, chunked, and keyboard-navigable (hover delay, focus management, never full-screen takeover). Mega-menus work, but simplicity + interaction details are key. 
+Nielsen Norman Group
++1
+Baymard Institute
+
+Use semantic <nav> + link lists; avoid ARIA role="menu" for basic site nav (reserve it for app-style action menus). 
+MDN Web Docs
+boia.org
+web.dev
+
+Disclosure micro-line beneath nav (desktop):
+“Independent research with clear disclosures. We may earn from qualifying purchases.” (FTC: “clear and conspicuous.”) 
+Federal Trade Commission
+Federal Register
+
+1) Hero (company-of-companies + motion)
+
+Headline:
+Findawise is the AI Operating Company behind seven specialist businesses—unified by one Empire OS.
+
+Subhead:
+We design, run, and scale end-to-end systems—automation, agents, affiliate growth, decision platforms, and more—so brands ship outcomes faster with provable ROI.
+
+Primary CTA: Book a 72h Pilot Build
+Secondary CTA: Explore our Companies
+
+Trust strip: Outcome-backed engagements · Transparent research & disclosures · Global-ready (security, privacy, SLAs)
+
+Hero video / animation (pick 1 for launch; all accessible & fast)
+
+A) “Orbit” cinematic (8–12s, MP4/WebM): 7 luminous nodes (each BU) orbit a central “Empire OS”. Hover highlights a node; click opens BU overlay. Implement with <video muted playsinline autoplay loop>; encode & compress to keep LCP green. Provide a static poster + Pause Motion control; honor prefers-reduced-motion. 
+web.dev
++2
+web.dev
++2
+
+B) Lottie vector: flowing routes “inputs → OS → outputs” (tiny payload, crisp). Use intersection observers to stop when offscreen; compress JSON. 
+LottieFiles
+PixelFreeStudio Blog -
+
+C) Rive interactive: subtle constellation reacts to pointer; programmatically pause for reduced-motion users. 
+rive.app
++1
+
+Performance notes: video can be LCP—optimize codecs/containers; lazy-load where possible; test. 
+web.dev
+DebugBear
+
+Accessibility notes: don’t obscure focus with sticky headers; ensure motion can be reduced/paused. 
+W3C
+web.dev
+
+2) KPI / Credibility Bar (above the fold)
+
+Average time-to-decision: < 60 sec
+
+Median savings with verified deals: up to 40%
+
+Execution speed-up: 3–10× (workflows + agents)
+
+(Short, scannable proof beats hype; users scan before they read.) 
+Nielsen Norman Group
++1
+
+3) Our Companies (portfolio grid)
+
+Each card is a company with its own roadmap, pricing, docs, and deep hooks to Empire OS.
+
+Automation Services — “We Do It for You”
+One-liner: End-to-end automation design & delivery (audit → integrate → ship).
+Use cases: Lead routing, finance ops, ticket triage, KPI reporting.
+Value: Save hundreds of hours, reduce errors, scale without headcount.
+CTA: Book a 72h Pilot Build
+
+Workflow Store — Prebuilt Flows You Can Deploy Today
+One-liner: Plug-and-play automations (scraping, enrichment, outreach, finance, reporting).
+Notes: 1-click deploy with env/secrets; evergreen with patch notes and guides.
+Value: Buy once, run forever, extend as needed.
+CTA: Browse 350+ Workflows
+
+Digital Assets — Accelerators for Growth
+One-liner: Prompt packs, datasets, playbooks, design kits, creative bundles.
+Examples: Agent prompts (SDR/support), datasets (finetune/eval), playbooks, ad & landing creatives.
+Value: Ship faster; skip reinvention.
+CTA: Download Assets → Go Live Same Day
+
+AI Agents — Managed + Self-Host Options
+One-liner: Agents that act, not just chat—integrations, memory, approvals.
+Modes: Managed (we run) or self-host (runbooks).
+Examples: SDR (qualify + book), Support (auto-resolve), Ops (reconcile & notify).
+Value: Reduce repetitive headcount; add intelligent scale.
+CTA: Deploy Your First Agent
+
+Affiliate Hub — Promote the Best Brands
+One-liner: Vetted high-EPC brands + dynamic creatives.
+Features: Smart links (geo/device), creative rotation, real-time EPC/CVR/payouts, disclosures baked in.
+CTA: Open Affiliate Hub (keep disclosures clear & conspicuous). 
+Federal Trade Commission
+Federal Register
+

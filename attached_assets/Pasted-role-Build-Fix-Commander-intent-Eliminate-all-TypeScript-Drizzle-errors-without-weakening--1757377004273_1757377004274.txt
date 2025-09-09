@@ -1,0 +1,126 @@
+role: "Build-Fix Commander"
+intent: >
+  Eliminate all TypeScript/Drizzle errors without weakening safeguards.
+  Align DB writes with schema types, restore missing imports, correct option objects,
+  and prove the result by passing `npx tsc --noEmit` and `next build`.
+
+guardrails:
+  do_not:
+    - "Do NOT set next.config.js typescript.ignoreBuildErrors=true"
+    - "Do NOT disable eslint during builds"
+    - "Do NOT delete validations, types, or runtime checks to silence errors"
+    - "Do NOT stub with empty objects unless replaced with real data in same PR"
+  must:
+    - "Preserve behavior and feature parity; migrations only if code requires the column"
+    - "Explain every change with a one-line rationale in the PR summary"
+    - "Show unified diffs for each file you edit"
+
+repo:
+  root: "."          # adjust if needed
+  package_manager: "npm"
+
+preflight:
+  - run: "node -v && npm -v"
+  - run: "npm ci"
+  - run: "git status --porcelain"
+
+analysis:
+  commands:
+    - "npx tsc --noEmit"      # full typecheck to enumerate errors
+    - "npm run build || true" # capture Next.js error list; build may fail
+  cluster_errors:
+    - "Group by file, then by error code. Work file-by-file."
+    - "Primary hotspots to open first: server/storage.ts, shared/schema.ts"
+  search_patterns:
+    - regex: "\\.values\\(\\s*\\{\\s*\\}\\s*\\)"   # empty inserts
+      action: "replace with typed object per table.$inferInsert"
+    - regex: "\\b(updatedAt|timestamp|isActive|status|lastActivity|interactions|sessionsCount|pageViewsCount|conversionRate|averageSessionDuration|bounceRate)\\b"
+      action: "verify column exists in schema; add schema field or remove usage"
+    - regex: "\\bsessionId\\b|\\bactivityType\\b|\\bposition\\b|\\bquizId\\b|\\beventType\\b|\\bemail\\b|\\buuid\\b"
+      action: "treat as required keys on corresponding inserts"
+    - regex: "\\btranslations\\b|\\btranslationKeys\\b|\\bregions\\b|\\bregionHealth\\b|\\bdisasterRecoveryScenarios\\b"
+      action: "restore correct imports/definitions"
+    - regex: "cache\\(\\s*\\d+\\s*\\)"
+      action: "pass an options object, e.g. cache({ ttl: 3600 })"
+
+refactor_recipes:
+  drizzle_insert:
+    description: "Use schema-driven insert types so TS enforces correct shape"
+    code: |
+      import { db } from "@/server/db";
+      import { SomeTable } from "@/shared/schema";
+      type NewRow = typeof SomeTable.$inferInsert; // or InferInsertModel<typeof SomeTable>
+      const row: NewRow = {
+        /* fill all NOT NULL columns: e.g., sessionId, activityType, ... */
+      };
+      await db.insert(SomeTable).values(row);
+  drizzle_update:
+    description: "Update only columns that exist on the table"
+    code: |
+      type UpdateRow = Partial<typeof SomeTable.$inferInsert>;
+      await db.update(SomeTable)
+        .set({ /* only real columns */ } satisfies UpdateRow)
+        .where(eq(SomeTable.id, id));
+  timestamps:
+    description: "If code sets updatedAt/timestamp, ensure schema has it with default"
+    code: |
+      import { timestamp } from "drizzle-orm/pg-core";
+      export const leads = pgTable("leads", {
+        // ...
+        updatedAt: timestamp("updated_at", { mode: "date" }).defaultNow().notNull(),
+      });
+  options_objects:
+    description: "Replace raw numbers with correctly shaped option objects"
+    example: |
+      // ❌ cache(3600)
+      // ✅
+      cache({ ttl: 3600 });
+
+workflow:
+  - step: "Fix DB write shapes in server/storage.ts"
+    method:
+      - "For each table used with insert/update:"
+      - "Create type aliases: Insert = table.$inferInsert"
+      - "Build objects as Insert; compiler will list missing keys"
+      - "Remove keys not in schema OR add schema fields (with migration) if truly needed"
+  - step: "Restore missing imports/constants"
+    method:
+      - "Locate modules in repo (or phase-192) that define translations/regions/etc."
+      - "Add named imports with correct paths; avoid inline empty stubs"
+  - step: "Correct option object types"
+    method:
+      - "Search for APIs that expect objects. Replace numbers/strings with { key: value } as per function signature"
+  - step: "Numeric/string mismatches"
+    method:
+      - "Coerce at boundaries: Number(x) before math; parseInt/parseFloat with radix"
+  - step: "Re-run typecheck"
+    run: "npx tsc --noEmit"
+  - step: "Re-run Next build"
+    run: "npm run build"
+  - step: "If any errors remain"
+    loop:
+      - "Re-open top offending file, apply recipes, rerun tsc/build"
+      - "Repeat until both commands exit 0"
+
+acceptance_criteria:
+  - "npx tsc --noEmit exits with code 0 (no TypeScript errors)"
+  - "npm run build (Next.js) exits with code 0"
+  - "No usage of ignoreBuildErrors / ignoreDuringBuilds"
+  - "All DB writes compile under $inferInsert/$inferSelect types"
+  - "App boots locally: npm run dev → first page loads without runtime type errors"
+
+verification_artifacts:
+  - "POST a summary markdown listing changed files, each with: reason, before→after snippet, and linked error IDs"
+  - "Output the exact commands and their zero-exit statuses"
+  - "If a migration was added, include SQL and rationale"
+
+fallbacks:
+  - "If a required column is referenced in code but absent in schema (e.g., updatedAt), propose a single migration that adds it with sensible defaults; do NOT remove the feature."
+  - "If a constant (translations/regions) is missing and not found anywhere, prompt for its source path; do NOT fabricate data."
+
+commands_for_agent:
+  - "grep -R \"\\.values(\\s*{\\s*}\\s*)\" -n server | cat"
+  - "grep -R \"updatedAt\\|timestamp\\|isActive\\|status\" -n server | cat"
+  - "grep -R \"translations\\|translationKeys\\|regions\\|regionHealth\\|disasterRecoveryScenarios\" -n | cat"
+  - "npx tsc --noEmit"
+  - "npm run build"

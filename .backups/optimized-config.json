@@ -1,0 +1,8 @@
+{
+  "backupInterval": 60,
+  "healthCheckInterval": 60,
+  "maxBackupFiles": 50,
+  "backupOnlyOnChanges": true,
+  "cleanupOldBackups": true,
+  "lastOptimized": "2025-09-05T19:22:09.025Z"
+}

@@ -1,0 +1,43 @@
+ Setting up local AI models...
+🚀 GPU available - setting up Ollama with GPU support
+⏳ Waiting for Ollama service to be ready...
+⬇️  Downloading AI models (this may take 10-30 minutes)...
+📥 Pulling Llama2...
+pulling manifest
+Error: max retries exceeded: Get "https://dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com/ollama/docker/registry/v2/blobs/sha256/66/667b0c1932bc6ffc593ed1d03f895bf2dc8dc6df21db3042284a6f4416b06a29/data?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=66040c77ac1b787c3af820529859349a%2F20250823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250823T111317Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=abce18d3abf2555c99d5c58eef8cfc66055ed82a35a983a10a21593662bf9d29": dial tcp: lookup dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com on 127.0.0.11:53: no such host
+⚠️  Failed to pull Llama2
+📥 Pulling Nomic Embed...
+pulling manifest
+Error: max retries exceeded: Get "https://dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com/ollama/docker/registry/v2/blobs/sha256/97/970aa74c0a90ef7482477cf803618e776e173c007bf957f635f1015bfcfef0e6/data?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=66040c77ac1b787c3af820529859349a%2F20250823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250823T111424Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=1e2dfff64074ba676b370f654ac11e1b054cfc67f893d16e3213ae8197c2da8f": dial tcp: lookup dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com on 127.0.0.11:53: no such host
+⚠️  Failed to pull Nomic Embed
+✅ AI models setup completed
+📝 Creating startup script...
+📝 Creating development helper script...
+
+🎉 EMPIRE LOCAL DEVELOPMENT SETUP COMPLETED!
+============================================
+
+🚀 To start the system:
+   ./start-local.sh
+
+🛑 To stop the system:
+   ./stop-local.sh
+
+🛠️  Development tools:
+   ./dev-tools.sh [command] - Various development utilities
+   ./health-check.sh       - Quick system health check
+
+🌐 Application will be available at:
+   • Full Application: http://localhost:5000
+   • Backend API: http://localhost:5000/api
+   • Admin Dashboard: http://localhost:5000/admin
+   • Ollama API: http://localhost:11434
+   • pgAdmin: http://localhost:5050 (admin@findawise.com / admin123)
+   • Redis: localhost:6379
+
+📊 System Status:
+   • GPU Support: true
+   • AI Models: Llama2, Nomic Embed Text
+   • Database: PostgreSQL (findawise_empire)
+   • Cache: Redis enabled
+   • All Enterprise Features: Enabled

@@ -1,0 +1,55 @@
+FROM nvidia/cuda:12.1-runtime-ubuntu22.04
+
+# Install Python and system dependencies
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    python3-venv \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Create virtual environment
+RUN python3 -m venv /app/venv
+ENV PATH="/app/venv/bin:$PATH"
+
+# Install Python packages
+RUN pip install --upgrade pip
+RUN pip install \
+    torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \
+    transformers[torch] \
+    sentence-transformers \
+    fastapi \
+    uvicorn \
+    numpy \
+    scipy \
+    scikit-learn \
+    faiss-gpu \
+    onnxruntime-gpu
+
+# Copy embedding server code
+COPY ai-ml-data/embedding-server.py /app/embedding-server.py
+COPY ai-ml-data/models-config.json /app/models-config.json
+
+# Create models directory
+RUN mkdir -p /app/models
+
+# Download models on build (optional - can be done at runtime)
+RUN python3 -c "
+from sentence_transformers import SentenceTransformer
+import os
+os.environ['TRANSFORMERS_CACHE'] = '/app/models'
+models = ['all-MiniLM-L6-v2', 'all-mpnet-base-v2', 'paraphrase-multilingual-MiniLM-L12-v2']
+for model in models:
+    try:
+        SentenceTransformer(model)
+        print(f'Downloaded {model}')
+    except Exception as e:
+        print(f'Failed to download {model}: {e}')
+"
+
+EXPOSE 8001
+
+CMD ["python3", "embedding-server.py"]

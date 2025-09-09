@@ -1,0 +1,102 @@
+version: 1.0.0
+name: ai-cto-brain
+
+models:
+  - name: Planner
+    provider: ollama
+    model: mixtral:8x7b-instruct
+    apiBase: http://localhost:11434
+    capabilities: ["chat","plan"]
+
+  - name: HeavyDev
+    provider: ollama
+    model: deepseek-coder:33b-instruct
+    apiBase: http://localhost:11434
+    capabilities: ["chat","edit","autocomplete"]
+
+  - name: FastDev
+    provider: ollama
+    model: deepseek-coder:6.7b
+    apiBase: http://localhost:11434
+    capabilities: ["chat","edit"]
+
+  - name: QA
+    provider: ollama
+    model: wizardcoder:15b
+    apiBase: http://localhost:11434
+    capabilities: ["chat","edit"]
+
+  - name: Docs
+    provider: ollama
+    model: llama3.1:latest
+    apiBase: http://localhost:11434
+    capabilities: ["chat"]
+
+  - name: Design
+    provider: ollama
+    model: llava:7b-v1.6
+    apiBase: http://localhost:11434
+    capabilities: ["chat"]
+
+systemPrompt: |
+  You are the in-repo CTO + COO. Propose plans, then generate safe, incremental patches.
+  Always return: (1) Plan, (2) File paths, (3) Unified diffs, (4) Tests, (5) Rollback notes.
+
+prompts:
+  - name: plan
+    description: High-level repo sweep and upgrade plan
+    model: Planner
+    prompt: |
+      Act as CTO. Analyze the repo tree and docs. Output:
+      - System Map & stacks
+      - Risks (P0/P1/P2)
+      - Upgrade Plan (milestones)
+      - Work Breakdown (tasks with owners)
+      - Backend/Frontend priorities
+
+  - name: audit
+    description: Security/Perf/Scalability audit
+    model: HeavyDev
+    prompt: |
+      Deep audit across backend/frontend/tests:
+      - Security (auth, secrets, OWASP), performance hotspots, scalability, code quality.
+      - Return DEFECT LOG: file path, lines, root cause, severity, proposed fix (diff summary).
+
+  - name: refactor
+    description: Safe modernization refactor
+    model: FastDev
+    prompt: |
+      Refactor for clarity/typing/error handling/logging; remove dead code. Keep API surface same.
+      Output unified diffs grouped by module with short commit messages.
+
+  - name: backend
+    description: Backend upgrades & features
+    model: HeavyDev
+    prompt: |
+      Implement backend tasks with ports/adapters, validation, pagination, idempotency, rate limiting, caching.
+      Add observability hooks (logs/metrics/traces). Provide DB migrations (with rollback).
+
+  - name: frontend
+    description: Frontend modernization/features
+    model: HeavyDev
+    prompt: |
+      Modernize UI: componentize, a11y (WCAG), lazy-load, code-split, remove unused CSS.
+      Provide React/TS + Tailwind diffs and docs updates.
+
+  - name: tests
+    description: Generate tests & coverage plan
+    model: QA
+    prompt: |
+      Produce unit/integration tests to target 90% coverage where feasible. Include fixtures/mocks and CI scripts.
+
+  - name: docs
+    description: Write/update docs
+    model: Docs
+    prompt: |
+      Update README (quickstart/env/scripts), CONTRIBUTING, SECURITY, ADRs, and Release Notes for vNEXT.
+
+  - name: design
+    description: Design-to-code specialist
+    model: Design
+    prompt: |
+      From text requirements or screenshots, generate modern UI (React + Tailwind) with component variants and a11y notes.

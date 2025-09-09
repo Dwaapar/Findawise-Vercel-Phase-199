@@ -1,0 +1,45 @@
+Findawise-newphase-163\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+[+] Running 4/4
+ ✔ Container findawise_redis     Running                                                      0.0s 
+ ✔ Container findawise_ollama    Running                                                      0.0s 
+ ✔ Container findawise_postgres  Running                                                      0.0s 
+ ✔ Container findawise_pgadmin   Running                                                      0.0s 
+PS C:\findawise newphase\Findawise-newphase-163\Findawise-newphase-163> npm install
+npm warn skipping integrity check for git dependency ssh://git@github.com/dmarcos/three-bmfont-text.git
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead       
+
+added 1190 packages, and audited 1191 packages in 31s
+
+262 packages are looking for funding
+  run `npm fund` for details
+
+17 vulnerabilities (6 low, 11 moderate)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+PS C:\findawise newphase\Findawise-newphase-163\Findawise-newphase-163> npm run db:push
+
+> rest-express@1.0.0 db:push
+> drizzle-kit push
+
+No config path provided, using default 'drizzle.config.ts'
+Reading config file 'C:\findawise newphase\Findawise-newphase-163\Findawise-newphase-163\drizzle.config.ts'
+Using 'pg' driver for database querying
+[✓] Pulling schema from database...
+ Warning  Found data-loss statements:
+· You're about to delete moderation_rules table with 4 items
+· You're about to delete media_contacts table with 4 items
+· You're about to delete outreach_templates table with 3 items
+
+THIS ACTION WILL CAUSE DATA LOSS AND CANNOT BE REVERTED
+
+Do you still want to push changes?
+❯ No, abort
+  Yes, I want to remove 3 tables,

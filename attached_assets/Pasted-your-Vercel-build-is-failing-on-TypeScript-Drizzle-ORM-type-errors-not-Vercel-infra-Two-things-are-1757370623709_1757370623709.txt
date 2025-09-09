@@ -1,0 +1,159 @@
+your Vercel build is failing on TypeScript/Drizzle ORM type errors, not Vercel infra. Two things are wrong:
+
+Your DB schema types and server/storage.ts are out of sync. You’re calling Drizzle inserts/updates with the wrong shape (often {}) or with fields that don’t exist. Example errors: passing {} where position or activityType are required; trying to set updatedAt on objects that don’t define it; referencing a column that isn’t in the table (timestamp vs date/updatedAt). 
+
+build log
+
+ 
+
+build log
+
+ 
+
+build log
+
+You have missing symbols/imports. Code references things that aren’t defined anywhere: translations, translationKeys, culturalMappings, regions, etc. That alone spawns hundreds of errors. 
+
+build log
+
+That’s why you see 6,200+ errors: the same root issues repeat across many lines/files. (The log even says you’re only seeing the last 10k lines.) 
+
+build log
+
+What the errors mean (with fixes)
+A) Wrong payloads for Drizzle .insert() / .values() / .update().set()
+
+Symptoms
+
+“No overload matches this call… Argument of type {} is not assignable… position/activityType/sessionId is missing.”
+You’re passing empty objects or incomplete objects where required fields are typed as required. Examples: lead_form_assignments.position, lead_activities.activityType, lead_captures.sessionId/email. 
+
+build log
+
+ 
+
+build log
+
+“Object literal may only specify known properties… updatedAt/isProcessed/status does not exist…”
+You’re trying to set columns that aren’t in the table type you’re updating, or you used the wrong type for the update source. 
+
+build log
+
+ 
+
+build log
+
+“Property timestamp does not exist on type neuron_analytics.”
+Your code expects a timestamp column, but the table type only has date/updatedAt (per the error). Rename usage or add the column. 
+
+build log
+
+How to fix (do these concretely)
+
+Use the right types when building values/updates.
+For each table:
+
+import { InferInsertModel, InferSelectModel } from 'drizzle-orm';
+type NewLeadActivity = InferInsertModel<typeof leadActivities>;
+const value: NewLeadActivity = { activityType: 'opened', /* ...required fields... */ };
+await db.insert(leadActivities).values(value);
+
+
+Never pass {}. If some fields are optional, mark them optional in the schema or give defaults.
+
+Only set columns that actually exist on the table.
+If you want updatedAt auto-managed, define it in schema with an on-update hook/default (or set it via SQL):
+
+// schema
+updatedAt: timestamp('updated_at', { mode: 'date' }).defaultNow().notNull(),
+// on update
+await db.update(table).set({ updatedAt: new Date() });
+
+
+If the schema doesn’t have updatedAt, remove those sets—or add the column (and run the migration). 
+
+build log
+
+Fix column mismatches.
+Replace code that uses non-existent columns (timestamp, status, etc.) with the real columns (date, updatedAt, stats?.status, etc.). 
+
+build log
+
+B) Missing imports / undefined constants
+
+Symptoms
+
+“Cannot find name ‘translations’ / ‘translationKeys’ / ‘culturalMappings’ / ‘regions’…”
+These identifiers aren’t imported/declared. 
+
+build log
+
+How to fix
+
+Import them from the module where they live. If you removed those modules, delete or guard the code using them (e.g., behind feature flags). As a stopgap, you can define safe empty fallbacks:
+
+const translations: Record<string, any> = {};
+const translationKeys: string[] = [];
+
+Fastest route to green (execution plan)
+
+Pin & align versions (drizzle-orm/drizzle-kit/pg/typescript) across phase-192 and phase-193. Mismatched versions change the generated types and overloads.
+
+npm ls drizzle-orm drizzle-kit typescript pg
+
+
+Regenerate types (if you use Drizzle codegen) so your schema and TS types agree.
+
+Targeted refactors (high-impact hot spots) in server/storage.ts:
+
+Fix all .values({}) / .values([{ }]) calls to pass a typed object with the actual required fields (position, activityType, sessionId, email, etc.). 
+
+build log
+
+ 
+
+build log
+
+Remove or add columns so you stop setting non-existent fields (updatedAt, isProcessed, status, timestamp). 
+
+build log
+
+ 
+
+build log
+
+Add the missing imports (translations, translationKeys, etc.) or delete those blocks. 
+
+build log
+
+Sanity queries (to find the offenders quickly):
+
+Empty payloads:
+
+PowerShell:
+Select-String -Path server\storage.ts -Pattern '\.values\(\s*\{\s*\}\s*\)'
+
+Wrong column names:
+Select-String -Path server\storage.ts -Pattern '\btimestamp\b|\bstatus\b|\bisProcessed\b|\bupdatedAt\b'
+
+Missing symbols:
+Select-String -Path server\storage.ts -Pattern '\btranslations\b|\btranslationKeys\b|\bculturalMappings\b|\bregions\b'
+
+(If you must ship before fixing types): You can bypass TS checks in Next.js:
+
+// next.config.js
+module.exports = {
+  typescript: { ignoreBuildErrors: true },
+  eslint: { ignoreDuringBuilds: true },
+};
+
+
+This deploys but does not fix runtime bugs. Use only as a temporary release valve.
+
+Why this happened
+
+A refactor/upgrades changed table types and required fields, but server/storage.ts wasn’t updated to match.
+
+Large files centralized a lot of logic, so one mismatch created a cascade of overload/type errors everywhere.
+
+Missing imports increased the error count dramatically because every reference line fails

@@ -1,0 +1,550 @@
+// app/page.tsx — Findawise (Parent Company of 7 Businesses)
+// Framework: Next.js App Router style (SSR‑ready component)
+// Styling: TailwindCSS (assumed configured), minimal inline icons via Lucide (optional)
+// A11y: No ARIA menu roles for site nav; disclosure/mega menu uses button + focusable links
+// Perf: Hero <video> is LCP‑sensitive; use compressed MP4/WebM, muted+playsInline, poster, and Pause control
+// SEO: Organization JSON‑LD with subOrganization nodes
+
+import React, { useEffect, useId, useRef, useState } from "react";
+
+// -------------------------
+// Utilities
+// -------------------------
+function cx(...cls: (string | false | undefined)[]) { return cls.filter(Boolean).join(" "); }
+
+function track(name: string, data?: Record<string, unknown>) {
+  // Replace with your analytics bus
+  // eslint-disable-next-line no-console
+  console.log("event", name, data || {});
+}
+
+// -------------------------
+// Data (replace with API feeds)
+// -------------------------
+const COMPANIES = [
+  {
+    key: "automation",
+    name: "Automation Services",
+    tagline: "We Do It for You",
+    oneliner: "End-to-end automation design & delivery (audit → integrate → ship).",
+    bullets: ["Lead routing", "Finance ops", "Ticket triage", "KPI reporting"],
+    value: "Save hundreds of hours, reduce errors, scale without headcount.",
+    cta: { label: "Book a 72h Pilot Build", href: "/automation" },
+  },
+  {
+    key: "workflows",
+    name: "Workflow Store",
+    tagline: "Prebuilt Flows You Can Deploy Today",
+    oneliner: "Plug-and-play automations: scraping, enrichment, outreach, finance, reporting.",
+    bullets: ["1‑click deploy", "Secrets/env setup", "Patch notes", "Step guides"],
+    value: "Buy once, run forever, extend as needed.",
+    cta: { label: "Browse 350+ Workflows", href: "/workflows" },
+  },
+  {
+    key: "assets",
+    name: "Digital Assets",
+    tagline: "Accelerators for Growth",
+    oneliner: "Prompt packs, datasets, playbooks, design kits, creative bundles.",
+    bullets: ["Agent prompts", "Datasets", "Playbooks", "Ad/Landing creatives"],
+    value: "Ship faster; skip reinvention.",
+    cta: { label: "Download Assets → Go Live Same Day", href: "/assets" },
+  },
+  {
+    key: "agents",
+    name: "AI Agents",
+    tagline: "Managed + Self‑Host Options",
+    oneliner: "Agents that act, not just chat — integrations, memory, approvals.",
+    bullets: ["Managed service", "Self‑host runbooks", "Benchmarked", "Configurable"],
+    value: "Reduce repetitive headcount; add intelligent scale.",
+    cta: { label: "Deploy Your First Agent", href: "/agents" },
+  },
+  {
+    key: "affiliate",
+    name: "Affiliate Hub",
+    tagline: "Promote the Best Brands",
+    oneliner: "Vetted high‑EPC brands + dynamic creatives.",
+    bullets: ["Smart links", "Geo/device optimized", "Creative rotation", "Real‑time EPC/CVR"],
+    value: "Maximize affiliate revenue with no guesswork.",
+    cta: { label: "Open Affiliate Hub", href: "/deals" },
+  },
+  {
+    key: "decision",
+    name: "Decision Platform",
+    tagline: "End Choice Overload",
+    oneliner: "Expert guides, interactive comparisons, and adaptive quizzes.",
+    bullets: ["Best X for Y guides", "Pros/cons tables", "Adaptive quiz", "Research prompts"],
+    value: "Clarity in chaos + monetization via verified offers.",
+    cta: { label: "Take the 2‑Minute Quiz", href: "/guides" },
+  },
+  {
+    key: "services",
+    name: "Services (Tools)",
+    tagline: "Practical Utilities for Teams & Individuals",
+    oneliner: "Self‑serve mini‑products that solve everyday needs.",
+    bullets: ["Resume Maker", "Cover Letter", "Portfolio Builder", "Email Optimizer"],
+    value: "Handle essentials in minutes.",
+    cta: { label: "Explore Tools", href: "/services" },
+  },
+] as const;
+
+const SOLUTIONS = [
+  { key: "leadgen", title: "Lead Generation", desc: "Capture, qualify, and route with automations + agents.", companies: ["workflows", "agents", "automation"] },
+  { key: "support", title: "Support Deflection", desc: "Auto‑resolve with support agents, escalate with context.", companies: ["agents", "automation"] },
+  { key: "finops", title: "Finance Ops", desc: "Reconcile, notify exceptions, and close faster.", companies: ["automation", "workflows", "agents"] },
+  { key: "trust", title: "Trust & Safety", desc: "Moderation pipelines with human‑in‑the‑loop controls.", companies: ["workflows", "automation"] },
+  { key: "product", title: "Product Analytics", desc: "Event taxonomy, dashboards, cohorts, ROI evidence.", companies: ["automation", "workflows"] },
+  { key: "content", title: "Content Ops", desc: "Research → draft → edit → publish pipelines.", companies: ["workflows", "assets", "agents"] },
+] as const;
+
+const CASES = [
+  { title: "SaaS Signups ↑43%", detail: "Decision Platform + Affiliate Hub + Offer Engine", link: "/case/saas-signups" },
+  { title: "E‑com CAC −28%", detail: "Workflow bundles + Agents for ops", link: "/case/ecom-cac" },
+  { title: "Ops 72h → 6h", detail: "Automation Services + playbooks", link: "/case/ops-time" },
+] as const;
+
+const DEALS = [
+  { brand: "NordLayer", text: "Up to 63% off + 3 mo free", href: "/deals/vpn" },
+  { brand: "Tesco Mobile", text: "Free EU roaming + phone bundles", href: "/deals/phones" },
+  { brand: "BitDefender", text: "Family Pack −55%", href: "/deals/antivirus" },
+];
+
+// -------------------------
+// Header with Accessible Mega Menu (Disclosure pattern)
+// -------------------------
+function Header() {
+  const [open, setOpen] = useState(false);
+  const menuId = useId();
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    function onClickAway(e: MouseEvent) {
+      if (!panelRef.current || !btnRef.current) return;
+      const t = e.target as Node;
+      if (!panelRef.current.contains(t) && !btnRef.current.contains(t)) setOpen(false);
+    }
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onClickAway);
+    return () => { document.removeEventListener("keydown", onKey); document.removeEventListener("mousedown", onClickAway); };
+  }, []);
+
+  return (
+    <header className="sticky top-0 z-40 border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/50">
+      <div className="mx-auto max-w-7xl px-4 py-3 flex items-center gap-4">
+        <a href="/" className="flex items-center gap-2">
+          <div className="h-8 w-8 rounded-lg bg-primary/15 grid place-items-center text-primary">★</div>
+          <span className="font-semibold tracking-tight">Findawise</span>
+        </a>
+        <nav className="ml-auto hidden md:flex items-center gap-6 text-sm">
+          <div className="relative">
+            <button
+              ref={btnRef}
+              className="inline-flex items-center gap-2 hover:text-primary focus:outline-none focus-visible:ring rounded-md px-2 py-1"
+              aria-expanded={open}
+              aria-controls={menuId}
+              onClick={() => { setOpen(v => !v); track("mega_companies_toggle", { open: !open }); }}
+            >
+              Companies <svg width="14" height="14" viewBox="0 0 24 24" className={cx("transition", open && "rotate-180")}><path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
+            </button>
+            {open && (
+              <div ref={panelRef} id={menuId} className="absolute left-0 mt-2 w-[760px] p-4 rounded-2xl border bg-popover shadow-xl grid grid-cols-3 gap-3">
+                {COMPANIES.map(c => (
+                  <a
+                    key={c.key}
+                    href={c.cta.href}
+                    className="group rounded-xl p-3 hover:bg-accent focus:bg-accent focus:outline-none"
+                    onClick={() => track("company_card_click", { name: c.key })}
+                  >
+                    <p className="text-sm font-medium">{c.name}</p>
+                    <p className="text-xs text-muted-foreground">{c.oneliner}</p>
+                    <div className="mt-2 flex flex-wrap gap-1">
+                      {c.bullets.slice(0,3).map(b => <span key={b} className="text-[10px] rounded-full px-2 py-0.5 bg-muted">{b}</span>)}
+                    </div>
+                    <div className="mt-2 text-primary text-xs">{c.cta.label} →</div>
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+          <a className="hover:text-primary" href="/os">Empire OS</a>
+          <a className="hover:text-primary" href="/solutions">Solutions</a>
+          <a className="hover:text-primary" href="/cases">Case Studies</a>
+          <a className="hover:text-primary" href="/pricing">Pricing</a>
+          <a className="hover:text-primary" href="/blog">Blog</a>
+        </nav>
+        <div className="hidden md:flex items-center gap-2">
+          <input aria-label="Search" placeholder="Search companies, solutions, docs…" className="h-10 w-64 rounded-xl border bg-background px-3 text-sm" />
+          <a href="/account" className="text-sm hover:text-primary">Sign in</a>
+          <a href="/automation" className="inline-flex items-center rounded-2xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">Book a 72h Pilot</a>
+        </div>
+      </div>
+      <div className="hidden md:block border-t text-xs text-muted-foreground">
+        <div className="mx-auto max-w-7xl px-4 py-2">Independent research with clear disclosures. We may earn from qualifying purchases.</div>
+      </div>
+    </header>
+  );
+}
+
+// -------------------------
+// Hero with Video (pause + reduced motion)
+// -------------------------
+function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [paused, setPaused] = useState(false);
+  const [shouldAutoplay, setShouldAutoplay] = useState(true);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) { setShouldAutoplay(false); setPaused(true); }
+  }, []);
+
+  useEffect(() => {
+    const v = videoRef.current; if (!v) return;
+    if (paused) v.pause(); else v.play().catch(() => {});
+  }, [paused]);
+
+  return (
+    <section className="relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 pt-12 pb-16 grid gap-8 lg:grid-cols-2">
+        <div>
+          <h1 className="text-4xl md:text-6xl font-semibold leading-tight">Findawise is the <span className="text-primary">AI Operating Company</span> behind seven specialist businesses—unified by one Empire OS.</h1>
+          <p className="mt-4 text-lg text-muted-foreground">We design, run, and scale end‑to‑end systems—automation, agents, affiliate growth, decision platforms, and more—so brands ship outcomes faster, with provable ROI.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="/automation" onClick={() => track("hero_pilot_click")} className="inline-flex items-center rounded-2xl bg-primary px-5 py-3 text-base font-medium text-primary-foreground">Book a 72h Pilot Build</a>
+            <a href="#companies" className="inline-flex items-center rounded-2xl border px-5 py-3 text-base">Explore our Companies</a>
+          </div>
+          <div className="mt-5 flex flex-wrap gap-4 text-sm text-muted-foreground">
+            <div>Outcome‑backed engagements</div>
+            <div>Transparent research & disclosures</div>
+            <div>Global‑ready (security, privacy, SLAs)</div>
+          </div>
+        </div>
+        <div className="relative rounded-3xl overflow-hidden border bg-muted/20">
+          <video
+            ref={videoRef}
+            className="block h-full w-full object-cover"
+            playsInline
+            muted
+            loop
+            // Autoplay only if not reduced motion
+            autoPlay={shouldAutoplay}
+            preload="metadata"
+            poster="/media/hero-orbit-poster.jpg"
+          >
+            <source src="/media/hero-orbit.webm" type="video/webm" />
+            <source src="/media/hero-orbit.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute right-3 top-3">
+            <button
+              className="rounded-full bg-background/80 backdrop-blur px-3 py-1 text-xs border"
+              onClick={() => setPaused(v => !v)}
+            >{paused ? "Play" : "Pause"} motion</button>
+          </div>
+        </div>
+      </div>
+      <KPIBar />
+    </section>
+  );
+}
+
+function KPIBar() {
+  return (
+    <div className="border-t border-b bg-background/60">
+      <div className="mx-auto max-w-7xl px-4 py-4 grid gap-4 sm:grid-cols-3 text-sm">
+        <div><span className="font-semibold">&lt; 60 sec</span> average time‑to‑decision</div>
+        <div><span className="font-semibold">up to 40%</span> median savings with verified deals</div>
+        <div><span className="font-semibold">3–10×</span> execution speed‑up with workflows & agents</div>
+      </div>
+    </div>
+  );
+}
+
+// -------------------------
+// Companies Grid (7 businesses)
+// -------------------------
+function Companies() {
+  return (
+    <section id="companies" className="py-16">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold">Our Companies</h2>
+          <p className="mt-2 text-muted-foreground max-w-2xl">Each business has its own roadmap, pricing, docs, and deep hooks to Empire OS.</p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {COMPANIES.map((c) => (
+            <a key={c.key} href={c.cta.href} className="group rounded-2xl border p-5 hover:shadow-lg focus:outline-none focus-visible:ring">
+              <div className="text-xs uppercase tracking-wide text-primary/90">{c.tagline}</div>
+              <h3 className="mt-1 text-xl font-semibold">{c.name}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{c.oneliner}</p>
+              <div className="mt-3 flex flex-wrap gap-1">
+                {c.bullets.map(b => (
+                  <span key={b} className="text-[10px] rounded-full px-2 py-0.5 bg-muted">{b}</span>
+                ))}
+              </div>
+              <p className="mt-3 text-sm">{c.value}</p>
+              <div className="mt-4 text-primary text-sm font-medium">{c.cta.label} →</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// -------------------------
+// Empire OS
+// -------------------------
+function EmpireOS() {
+  const pillars = [
+    { title: "Offer Engine", text: "Live pricing, coupons, transparent affiliate rails." },
+    { title: "Workflow Runtime", text: "Declarative deploys, env/secrets, patch notes." },
+    { title: "Agent Framework", text: "Toolchain, memory, policies, approvals." },
+    { title: "Decision Brain", text: "Vector search, retrieval, ranking, experiments." },
+    { title: "Analytics Fabric", text: "Event taxonomy, cohorts, ROI evidence." },
+    { title: "Privacy & Compliance", text: "Consent, disclosures, WCAG & regional laws." },
+  ];
+  return (
+    <section className="py-16 border-t">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold">Empire OS</h2>
+          <p className="mt-2 text-muted-foreground max-w-2xl">One backbone, seven frontiers. A shared platform that powers every business across the Findawise portfolio.</p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {pillars.map(p => (
+            <div key={p.title} className="rounded-2xl border p-5">
+              <h3 className="font-semibold">{p.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{p.text}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6 flex gap-3">
+          <a href="/os" className="rounded-2xl border px-4 py-2">Explore Empire OS</a>
+          <a href="/security" className="rounded-2xl border px-4 py-2">Read Security & Compliance</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// -------------------------
+// Solutions by Outcome
+// -------------------------
+function Solutions() {
+  return (
+    <section className="py-16">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold">Solutions by Outcome</h2>
+          <p className="mt-2 text-muted-foreground max-w-2xl">Pick the outcome you need; we map the right companies, playbooks, and case studies.</p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {SOLUTIONS.map(s => (
+            <a key={s.key} href={`/solutions/${s.key}`} className="rounded-2xl border p-5 hover:shadow-lg">
+              <h3 className="font-semibold">{s.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
+              <div className="mt-3 flex flex-wrap gap-1">
+                {s.companies.map(k => (
+                  <span key={k} className="text-[10px] rounded-full px-2 py-0.5 bg-muted">{COMPANIES.find(c => c.key===k)?.name}</span>
+                ))}
+              </div>
+              <div className="mt-3 text-primary text-sm font-medium">Explore solution →</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// -------------------------
+// Case Studies
+// -------------------------
+function CaseStudies() {
+  return (
+    <section className="py-16 border-t">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold">Featured Case Studies</h2>
+          <p className="mt-2 text-muted-foreground max-w-2xl">Real outcomes across multiple companies in the Findawise portfolio.</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {CASES.map(c => (
+            <a key={c.title} href={c.link} className="rounded-2xl border p-5 hover:shadow-lg">
+              <h3 className="font-semibold">{c.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{c.detail}</p>
+              <div className="mt-3 text-primary text-sm font-medium">Read case →</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// -------------------------
+// Deals Ticker
+// -------------------------
+function DealsTicker() {
+  return (
+    <section className="border-t border-b bg-background/60">
+      <div className="relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 py-3 text-sm">
+          <div className="font-medium mb-2">Today’s verified deals</div>
+          <div className="flex gap-6 whitespace-nowrap animate-[ticker_45s_linear_infinite] hover:[animation-play-state:paused]">
+            {DEALS.concat(DEALS).map((d, i) => (
+              <a key={`${d.brand}-${i}`} href={d.href} className="inline-flex items-center gap-2 pr-6">
+                <span className="rounded-full bg-primary/15 text-primary px-2 py-0.5 text-[10px]">{d.brand}</span>
+                <span className="text-muted-foreground">{d.text}</span>
+                <span className="text-primary">View deal →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+        <style>{`@keyframes ticker { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }`}</style>
+      </div>
+    </section>
+  );
+}
+
+// -------------------------
+// Insights (Blog)
+// -------------------------
+function Insights() {
+  const posts = [
+    { title: "Agent Benchmarks: Actions > Chat", href: "/blog/agent-benchmarks" },
+    { title: "Automation ROI: Payback in Weeks", href: "/blog/automation-roi" },
+    { title: "Affiliate Integrity: Disclosures That Build Trust", href: "/blog/affiliate-integrity" },
+  ];
+  return (
+    <section className="py-16">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold">Insights</h2>
+          <p className="mt-2 text-muted-foreground max-w-2xl">Benchmarks, playbooks, and research from across the portfolio.</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {posts.map(p => (
+            <a key={p.title} href={p.href} className="rounded-2xl border p-5 hover:shadow-lg">
+              <h3 className="font-semibold">{p.title}</h3>
+              <div className="mt-3 text-primary text-sm font-medium">Read →</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// -------------------------
+// Lead Magnet
+// -------------------------
+function LeadMagnet() {
+  return (
+    <section className="py-16 border-t">
+      <div className="mx-auto max-w-3xl px-4">
+        <div className="rounded-3xl border p-6 md:p-10">
+          <h2 className="text-2xl md:text-3xl font-semibold">Get the Empire Briefing</h2>
+          <p className="mt-2 text-muted-foreground">Bi‑weekly playbooks, benchmarks & real‑world deals. No fluff.</p>
+          <form className="mt-5 grid gap-3 md:grid-cols-[1fr_auto]" onSubmit={(e) => { e.preventDefault(); track("newsletter_subscribe"); }}>
+            <input type="email" required placeholder="you@company.com" className="h-12 rounded-2xl border px-3" />
+            <button className="h-12 rounded-2xl bg-primary px-6 text-primary-foreground">Subscribe</button>
+          </form>
+          <p className="mt-2 text-xs text-muted-foreground">By subscribing, you accept our terms and affiliate disclosure. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// -------------------------
+// Footer (corporate)
+// -------------------------
+function Footer() {
+  return (
+    <footer className="border-t">
+      <div className="mx-auto max-w-7xl px-4 py-10 grid gap-8 sm:grid-cols-2 md:grid-cols-4 text-sm">
+        <div>
+          <div className="flex items-center gap-2 mb-3"><div className="h-8 w-8 rounded-lg bg-primary/15 grid place-items-center text-primary">★</div><span className="font-semibold">Findawise</span></div>
+          <p className="text-muted-foreground">The AI Operating Company behind seven specialist businesses.</p>
+        </div>
+        <div>
+          <p className="font-medium mb-2">Company</p>
+          <ul className="space-y-1 text-muted-foreground">
+            <li><a className="hover:text-primary" href="/about">About</a></li>
+            <li><a className="hover:text-primary" href="/careers">Careers</a></li>
+            <li><a className="hover:text-primary" href="/press">Press</a></li>
+            <li><a className="hover:text-primary" href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p className="font-medium mb-2">Legal</p>
+          <ul className="space-y-1 text-muted-foreground">
+            <li><a className="hover:text-primary" href="/privacy">Privacy</a></li>
+            <li><a className="hover:text-primary" href="/terms">Terms</a></li>
+            <li><a className="hover:text-primary" href="/cookies">Cookies</a></li>
+            <li><a className="hover:text-primary" href="/disclosure">Affiliate Disclosure</a></li>
+            <li><a className="hover:text-primary" href="/accessibility">Accessibility (WCAG 2.2)</a></li>
+            <li><a className="hover:text-primary" href="/security">Security</a></li>
+          </ul>
+        </div>
+        <div>
+          <p className="font-medium mb-2">Explore</p>
+          <ul className="space-y-1 text-muted-foreground">
+            <li><a className="hover:text-primary" href="/solutions">Solutions</a></li>
+            <li><a className="hover:text-primary" href="/cases">Case Studies</a></li>
+            <li><a className="hover:text-primary" href="/blog">Blog</a></li>
+            <li><a className="hover:text-primary" href="/deals">Deals</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="mx-auto max-w-7xl px-4 py-6 border-t text-xs text-muted-foreground">
+        © {new Date().getFullYear()} Findawise. Prices and offers may change; we may earn a commission from qualifying purchases at no extra cost to you.
+      </div>
+    </footer>
+  );
+}
+
+// -------------------------
+// JSON‑LD Organization with subOrganizations
+// -------------------------
+function OrgSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Findawise",
+    url: "https://www.findawise.com",
+    logo: "https://www.findawise.com/logo.png",
+    subOrganization: COMPANIES.map(c => ({
+      "@type": "Organization",
+      name: `Findawise ${c.name}`,
+      url: `https://www.findawise.com/${c.key}`,
+      parentOrganization: { "@type": "Organization", name: "Findawise", url: "https://www.findawise.com" }
+    }))
+  } as const;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
+}
+
+// -------------------------
+// Page Assembly
+// -------------------------
+export default function HomePage() {
+  return (
+    <main className="min-h-screen antialiased">
+      <Header />
+      <Hero />
+      <Companies />
+      <EmpireOS />
+      <Solutions />
+      <CaseStudies />
+      <DealsTicker />
+      <Insights />
+      <LeadMagnet />
+      <Footer />
+      <OrgSchema />
+    </main>
+  );
+}

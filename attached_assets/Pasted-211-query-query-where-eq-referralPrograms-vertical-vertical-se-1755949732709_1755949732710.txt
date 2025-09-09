@@ -1,0 +1,794 @@
+211         query = query.where(eq(referralPrograms.vertical, vertical));
+              ~~~~~
+
+server/storage.ts:10235:9 - error TS2740: Type 'Omit<PgSelectBase<"referral_links", { id: PgColumn<{ name: "id"; tableName: "referral_links"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; isPrimaryKey: true; ... 5 more ...; generated: undefined; }, {}, {}>; ... 16 more ...; updatedAt: PgColumn<...>...' is missing the following properties from type 'PgSelectBase<"referral_links", { id: PgColumn<{ name: "id"; tableName: "referral_links"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; isPrimaryKey: true; ... 5 more ...; generated: undefined; }, {}, {}>; ... 16 more ...; updatedAt: PgColumn<...>; }, ...': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10235         query = query.where(eq(referralLinks.programId, programId));
+              ~~~~~
+
+server/storage.ts:10259:9 - error TS2740: Type 'Omit<PgSelectBase<"referral_transactions", { id: PgColumn<{ name: "id"; tableName: "referral_transactions"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 14 more ...; createdAt: PgColumn<...>; }, ....' is missing the following properties from type 'PgSelectBase<"referral_transactions", { id: PgColumn<{ name: "id"; tableName: "referral_transactions"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 14 more ...; createdAt: PgColumn<...>; }, ... 5 ...': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10259         query = query.where(eq(referralTransactions.programId, programId));
+              ~~~~~
+
+server/storage.ts:10283:9 - error TS2740: Type 'Omit<PgSelectBase<"backlink_opportunities", { id: PgColumn<{ name: "id"; tableName: "backlink_opportunities"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 21 more ...; updatedAt: PgColumn<...>; },...' is missing the following properties from type 'PgSelectBase<"backlink_opportunities", { id: PgColumn<{ name: "id"; tableName: "backlink_opportunities"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 21 more ...; updatedAt: PgColumn<...>; }, ... ...': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10283         query = query.where(eq(backlinkOpportunities.vertical, vertical));
+              ~~~~~
+
+server/storage.ts:10306:9 - error TS2740: Type 'Omit<PgSelectBase<"backlink_outreach", { id: PgColumn<{ name: "id"; tableName: "backlink_outreach"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 15 more ...; createdAt: PgColumn<...>; }, ... 5 mor...' is missing the following properties from type 'PgSelectBase<"backlink_outreach", { id: PgColumn<{ name: "id"; tableName: "backlink_outreach"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; isPrimaryKey: true; ... 5 more ...; generated: undefined; }, {}, {}>; ... 15 more ...; createdAt: PgColumn<......': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10306         query = query.where(eq(backlinkOutreach.opportunityId, opportunityId));      
+              ~~~~~
+
+server/storage.ts:10351:9 - error TS2740: Type 'Omit<PgSelectBase<"social_media_accounts", { id: PgColumn<{ name: "id"; tableName: "social_media_accounts"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 17 more ...; updatedAt: PgColumn<...>; }, ....' is missing the following properties from type 'PgSelectBase<"social_media_accounts", { id: PgColumn<{ name: "id"; tableName: "social_media_accounts"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 17 more ...; updatedAt: PgColumn<...>; }, ... 5 ...': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10351         query = query.where(eq(socialMediaAccounts.vertical, vertical));
+              ~~~~~
+
+server/storage.ts:10375:9 - error TS2740: Type 'Omit<PgSelectBase<"social_media_posts", { id: PgColumn<{ name: "id"; tableName: "social_media_posts"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 18 more ...; updatedAt: PgColumn<...>; }, ... 5 m...' is missing the following properties from type 'PgSelectBase<"social_media_posts", { id: PgColumn<{ name: "id"; tableName: "social_media_posts"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 18 more ...; updatedAt: PgColumn<...>; }, ... 5 more ....': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10375         query = query.where(eq(socialMediaPosts.accountId, accountId));
+              ~~~~~
+
+server/storage.ts:10398:9 - error TS2740: Type 'Omit<PgSelectBase<"social_media_engagement", { id: PgColumn<{ name: "id"; tableName: "social_media_engagement"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 14 more ...; createdAt: PgColumn<...>; ...' is missing the following properties from type 'PgSelectBase<"social_media_engagement", { id: PgColumn<{ name: "id"; tableName: "social_media_engagement"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 14 more ...; createdAt: PgColumn<...>; }, .....': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10398         query = query.where(eq(socialMediaEngagement.postId, postId));
+              ~~~~~
+
+server/storage.ts:10408:9 - error TS2393: Duplicate function implementation.
+
+10408   async createEmailCampaign(campaign: any): Promise<any> {
+              ~~~~~~~~~~~~~~~~~~~
+
+server/storage.ts:10418:9 - error TS2393: Duplicate function implementation.
+
+10418   async getEmailCampaigns(vertical?: string): Promise<any[]> {
+              ~~~~~~~~~~~~~~~~~
+
+server/storage.ts:10422:9 - error TS2740: Type 'Omit<PgSelectBase<"email_campaigns", { id: PgColumn<{ name: "id"; tableName: "email_campaigns"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; isPrimaryKey: true; ... 5 more ...; generated: undefined; }, {}, {}>; ... 9 more ...; updatedAt: PgColumn<......' is missing the following properties from type 'PgSelectBase<"email_campaigns", { id: PgColumn<{ name: "id"; tableName: "email_campaigns"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; isPrimaryKey: true; ... 5 more ...; generated: undefined; }, {}, {}>; ... 9 more ...; updatedAt: PgColumn<...>; },...': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10422         query = query.where(eq(emailCampaigns.vertical, vertical));
+              ~~~~~
+
+server/storage.ts:10422:47 - error TS2339: Property 'vertical' does not exist on type 'PgTableWithColumns<{ name: "email_campaigns"; schema: undefined; columns: { id: PgColumn<{ name: "id"; tableName: "email_campaigns"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; ... 7 more ...; generated: undefined; }, {}, {}>; ... 9 more ...; updatedAt: PgColumn<...>...'.
+
+10422         query = query.where(eq(emailCampaigns.vertical, vertical));
+                                                    ~~~~~~~~
+
+server/storage.ts:10445:9 - error TS2740: Type 'Omit<PgSelectBase<"email_automations", { id: PgColumn<{ name: "id"; tableName: "email_automations"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 16 more ...; updatedAt: PgColumn<...>; }, ... 5 mor...' is missing the following properties from type 'PgSelectBase<"email_automations", { id: PgColumn<{ name: "id"; tableName: "email_automations"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; isPrimaryKey: true; ... 5 more ...; generated: undefined; }, {}, {}>; ... 16 more ...; updatedAt: PgColumn<......': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10445         query = query.where(eq(emailAutomations.vertical, vertical));
+              ~~~~~
+
+server/storage.ts:10469:9 - error TS2740: Type 'Omit<PgSelectBase<"email_subscribers", { id: PgColumn<{ name: "id"; tableName: "email_subscribers"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 24 more ...; updatedAt: PgColumn<...>; }, ... 5 mor...' is missing the following properties from type 'PgSelectBase<"email_subscribers", { id: PgColumn<{ name: "id"; tableName: "email_subscribers"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; isPrimaryKey: true; ... 5 more ...; generated: undefined; }, {}, {}>; ... 24 more ...; updatedAt: PgColumn<......': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10469         query = query.where(eq(emailSubscribers.vertical, vertical));
+              ~~~~~
+
+server/storage.ts:10494:9 - error TS2740: Type 'Omit<PgSelectBase<"conversion_funnels", { id: PgColumn<{ name: "id"; tableName: "conversion_funnels"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 22 more ...; updatedAt: PgColumn<...>; }, ... 5 m...' is missing the following properties from type 'PgSelectBase<"conversion_funnels", { id: PgColumn<{ name: "id"; tableName: "conversion_funnels"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 22 more ...; updatedAt: PgColumn<...>; }, ... 5 more ....': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10494         query = query.where(eq(conversionFunnels.vertical, vertical));
+              ~~~~~
+
+server/storage.ts:10518:9 - error TS2740: Type 'Omit<PgSelectBase<"conversion_experiments", { id: PgColumn<{ name: "id"; tableName: "conversion_experiments"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 23 more ...; updatedAt: PgColumn<...>; },...' is missing the following properties from type 'PgSelectBase<"conversion_experiments", { id: PgColumn<{ name: "id"; tableName: "conversion_experiments"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 23 more ...; updatedAt: PgColumn<...>; }, ... ...': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10518         query = query.where(eq(conversionExperiments.funnelId, funnelId));
+              ~~~~~
+
+server/storage.ts:10541:9 - error TS2740: Type 'Omit<PgSelectBase<"conversion_events", { id: PgColumn<{ name: "id"; tableName: "conversion_events"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; ... 6 more ...; generated: undefined; }, {}, {}>; ... 23 more ...; createdAt: PgColumn<...>; }, ... 5 mor...' is missing the following properties from type 'PgSelectBase<"conversion_events", { id: PgColumn<{ name: "id"; tableName: "conversion_events"; dataType: "number"; columnType: "PgSerial"; data: number; driverParam: number; notNull: true; hasDefault: true; isPrimaryKey: true; ... 5 more ...; generated: undefined; }, {}, {}>; ... 23 more ...; createdAt: PgColumn<......': config, joinsNotNullableMap, tableName, isPartialSelect, and 5 more.
+
+10541         query = query.where(eq(conversionEvents.funnelId, funnelId));
+              ~~~~~
+
+server/storage.ts:10667:9 - error TS2393: Duplicate function implementation.
+
+10667   async getEducationArchetypes() {
+              ~~~~~~~~~~~~~~~~~~~~~~
+
+server/storage.ts:10679:9 - error TS2393: Duplicate function implementation.
+
+10679   async getEducationArchetypeBySlug(slug: string) {
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+server/storage.ts:10812:9 - error TS2393: Duplicate function implementation.
+
+10812   async getUsers() {
+              ~~~~~~~~
+
+server/storage.ts:10817:9 - error TS2393: Duplicate function implementation.
+
+10817   async healthCheck() {
+              ~~~~~~~~~~~
+
+server/storage.ts:10821:9 - error TS2393: Duplicate function implementation.
+
+10821   async getLayoutTemplates() {
+              ~~~~~~~~~~~~~~~~~~
+
+server/storage.ts:10833:9 - error TS2393: Duplicate function implementation.
+
+10833   async getActiveAiToolsExperiments() {
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+server/types/empireModuleTypes.ts:175:3 - error TS2687: All declarations of 'options' must have identical modifiers.
+
+175   options?: {
+      ~~~~~~~
+
+server/types/empireModuleTypes.ts:226:3 - error TS2687: All declarations of 'options' must have identical modifiers.
+
+226   options?: {
+      ~~~~~~~
+
+server/types/empireModuleTypes.ts:262:3 - error TS2717: Subsequent property declarations must have the same type.  Property 'metadata' must be of type 'Record<string, any>', but here has type '{ renderTime: number; size: number; seoScore: number; performanceScore: number; accessibilityScore: number; securityScore: number; moduleErrors: string[]; warnings: string[]; }'.
+
+262   metadata: {
+      ~~~~~~~~
+
+  server/types/empireModuleTypes.ts:169:3
+    169   metadata: Record<string, any>;
+          ~~~~~~~~
+    'metadata' was also declared here.
+
+server/types/empireModuleTypes.ts:280:3 - error TS2687: All declarations of 'options' must have identical modifiers.
+
+280   options: {
+      ~~~~~~~
+
+server/types/empireModuleTypes.ts:280:3 - error TS2717: Subsequent property declarations must have the same type.  Property 'options' must be of type '{ renderEngine?: string | undefined; cacheEnabled?: boolean | undefined; securityLevel?: "basic" | "strict" | "paranoid" | undefined; optimizations?: string[] | undefined; abTest?: { ...; } | undefined; } | undefined', but here has type '{ preview: boolean; skipValidation: boolean; skipCache: boolean; includeAnalytics: boolean; optimizeForSpeed: boolean; generateSnapshot: boolean; customProcessors: string[]; }'.
+
+280   options: {
+      ~~~~~~~
+
+  server/types/empireModuleTypes.ts:175:3
+    175   options?: {
+          ~~~~~~~
+    'options' was also declared here.
+
+server/types/empireModuleTypes.ts:298:3 - error TS2717: Subsequent property declarations must have the same type.  Property 'metadata' must be of type '{ generationTime: number; cacheHit: boolean; security: EmpireSecurityContext; performance: EmpirePerformanceMetrics; seo: { score: number; suggestions: string[]; }; accessibility: { ...; }; }', but here has type '{ generationTime: number; cacheHit: boolean; modulesRendered: number; seoScore: number; performanceMetrics: EmpirePerformanceMetrics; validationResult: EmpireValidationResult; warnings: string[]; errors: string[]; }'.
+
+298   metadata: {
+      ~~~~~~~~
+
+  server/types/empireModuleTypes.ts:195:3
+    195   metadata: {
+          ~~~~~~~~
+    'metadata' was also declared here.
+
+server/types/empireModuleTypes.ts:801:3 - error TS2687: All declarations of 'options' must have identical modifiers.
+
+801   options: {
+      ~~~~~~~
+
+server/types/empireModuleTypes.ts:801:3 - error TS2717: Subsequent property declarations must have the same type.  Property 'options' must be of type '{ parallel?: boolean | undefined; validateAll?: boolean | undefined; rollbackOnError?: boolean | undefined; } | undefined', but here has type '{ batchSize: number; parallel: boolean; failFast: boolean; skipValidation: boolean; dryRun: boolean; rollbackOnError: boolean; }'.
+
+801   options: {
+      ~~~~~~~
+
+  server/types/empireModuleTypes.ts:226:3
+    226   options?: {
+          ~~~~~~~
+    'options' was also declared here.
+
+server/utils/archetypeEngine.ts:230:37 - error TS2551: Property 'getUserSession' does not exist on type 'DatabaseStorage'. Did you mean 'getCtaUserSession'?
+
+230       const session = await storage.getUserSession(sessionId);
+                                        ~~~~~~~~~~~~~~
+
+  server/storage.ts:8376:9
+    8376   async getCtaUserSession(sessionId: string, instanceId: string): Promise<CtaUserSession | undefined> {
+                 ~~~~~~~~~~~~~~~~~
+    'getCtaUserSession' is declared here.
+
+server/utils/archetypeEngine.ts:231:44 - error TS2551: Property 'getBehaviorEventsBySession' does not exist on type 'DatabaseStorage'. Did you mean 'getBehaviorsBySession'?
+
+231       const behaviorEvents = await storage.getBehaviorEventsBySession(sessionId);      
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  server/storage.ts:1208:9
+    1208   async getBehaviorsBySession(sessionId: string): Promise<BehaviorEvent[]> {      
+                 ~~~~~~~~~~~~~~~~~~~~~
+    'getBehaviorsBySession' is declared here.
+
+server/utils/archetypeEngine.ts:232:62 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+
+232       const userProfile = await storage.getGlobalUserProfile(sessionId);
+                                                                 ~~~~~~~~~
+
+server/utils/archetypeEngine.ts:567:41 - error TS2554: Expected 3 arguments, but got 1.    
+
+567       const assignments = await storage.getBehaviorEventsByType('archetype_assignment');
+                                            ~~~~~~~~~~~~~~~~~~~~~~~
+
+  server/storage.ts:4029:52
+    4029   async getBehaviorEventsByType(eventType: string, startDate: Date, endDate: Date): Promise<any[]> {
+                                                            ~~~~~~~~~~~~~~~
+    An argument for 'startDate' was not provided.
+
+server/utils/errorHandler.ts:124:11 - error TS2353: Object literal may only specify known properties, and 'retryCount' does not exist in type '{ category: ErrorCategory; severity: ErrorSeverity; message: string; originalError?: Error | undefined; context?: any; userId?: string | undefined; neuronId?: string | undefined; }'.
+
+124           retryCount: attempt - 1,
+              ~~~~~~~~~~
+
+server/utils/seedAllData.ts:162:40 - error TS2345: Argument of type '{ slug: string; name: string; description: string; type: string; category: string; emotion: string; fileUrl: string; downloadName: string; leadScore: number; metadata: { pages: number; fileSize: string; days?: undefined; habits?: undefined; templates?: undefined; tools?: undefined; }; } | { ...; } | { ...; }' is not assignable to parameter of type '{ title: string; type: string; slug: string; deliveryMethod: string; description?: string | null | undefined; isActive?: boolean | null | undefined; deliveryUrl?: string | null | undefined; deliveryConfig?: Json | undefined; }'.
+  Type '{ slug: string; name: string; description: string; type: string; category: string; emotion: string; fileUrl: string; downloadName: string; leadScore: number; metadata: { pages: number; fileSize: string; days?: undefined; habits?: undefined; templates?: undefined; tools?: undefined; }; }' is missing the following properties from type '{ title: string; type: string; slug: string; deliveryMethod: string; description?: string | null | undefined; isActive?: boolean | null | undefined; deliveryUrl?: string | null | undefined; deliveryConfig?: Json | undefined; }': title, deliveryMethod
+
+162         await storage.createLeadMagnet(magnet);
+                                           ~~~~~~
+
+server/utils/seedAllData.ts:218:38 - error TS2345: Argument of type '{ slug: string; name: string; description: string; type: string; position: string; isActive: boolean; fields: { name: string; label: string; type: string; required: boolean; placeholder: string; }[]; settings: { ...; }; antiSpam: { ...; }; }' is not assignable to parameter of type '{ title: string; slug: string; formType: string; formFields: Json; description?: string | null | undefined; emotion?: string | null | undefined; isActive?: boolean | null | undefined; styling?: Json | undefined; leadMagnetId?: number | ... 1 more ... | undefined; triggerConfig?: Json | undefined; }'.
+  Type '{ slug: string; name: string; description: string; type: string; position: string; isActive: boolean; fields: { name: string; label: string; type: string; required: boolean; placeholder: string; }[]; settings: { ...; }; antiSpam: { ...; }; }' is missing the following properties from type '{ title: string; slug: string; formType: string; formFields: Json; description?: string | null | undefined; emotion?: string | null | undefined; isActive?: boolean | null | undefined; styling?: Json | undefined; leadMagnetId?: number | ... 1 more ... | undefined; triggerConfig?: Json | undefined; }': title, formType, formFields
+
+218         await storage.createLeadForm(form);
+                                         ~~~~
+
+server/utils/seedAllData.ts:252:23 - error TS2551: Property 'createUserSession' does not exist on type 'DatabaseStorage'. Did you mean 'createCtaUserSession'?
+
+252         await storage.createUserSession(session);
+                          ~~~~~~~~~~~~~~~~~
+
+  server/storage.ts:8371:9
+    8371   async createCtaUserSession(session: InsertCtaUserSession): Promise<CtaUserSession> {
+                 ~~~~~~~~~~~~~~~~~~~~
+    'createCtaUserSession' is declared here.
+
+server/utils/standardErrorHandler.ts:129:31 - error TS18046: 'error' is of type 'unknown'. 
+
+129       if (allowDuplicates && (error.message?.includes('duplicate key') || error.message?.includes('unique constraint'))) {
+                                  ~~~~~
+
+server/utils/standardErrorHandler.ts:129:75 - error TS18046: 'error' is of type 'unknown'. 
+
+129       if (allowDuplicates && (error.message?.includes('duplicate key') || error.message?.includes('unique constraint'))) {
+                                                                              ~~~~~        
+
+shared/aiToolsTables.ts:363:3 - error TS2322: Type 'true' is not assignable to type 'never'.
+
+363   id: true,
+      ~~
+
+shared/aiToolsTables.ts:376:3 - error TS2322: Type 'true' is not assignable to type 'never'.
+
+376   id: true,
+      ~~
+
+shared/aiToolsTables.ts:382:3 - error TS2322: Type 'true' is not assignable to type 'never'.
+
+382   id: true,
+      ~~
+
+shared/aiToolsTables.ts:404:3 - error TS2322: Type 'true' is not assignable to type 'never'.
+
+404   id: true,
+      ~~
+
+shared/aiToolsTables.ts:415:3 - error TS2322: Type 'true' is not assignable to type 'never'.
+
+415   id: true,
+      ~~
+
+shared/aiToolsTables.ts:426:3 - error TS2322: Type 'true' is not assignable to type 'never'.
+
+426   id: true,
+      ~~
+
+shared/moneyTrafficGrowthTables.ts:598:14 - error TS7022: 'forumCategories' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+
+598 export const forumCategories = pgTable("forum_categories", {
+                 ~~~~~~~~~~~~~~~
+
+shared/moneyTrafficGrowthTables.ts:604:45 - error TS7024: Function implicitly has return type 'any' because it does not have a return type annotation and is referenced directly or indirectly in one of its return expressions.
+
+604   parentId: integer("parent_id").references(() => forumCategories.id),
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~
+
+shared/moneyTrafficGrowthTables.ts:646:14 - error TS7022: 'forumReplies' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+
+646 export const forumReplies = pgTable("forum_replies", {
+                 ~~~~~~~~~~~~
+
+shared/moneyTrafficGrowthTables.ts:649:45 - error TS7024: Function implicitly has return type 'any' because it does not have a return type annotation and is referenced directly or indirectly in one of its return expressions.
+
+649   parentId: integer("parent_id").references(() => forumReplies.id),
+                                                ~~~~~~~~~~~~~~~~~~~~~
+
+shared/moneyTrafficGrowthTables.ts:667:14 - error TS7022: 'resourceCategories' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+
+667 export const resourceCategories = pgTable("resource_categories", {
+                 ~~~~~~~~~~~~~~~~~~
+
+shared/moneyTrafficGrowthTables.ts:673:45 - error TS7024: Function implicitly has return type 'any' because it does not have a return type annotation and is referenced directly or indirectly in one of its return expressions.
+
+673   parentId: integer("parent_id").references(() => resourceCategories.id),
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+shared/trafficGeneratorTables.ts:166:16 - error TS2345: Argument of type '{}' is not assignable to parameter of type 'SQL<unknown> | { frequency: string; contentTypes: string[]; language: string; timezone: string; }'.
+
+166   }>().default({}),
+                   ~~
+
+shared/trafficGeneratorTables.ts:198:16 - error TS2345: Argument of type '{}' is not assignable to parameter of type 'SQL<unknown> | { country: string; state: string; city: string; }'.
+
+198   }>().default({}),
+                   ~~
+
+shared/trafficGeneratorTables.ts:474:16 - error TS2345: Argument of type '{}' is not assignable to parameter of type 'SQL<unknown> | { showLogo: boolean; customColors: boolean; customFonts: boolean; }'.
+
+474   }>().default({}),
+                   ~~
+
+
+Found 4154 errors in 371 files.
+
+Errors  Files
+     2  client/src/App.tsx:119
+     8  client/src/components/AffiliateOfferRenderer.tsx:116
+     3  client/src/components/AnalyticsDashboard.tsx:122
+     2  client/src/components/BlogContentRenderer.tsx:44
+     2  client/src/components/BlogManager.tsx:144
+     3  client/src/components/ConfigManager.tsx:195
+     2  client/src/components/ConsentBanner.tsx:310
+     3  client/src/components/Dashboard.tsx:45
+    13  client/src/components/DynamicPageGenerator.tsx:27
+     1  client/src/components/Finance/FinanceAIChatbot.tsx:30
+     3  client/src/components/Finance/FinanceCalculators.tsx:25
+     1  client/src/components/Finance/FinanceGamification.tsx:18
+     1  client/src/components/Finance/FinanceQuiz.tsx:24
+     1  client/src/components/InteractiveModules/CalculatorModule.tsx:14
+     2  client/src/components/InteractiveModules/ComparisonModule.tsx:10
+     1  client/src/components/InteractiveModules/QuizModule.tsx:13
+     1  client/src/components/InteractiveModules/TimerModule.tsx:14
+     2  client/src/components/LeadCaptureForm.tsx:164
+     9  client/src/components/LeadCaptureRenderer.tsx:182
+     7  client/src/components/LocalAnalyticsEngine.tsx:9
+    69  client/src/components/LocalizationDashboard.tsx:59
+    60  client/src/components/LocalizedDynamicPageGenerator.tsx:15
+     1  client/src/components/NeuralProfileDashboard.tsx:21
+     9  client/src/components/SaaS/SaaSStackBuilder.tsx:3
+     2  client/src/components/SecurityQuiz.tsx:302
+     1  client/src/components/SecurityTools.tsx:63
+    16  client/src/components/TravelContentManager.tsx:144
+    21  client/src/components/TravelOfferRenderer.tsx:75
+     3  client/src/components/admin/FederationDashboard.tsx:139
+     1  client/src/components/admin/LocalizationDashboard.tsx:54
+     7  client/src/components/admin/PWAMobileDashboard.tsx:281
+    38  client/src/components/admin/SessionDashboard.tsx:81
+     3  client/src/components/admin/TranslationManagementPanel.tsx:172
+     4  client/src/components/ai-tools/LeadMagnetFlow.tsx:42
+     4  client/src/components/ai-tools/QuizEngine.tsx:46
+     5  client/src/components/ai-tools/ToolDirectory.tsx:51
+    23  client/src/components/ar-vr-3d/CTARenderer.tsx:7
+     2  client/src/components/compliance/ConsentBanner.tsx:35
+     7  client/src/components/education/AIAssistant.tsx:90
+    11  client/src/components/education/GamificationSystem.tsx:127
+    35  client/src/components/education/QuizEngine.tsx:72
+     3  client/src/components/federation/ApiNeuronDashboard.tsx:116
+     2  client/src/components/federation/NeuronControls.tsx:250
+     1  client/src/components/health/AdvancedHealthTools.tsx:588
+     1  client/src/components/health/PremiumHealthUI.tsx:61
+     2  client/src/components/layout/LayoutMutationRenderer.tsx:7
+     1  client/src/components/localization/LanguageSwitcher.tsx:16
+     1  client/src/components/ui/enterprise-features.tsx:10
+     2  client/src/components/ui/legendary-components.tsx:16
+     2  client/src/config/financeConfig.ts:126
+     1  client/src/config/localization.ts:321
+     3  client/src/hooks/useABTesting.ts:124
+     2  client/src/hooks/useLocalization-old.ts:19
+     4  client/src/hooks/useSystemData.ts:16
+     3  client/src/lib/AnalyticsClient.ts:392
+     6  client/src/lib/ConfigSync.ts:229
+     1  client/src/lib/pwa/PWAManager.ts:290
+     2  client/src/lib/sessionManager.ts:112
+     3  client/src/pages/AIToolsPage.tsx:35
+    19  client/src/pages/AdminAIDashboard.tsx:171
+    21  client/src/pages/AdminComplianceDashboard.tsx:65
+     5  client/src/pages/AdminOfferFeedDashboard.tsx:80
+    22  client/src/pages/ExperimentsDashboard.tsx:252
+     1  client/src/pages/FinanceHome.tsx:16
+     4  client/src/pages/HealthHome.tsx:202
+     2  client/src/pages/OfferEngineDashboard.tsx:339
+     2  client/src/pages/SaaS/SaaSHome.tsx:152
+     5  client/src/pages/SecurityDashboard.tsx:415
+     6  client/src/pages/SecurityTools.tsx:114
+    12  client/src/pages/TravelHome.tsx:51
+     5  client/src/pages/admin/AIMLCenter.tsx:194
+     1  client/src/pages/admin/FunnelDashboard.tsx:862
+    34  client/src/pages/admin/NotificationCenter.tsx:116
+     2  client/src/pages/admin/OfflineAiDashboard.tsx:9
+     1  client/src/pages/admin/SemanticGraphCenter.tsx:491
+    10  client/src/pages/admin/affiliate-dashboard.tsx:86
+     9  client/src/pages/admin/empire-launchpad.tsx:165
+     4  client/src/pages/admin/interactive-modules.tsx:102
+     8  client/src/pages/admin/neuron-federation.tsx:93
+    22  client/src/pages/admin/orchestrator-dashboard.tsx:117
+    20  client/src/services/ContentFetcher.ts:260
+    16  client/src/services/OfferLoader.ts:137
+    20  client/src/services/funnelEngine.ts:114
+     1  client/src/services/pwaManager.ts:562
+     1  client/src/services/sessionManager.ts:243
+     6  client/src/utils/ArchetypeEngine.ts:377
+     1  client/src/utils/sessionManager.ts:276
+    27  config/master-config.ts:13
+     1  scripts/deployment-health-monitor.ts:480
+     2  scripts/deployment-orchestrator.ts:592
+     1  scripts/empire-cli.ts:495
+     3  server/config/secrets-management.ts:164
+     1  server/config/supabase-config.ts:9
+     5  server/db/backup-restore-system.ts:223
+     3  server/db/clean-startup.ts:50
+     1  server/db/comprehensive-schema.ts:516
+    17  server/db/db-health-monitor.ts:129
+    11  server/db/empire-grade-seeding.ts:49
+     1  server/db/health-monitor.ts:9
+    22  server/db/index.ts:73
+     1  server/db/migrations.ts:6
+     4  server/db/security-audit-system.ts:218
+     7  server/db/seed-data.ts:176
+     1  server/db/supabase-health-monitor.ts:6
+     1  server/db/supabase-migrations.ts:6
+     9  server/db/supabase-verification.ts:6
+     7  server/lib/localizationStorage.ts:290
+     1  server/middleware/auth.ts:53
+     5  server/migration-startup.ts:119
+    45  server/routes.ts:1854
+     9  server/routes/admin/cultural-management.ts:34
+     8  server/routes/admin/translation-management.ts:42
+    36  server/routes/affiliateRoutes.ts:44
+    43  server/routes/ai-native.ts:42
+    26  server/routes/aiMLRoutes-backup.ts:22
+    24  server/routes/aiMLRoutes.ts:20
+     6  server/routes/aiOrchestrator.ts:244
+    10  server/routes/aiToolsRoutes.ts:86
+    45  server/routes/analyticsRoutes.ts:156
+     4  server/routes/api/admin.ts:68
+    24  server/routes/api/enterprise.ts:48
+     1  server/routes/api/neuralProfile.ts:74
+    15  server/routes/apiNeurons.ts:278
+    20  server/routes/chatbotRoutes.ts:79
+     9  server/routes/compliance.ts:16
+    22  server/routes/config.ts:119
+    63  server/routes/contentDefenderRoutes.ts:72
+     3  server/routes/contentFeedRoutes.ts:36
+     5  server/routes/contentFeedWebhookRoutes.ts:67
+    18  server/routes/cta-renderer.ts:2
+    16  server/routes/db-health.ts:47
+    36  server/routes/dealSniperRoutes.ts:84
+     4  server/routes/deployment.ts:120
+     6  server/routes/education.ts:648
+     2  server/routes/empire-finalizer.ts:7
+     1  server/routes/empire-hardening.ts:59
+    10  server/routes/empire-launchpad.ts:229
+     4  server/routes/empire-validation.ts:78
+    22  server/routes/empireBrainRoutes.ts:87
+    42  server/routes/empireModulesRoutes.ts:35
+    33  server/routes/federation.ts:39
+     1  server/routes/finance.ts:171
+    12  server/routes/findawise-api.ts:28
+    67  server/routes/franchiseExpansionRoutes.ts:94
+    28  server/routes/funnel.ts:39
+    17  server/routes/health.ts:45
+    43  server/routes/knowledge-memory.ts:26
+     4  server/routes/layoutMutation.ts:291
+     3  server/routes/localAiBrain.ts:131
+    21  server/routes/localAnalyticsRoutes.ts:9
+    13  server/routes/localization.ts:93
+     1  server/routes/moneyTrafficGrowth.ts:893
+     5  server/routes/multiRegion.ts:170
+    18  server/routes/multiRegionRoutes.ts:43
+     1  server/routes/notifications.ts:187
+    47  server/routes/offerEngineRoutes.ts:37
+     4  server/routes/offline-ai.ts:195
+    12  server/routes/plugins.ts:22
+     5  server/routes/pr-outreach-api.ts:32
+     8  server/routes/pwa.ts:4
+     1  server/routes/revenueSplitRoutes.ts:256
+     5  server/routes/rlhf.ts:113
+    17  server/routes/saas.ts:111
+    10  server/routes/security-audit.ts:44
+     4  server/routes/security.ts:233
+    14  server/routes/semantic.ts:721
+     1  server/routes/sessionRoutes.ts:328
+     7  server/routes/shorts-api.ts:38
+     1  server/routes/storefront.ts:409
+     6  server/routes/ugc-api.ts:32
+     6  server/routes/ultra-performance.ts:48
+     7  server/routes/vectorSearch.ts:506
+     6  server/seeders/saasSeedData.ts:281
+     3  server/services/affiliate/affiliateComplianceEngine.ts:207
+     6  server/services/affiliate/affiliateRedirectEngine.ts:146
+    80  server/services/ai-ml-orchestrator.ts:485
+     4  server/services/ai-ml/environmentDetector.ts:96
+     7  server/services/ai-ml/integrationRouter.ts:67
+     9  server/services/ai-ml/localLLMIntegration.ts:61
+     4  server/services/ai-ml/serviceHealthChecker.ts:165
+     3  server/services/ai-native/agenticWorkflowEngine.ts:249
+     9  server/services/ai-native/chaosResilienceEngine.ts:103
+     1  server/services/ai-native/federationTaskManager.ts:280
+     6  server/services/ai-native/llmBrainRouter.ts:198
+     8  server/services/ai-native/promptGraphCompiler.ts:293
+     1  server/services/ai-tools/SelfEvolveAgent.ts:387
+     3  server/services/analytics/fetch.ts:202
+    17  server/services/api-diff/liveApiDiffTracker.ts:300
+     1  server/services/api-diff/simplifiedApiDiffTracker.ts:68
+     7  server/services/apiNeuronMonitoring.ts:637
+     2  server/services/audit/performanceAuditor.ts:2
+    13  server/services/blog/blogContentEngine.ts:168
+     4  server/services/chatbot/chatbotEngine.ts:229
+     2  server/services/codex/codexAuditEngine.ts:156
+     2  server/services/codex/codexReportGenerator.ts:151
+     3  server/services/codex/codexScheduler.ts:21
+    11  server/services/codex/patchEngine.ts:168
+    10  server/services/compliance/complianceEngine.ts:143
+     1  server/services/compliance/consentBannerService.ts:1
+    75  server/services/config/centralConfigEngine.ts:369
+     4  server/services/content-feed/ContentEnrichmentService.ts:61
+    34  server/services/content-feed/ContentFeedEngine.ts:20
+     3  server/services/content-feed/connectors/WebhookConnector.ts:29
+    14  server/services/content-feed/connectors/saasFeedConnector.ts:42
+    22  server/services/content-feed/connectors/webScraperConnector.ts:35
+     4  server/services/content-feed/contentEnrichmentEngine.ts:157
+     5  server/services/content-feed/contentFeedCore.ts:281
+     1  server/services/content-feed/contentFeedNotificationEngine.ts:76
+     2  server/services/content-feed/contentFeedScheduler.ts:89
+     2  server/services/content/articleGenerator.ts:372
+     2  server/services/content/contentScheduler.ts:85
+     3  server/services/contentDefender/contentDefenderEngine.ts:387
+     6  server/services/contentPointer/contentPointerLogic.ts:190
+    39  server/services/cta-renderer/ctaAssetManager.ts:263
+    21  server/services/cta-renderer/ctaPersonalizationEngine.ts:130
+     8  server/services/cta-renderer/ctaRenderingEngine.ts:121
+     5  server/services/cultural/culturalEmotionMap.ts:31
+    40  server/services/dealSniper/dealSniperEngine.ts:87
+     1  server/services/deployment/ultraMigrationProofExportEngine.ts:927
+    18  server/services/emotion/emotionMappingEngine.ts:146
+     7  server/services/empire-hardening/billionDollarCTOAudit.ts:126
+     2  server/services/empire-hardening/bulletproofStorageAdapter.ts:150
+     9  server/services/empire-hardening/bulletproofSystemInitializer.ts:55
+    21  server/services/empire-hardening/comprehensiveSystemValidator.ts:138
+     1  server/services/empire-hardening/criticalPerformanceOptimizer.ts:371
+     1  server/services/empire-hardening/ctoCriticalOptimizer.ts:107
+    15  server/services/empire-hardening/databaseConnectionOptimizer.ts:111
+    15  server/services/empire-hardening/databasePerformanceOptimizer.ts:90
+    11  server/services/empire-hardening/empireGradeHealthcheck.ts:112
+     3  server/services/empire-hardening/empireGradeSystemHealer.ts:165
+    13  server/services/empire-hardening/fallbackEliminator.ts:103
+     6  server/services/empire-hardening/finalSystemValidator.ts:198
+     3  server/services/empire-hardening/migrationProofEngine.ts:226
+     5  server/services/empire-hardening/performanceOptimizer.ts:59
+     7  server/services/empire-hardening/resilientForeignKeyManager.ts:61
+     8  server/services/empire-hardening/securityAuditEngine.ts:44
+     6  server/services/empire-hardening/systemHealthOptimizer.ts:105
+    12  server/services/empire-hardening/ultraMigrationProofCore.ts:125
+     2  server/services/empire-hardening/ultraPerformanceEngine.ts:321
+     2  server/services/empire-security/empireFailoverLLM.ts:396
+     3  server/services/empire-security/empireSecurityManager.ts:336
+     9  server/services/empire/throneProtocol.ts:16
+     1  server/services/enterprise/enterpriseMonitoring.ts:468
+     3  server/services/enterprise/enterpriseUpgrade.ts:54
+     4  server/services/enterprise/infrastructureHardening.ts:71
+     3  server/services/enterprise/performanceOptimization.ts:79
+    14  server/services/enterprise/productionHardening.ts:190
+     6  server/services/enterprise/realAI.ts:51
+     6  server/services/enterprise/secureWebSocket.ts:68
+     7  server/services/enterprise/securityHardening.ts:114
+     5  server/services/federation/auditSystem.ts:280
+     5  server/services/federation/failureDetection.ts:8
+    13  server/services/federation/federationBridge.ts:100
+    14  server/services/federation/federationCore.ts:170
+     6  server/services/federation/neuronOS.ts:88
+     3  server/services/finance/financeEngine.ts:583
+    30  server/services/franchise/franchiseExpansionEngine.ts:281
+    10  server/services/growth/engines/apiPortalEngine.ts:91
+    11  server/services/growth/engines/backlinkBuildingEngine.ts:492
+    47  server/services/growth/engines/blogSwarmEngine.ts:7
+    15  server/services/growth/engines/contentRemixEngine.ts:143
+     7  server/services/growth/engines/contentScraperEngine.ts:96
+    21  server/services/growth/engines/conversionOptimizationEngine.ts:149
+    14  server/services/growth/engines/emailMarketingEngine.ts:203
+     2  server/services/growth/engines/forumEngine.ts:101
+     4  server/services/growth/engines/newsletterEngine.ts:407
+    35  server/services/growth/engines/referralSystemEngine.ts:147
+     9  server/services/growth/engines/resourceDirectoryEngine.ts:104
+     4  server/services/growth/engines/seoOptimizationEngine.ts:183
+    11  server/services/growth/engines/socialMediaAutomationEngine.ts:162
+    15  server/services/growth/engines/ugcVideoEngine.ts:288
+    10  server/services/growth/engines/viralChallengeEngine.ts:145
+    19  server/services/growth/engines/viralContentEngine.ts:222
+     3  server/services/growth/engines/viralDataVizEngine.ts:565
+     9  server/services/growth/engines/viralToolFactoryEngine.ts:476
+    84  server/services/growth/moneyTrafficGrowthEngine.ts:34
+     3  server/services/homeSecurity/securityEngine.ts:222
+    39  server/services/knowledge-memory/federationMemorySync.ts:3
+     1  server/services/knowledge-memory/ragEnhancer.ts:558
+     9  server/services/layout/layoutMutationEngine.ts:96
+    12  server/services/layout/layoutStorage.ts:60
+     1  server/services/layout/realTimeLayoutMutation.ts:636
+     4  server/services/ml/llmAgent.ts:297
+     5  server/services/ml/mlEngine.ts:276
+    11  server/services/multiRegion/disasterRecoveryEngine.ts:167
+     4  server/services/multiRegion/multiRegionLoadOrchestrator.ts:636
+     6  server/services/notifications/aiContentEngine.ts:100
+     5  server/services/notifications/channelProviders/emailProvider.ts:77
+     6  server/services/notifications/channelProviders/fcmProvider.ts:98
+     8  server/services/notifications/index.ts:71
+    24  server/services/notifications/journeyEngine.ts:91
+    15  server/services/notifications/notificationEngine.ts:106
+     2  server/services/notifications/triggerEngine.ts:191
+    11  server/services/offer-engine/affiliateAdapters/adapterRegistry.ts:58
+     3  server/services/offer-engine/affiliateAdapters/admitadAdapter.ts:46
+     1  server/services/offer-engine/affiliateAdapters/amazonPartnerAdapter.ts:169
+     1  server/services/offer-engine/affiliateAdapters/awinAdapter.ts:9
+     1  server/services/offer-engine/affiliateAdapters/baseAdapter.ts:179
+     1  server/services/offer-engine/affiliateAdapters/commissionJunctionAdapter.ts:9      
+     1  server/services/offer-engine/affiliateAdapters/ebayPartnerAdapter.ts:9
+     2  server/services/offer-engine/affiliateAdapters/flexOffersAdapter.ts:43
+     1  server/services/offer-engine/affiliateAdapters/impactAdapter.ts:9
+     1  server/services/offer-engine/affiliateAdapters/partnerStackAdapter.ts:9
+     1  server/services/offer-engine/affiliateAdapters/rakutenAdvertisingAdapter.ts:9      
+     1  server/services/offer-engine/affiliateNetworkHealthMonitor.ts:194
+     7  server/services/offer-engine/automatedSyncManager.ts:28
+     3  server/services/offer-engine/enterpriseAffiliateRoutes.ts:371
+     8  server/services/offer-engine/federationBroadcast.ts:58
+     5  server/services/offer-engine/offerAiOptimizer.ts:142
+     3  server/services/offer-engine/offerCompliance.ts:54
+     3  server/services/offer-engine/offerDashboard.ts:148
+    17  server/services/offer-engine/offerEngineCore.ts:9
+     1  server/services/offer-engine/offerFederationBroadcast.ts:4
+    15  server/services/offer-engine/offerPersonalizationEngine.ts:120
+     3  server/services/offer-engine/offerRoutes.ts:418
+     3  server/services/offer-engine/offerSourcesInitializer.ts:412
+    16  server/services/offer-engine/offerSyncEngine.ts:142
+    21  server/services/offline-ai/edgeAiManager.ts:3
+     4  server/services/offline-ai/offlineAiSyncEngine.ts:207
+    89  server/services/pages/dynamicPageGenerator.core.ts:85
+    84  server/services/pages/dynamicPageGenerator.ts:483
+    22  server/services/plugins/aiPluginMarketplace.ts:594
+    26  server/services/plugins/migrationProofPluginEngine.ts:121
+    17  server/services/plugins/pluginCodexIntegration.ts:191
+    10  server/services/quiz/empireQuizEngine.ts:222
+     6  server/services/realTimeLayout/layoutMutationEngine.ts:129
+     1  server/services/realTimeMetrics.ts:115
+     3  server/services/revenueSplit/revenueSplitManager.ts:543
+     8  server/services/rlhf/rlhfEngine.ts:218
+     1  server/services/scraper/productHuntScraper.ts:157
+     2  server/services/scraper/universalScraper.ts:31
+    13  server/services/semantic/autoAuditEngine.ts:339
+     6  server/services/semantic/graphVisualizationAPI.ts:142
+    10  server/services/semantic/intentGraphEngine.ts:210
+     1  server/services/semantic/intentPropagationEngine.ts:196
+     6  server/services/semantic/personalizationEngine.ts:172
+     8  server/services/semantic/semanticGraphEngine.ts:163
+     6  server/services/semantic/ultraMigrationProofEngine.ts:102
+     6  server/services/semantic/vectorDatabaseAdapter.ts:747
+     4  server/services/semantic/vectorEngine.ts:136
+    22  server/services/session/sessionEngineCore.ts:434
+    10  server/services/smartFunnel/smartFunnelEngine.ts:568
+     3  server/services/smartFunnel/smartFunnelOrchestrator.ts:177
+     4  server/services/smartFunnelOrchestrator.ts:132
+    23  server/services/storefront/adminDashboard.ts:167
+     2  server/services/storefront/checkoutEngine.ts:612
+     4  server/services/storefront/digitalDelivery.ts:494
+     7  server/services/storefront/paymentProcessor.ts:45
+    26  server/services/storefront/storefrontEngine.ts:533
+     2  server/services/testing/llmUnitTestGenerator.ts:171
+     6  server/services/traffic-generators/apiPortal.ts:290
+     8  server/services/traffic-generators/forumQAEngine.ts:6
+     4  server/services/traffic-generators/newsletterEngine.ts:6
+     4  server/services/traffic-generators/prOutreachBot.ts:162
+     4  server/services/traffic-generators/remixSpinEngine.ts:318
+     8  server/services/traffic-generators/resourceDirectoryEngine.ts:6
+     4  server/services/traffic-generators/shortsEngine.ts:268
+     8  server/services/traffic-generators/socialMediaBoosterEngine.ts:3
+     5  server/services/traffic-generators/syndicationEngine.ts:361
+     1  server/services/traffic-generators/ugcEngine.ts:408
+     6  server/services/traffic-generators/viralDataVizEngine.ts:3
+     2  server/startup/database-initialization.ts:128
+   376  server/storage.ts:144
+     8  server/types/empireModuleTypes.ts:175
+     4  server/utils/archetypeEngine.ts:230
+     1  server/utils/errorHandler.ts:124
+     3  server/utils/seedAllData.ts:162
+     2  server/utils/standardErrorHandler.ts:129
+     6  shared/aiToolsTables.ts:363
+     6  shared/moneyTrafficGrowthTables.ts:598
+     3  shared/trafficGeneratorTables.ts:166
+⚠️  TypeScript errors found - continuing setup
+🧹 Cleaning up any existing containers...
+🚀 Starting all Docker services...
+[+] Running 8/8
+ ✔ Network findawise-newphase-166_default         Created                             0.1s 
+ ✔ Volume "findawise-newphase-166_redis_data"     Created                             0.0s 
+ ✔ Volume "findawise-newphase-166_ollama_data"    Created                             0.0s 
+ ✔ Volume "findawise-newphase-166_postgres_data"  Created                             0.0s 
+ ✔ Container findawise_postgres                   S...                                0.6s 
+ ✔ Container findawise_redis                      Star...                             0.6s 
+ ✔ Container findawise_ollama                     Sta...                              0.4s 
+ ✔ Container findawise_pgadmin                    St...                               0.8s 
+⏳ Waiting for services to initialize...
+🗄️  Waiting for PostgreSQL database to be ready...
+/var/run/postgresql:5432 - accepting connections
+🔄 Running database migrations...
+
+> rest-express@1.0.0 db:push
+> drizzle-kit push
+
+No config path provided, using default 'drizzle.config.ts'
+Reading config file '/mnt/c/findawise newphase/Findawise-Newphase-166/Findawise-Newphase-166/drizzle.config.ts'
+Using 'pg' driver for database querying
+[✓] Pulling schema from database...
+[✓] Changes applied
+🌱 Seeding database with initial data...
+
+> rest-express@1.0.0 seed:min
+> tsx scripts/seed-minimal.ts
+
+
+Columns for vector_embedding_models: id, model_name, provider, dimensions, max_input_length, is_active, is_default, configuration, performance, supported_languages, api_endpoint, api_key_required, cost_per_token, created_at, updated_at
+[OK] vector_embedding_models seeded
+
+Columns for prompt_templates: id, template_id, name, description, category, template, variables, supported_agents, average_tokens, success_rate, usage_count, last_used, created_by, version, status, created_at, updated_at, metadata
+[OK] prompt_templates seeded
+
+Columns for api_only_neurons: id, neuron_id, name, type, language, version, base_url, healthcheck_endpoint, api_endpoints, authentication, capabilities, dependencies, resource_requirements, deployment_info, status, last_heartbeat, health_score, uptime, error_count, total_requests, successful_requests, average_response_time, last_error, alert_thresholds, auto_restart_enabled, max_restart_attempts, current_restart_attempts, last_restart_attempt, registered_at, api_key, metadata, is_active, created_at, updated_at
+[OK] api_only_neurons seeded
+
+Seed complete.
+🧠 Setting up local AI models...
+🚀 GPU available - setting up Ollama with GPU support
+⏳ Waiting for Ollama service to be ready...
+⬇️  Downloading AI models (this may take 10-30 minutes)...
+📥 Pulling Llama2...
+pulling manifest
+Error: max retries exceeded: Get "https://dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com/ollama/docker/registry/v2/blobs/sha256/66/667b0c1932bc6ffc593ed1d03f895bf2dc8dc6df21db3042284a6f4416b06a29/data?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=66040c77ac1b787c3af820529859349a%2F20250823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250823T111317Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=abce18d3abf2555c99d5c58eef8cfc66055ed82a35a983a10a21593662bf9d29": dial tcp: lookup dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com on 127.0.0.11:53: no such host
+⚠️  Failed to pull Llama2
+📥 Pulling Nomic Embed...
+pulling manifest
+Error: max retries exceeded: Get "https://dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com/ollama/docker/registry/v2/blobs/sha256/97/970aa74c0a90ef7482477cf803618e776e173c007bf957f635f1015bfcfef0e6/data?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=66040c77ac1b787c3af820529859349a%2F20250823%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20250823T111424Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=1e2dfff64074ba676b370f654ac11e1b054cfc67f893d16e3213ae8197c2da8f": dial tcp: lookup dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com on 127.0.0.11:53: no such host
+⚠️  Failed to pull Nomic Embed
+✅ AI models setup completed
+📝 Creating startup script...
+📝 Creating development helper script...
+
+🎉 EMPIRE LOCAL DEVELOPMENT SETUP COMPLETED!
+============================================
+
+🚀 To start the system:
+   ./start-local.sh
+
+🛑 To stop the system:
+   ./stop-local.sh
+
+🛠️  Development tools:
+   ./dev-tools.sh [command] - Various development utilities
+   ./health-check.sh       - Quick system health check
+
+🌐 Application will be available at:
+   • Full Application: http://localhost:5000
+   • Backend API: http://localhost:5000/api
+   • Admin Dashboard: http://localhost:5000/admin
+   • Ollama API: http://localhost:11434
+   • pgAdmin: http://localhost:5050 (admin@findawise.com / admin123)
+   • Redis: localhost:6379
+
+📊 System Status:
+   • GPU Support: true
+   • AI Models: Llama2, Nomic Embed Text
+   • Database: PostgreSQL (findawise_empire)
+   • Cache: Redis enabled
+   • All Enterprise Features: Enabled
+
+💡 Next Steps:
+   1. Run './start-local.sh' to start everything
+   2. Wait for services to initialize (2-3 minutes)
+   3. Visit http://localhost:5000 to see your application
+   4. Run './health-check.sh' to verify all services
+
+🏆 Your development environment is ready!
+
+📚 Quick Tips:
+   • Use './dev-tools.sh logs' to see application logs
+   • Use './dev-tools.sh db' to connect to the database
+   • Use './dev-tools.sh status' to check service status
+   • Check '.env' file for configuration options
+pc-hukum@DESKTOP-CQUM0N6:/mnt/c/findawise newphase/Findawise-Newphase-166/Findawise-Newphase-166$

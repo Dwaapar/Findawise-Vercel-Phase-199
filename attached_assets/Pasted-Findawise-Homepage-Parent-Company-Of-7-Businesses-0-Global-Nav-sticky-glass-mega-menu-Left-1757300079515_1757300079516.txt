@@ -1,0 +1,267 @@
+Findawise — Homepage (Parent Company Of 7 Businesses)
+0) Global Nav (sticky, glass, mega-menu)
+
+Left: Findawise logo
+Center: Companies ▾ · Empire OS · Solutions · Case Studies · Pricing · Blog
+Right: Search ▢ · Sign in · Book a 72h Pilot (primary)
+
+Mega-menu: “Companies”
+
+7 tiles (each is a company): Automation Services, Workflow Store, Digital Assets, AI Agents, Affiliate Hub, Decision Platform, Services (Tools).
+
+Each tile = icon → one-liner → 2 bullets → CTA. Keep simple, chunked, and keyboard-navigable (hover delay, focus management, never full-screen takeover). Mega-menus work, but simplicity + interaction details are key. 
+Nielsen Norman Group
++1
+Baymard Institute
+
+Use semantic <nav> + link lists; avoid ARIA role="menu" for basic site nav (reserve it for app-style action menus). 
+MDN Web Docs
+boia.org
+web.dev
+
+Disclosure micro-line beneath nav (desktop):
+“Independent research with clear disclosures. We may earn from qualifying purchases.” (FTC: “clear and conspicuous.”) 
+Federal Trade Commission
+Federal Register
+
+1) Hero (company-of-companies + motion)
+
+Headline:
+Findawise is the AI Operating Company behind seven specialist businesses—unified by one Empire OS.
+
+Subhead:
+We design, run, and scale end-to-end systems—automation, agents, affiliate growth, decision platforms, and more—so brands ship outcomes faster with provable ROI.
+
+Primary CTA: Book a 72h Pilot Build
+Secondary CTA: Explore our Companies
+
+Trust strip: Outcome-backed engagements · Transparent research & disclosures · Global-ready (security, privacy, SLAs)
+
+Hero video / animation (pick 1 for launch; all accessible & fast)
+
+A) “Orbit” cinematic (8–12s, MP4/WebM): 7 luminous nodes (each BU) orbit a central “Empire OS”. Hover highlights a node; click opens BU overlay. Implement with <video muted playsinline autoplay loop>; encode & compress to keep LCP green. Provide a static poster + Pause Motion control; honor prefers-reduced-motion. 
+web.dev
++2
+web.dev
++2
+
+B) Lottie vector: flowing routes “inputs → OS → outputs” (tiny payload, crisp). Use intersection observers to stop when offscreen; compress JSON. 
+LottieFiles
+PixelFreeStudio Blog -
+
+C) Rive interactive: subtle constellation reacts to pointer; programmatically pause for reduced-motion users. 
+rive.app
++1
+
+Performance notes: video can be LCP—optimize codecs/containers; lazy-load where possible; test. 
+web.dev
+DebugBear
+
+Accessibility notes: don’t obscure focus with sticky headers; ensure motion can be reduced/paused. 
+W3C
+web.dev
+
+2) KPI / Credibility Bar (above the fold)
+
+Average time-to-decision: < 60 sec
+
+Median savings with verified deals: up to 40%
+
+Execution speed-up: 3–10× (workflows + agents)
+
+(Short, scannable proof beats hype; users scan before they read.) 
+Nielsen Norman Group
++1
+
+3) Our Companies (portfolio grid)
+
+Each card is a company with its own roadmap, pricing, docs, and deep hooks to Empire OS.
+
+Automation Services — “We Do It for You”
+One-liner: End-to-end automation design & delivery (audit → integrate → ship).
+Use cases: Lead routing, finance ops, ticket triage, KPI reporting.
+Value: Save hundreds of hours, reduce errors, scale without headcount.
+CTA: Book a 72h Pilot Build
+
+Workflow Store — Prebuilt Flows You Can Deploy Today
+One-liner: Plug-and-play automations (scraping, enrichment, outreach, finance, reporting).
+Notes: 1-click deploy with env/secrets; evergreen with patch notes and guides.
+Value: Buy once, run forever, extend as needed.
+CTA: Browse 350+ Workflows
+
+Digital Assets — Accelerators for Growth
+One-liner: Prompt packs, datasets, playbooks, design kits, creative bundles.
+Examples: Agent prompts (SDR/support), datasets (finetune/eval), playbooks, ad & landing creatives.
+Value: Ship faster; skip reinvention.
+CTA: Download Assets → Go Live Same Day
+
+AI Agents — Managed + Self-Host Options
+One-liner: Agents that act, not just chat—integrations, memory, approvals.
+Modes: Managed (we run) or self-host (runbooks).
+Examples: SDR (qualify + book), Support (auto-resolve), Ops (reconcile & notify).
+Value: Reduce repetitive headcount; add intelligent scale.
+CTA: Deploy Your First Agent
+
+Affiliate Hub — Promote the Best Brands
+One-liner: Vetted high-EPC brands + dynamic creatives.
+Features: Smart links (geo/device), creative rotation, real-time EPC/CVR/payouts, disclosures baked in.
+CTA: Open Affiliate Hub (keep disclosures clear & conspicuous). 
+Federal Trade Commission
+Federal Register
+
+Decision Platform — End Choice Overload
+One-liner: Expert guides, interactive comparisons, adaptive quizzes.
+Value: Clarity in chaos + monetization via verified offers.
+CTA: Take the 2-Minute Quiz
+
+Services (Tools) — Practical Utilities for Teams & Individuals
+One-liner: Self-serve mini-products that solve everyday needs.
+Examples: Resume Maker, Cover Letter, Portfolio Builder, Email Optimizer, Ad Copy Splitter, Content Calendar Maker.
+CTA: Explore Tools
+
+Content style: one punchy sentence + bullets + action-first CTA. That’s scannable, objective writing (proven to improve usability). 
+Nielsen Norman Group
+
+4) Empire OS (shared backbone)
+
+Pitch: One backbone, seven frontiers.
+Pillars: Offer Engine · Workflow Runtime · Agent Framework · Decision Brain · Analytics Fabric · Privacy & Compliance (consent, disclosures, WCAG).
+CTAs: Explore Empire OS · Read Security & Compliance
+(Place near top for B2B buyers who think platform first.) 
+web.dev
+
+5) Solutions by Outcome (buyer framing)
+
+Tiles: Lead Generation · Support Deflection · Finance Ops · Trust & Safety · Product Analytics · Content Ops — each routes to a solution page mapping relevant companies + playbooks + case studies to help champions “sell it internally.” 
+Google for Developers
+
+6) Featured Case Studies (cross-company)
+
+SaaS signups ↑43% — Decision Platform + Affiliate Hub + Offer Engine
+
+E-com CAC −28% — Workflow bundles + Agents for ops
+
+Ops 72h → 6h — Automation Services + playbooks
+Include Download 1-pager & “See Architecture” (exec-friendly PDFs). 
+Google for Developers
+
+7) Live Deals (ticker rail)
+
+“Today’s verified deals:” Brand — “63% off + 3 months free” · Reveal code · View deal (auto-scroll, pause on hover, lazy-load). 
+web.dev
+
+8) Thought Leadership
+
+3 latest posts: benchmarks (agents), automation ROI, affiliate compliance. CTA: Read the Blog
+
+9) Lead Magnet
+
+Title: Get the Empire Briefing
+Copy: Bi-weekly playbooks, benchmarks & real-world deals. No fluff.
+Form: Email ▢ Subscribe
+(Short copy + clear benefit—users scan.) 
+Nielsen Norman Group
+
+10) Footer (corporate, complete)
+
+About · Careers · Press · Affiliate Disclosure · Privacy · Terms · Cookies · Accessibility (WCAG 2.2) · Security · Contact.
+(Ensure landmarks and clear labels.) 
+a11y-style-guide.com
+
+Copy Deck (paste verbatim)
+
+Primary CTA (global): Book a 72h Pilot Build
+Secondary CTA: Explore our Companies
+Hero trust strip: Outcome-backed engagements · Transparent research & disclosures · Global-ready (security, privacy, SLAs)
+Section heads: Our Companies · Empire OS · Solutions · Case Studies · Today’s Verified Deals · Insights · Empire Briefing
+Company CTAs:
+
+Automation Services → Book a 72h Pilot Build
+
+Workflow Store → Browse 350+ Workflows
+
+Digital Assets → Download Assets → Go Live Same Day
+
+AI Agents → Deploy Your First Agent
+
+Affiliate Hub → Open Affiliate Hub
+
+Decision Platform → Take the 2-Minute Quiz
+
+Services (Tools) → Explore Tools
+
+Accessibility, Performance, Compliance (baked in)
+
+WCAG 2.2 AA: visible focus, target size, focus not obscured by sticky headers; respect prefers-reduced-motion. 
+W3C
++1
+web.dev
+
+Hero media: encode/compress; autoplay only if muted playsinline; cap file size; supply poster + pause; test LCP (video can be LCP). 
+web.dev
++1
+
+Mega-menu: semantic <nav> + lists; don’t misuse ARIA menu; add hover delay and keep scope obvious. 
+MDN Web Docs
+Baymard Institute
+
+Affiliate disclosures: “clear and conspicuous”; updated Guides (2023). 
+Federal Register
+Federal Trade Commission
+
+Event Taxonomy (instrument on day 1)
+
+hero_pilot_click, mega_companies_open, company_card_click:{name}, solutions_tile_click:{name}, deal_reveal_click, case_study_open:{name}, newsletter_subscribe, search_submit, cta_footer_disclosure_open.
+
+(Measure scannable actions; NN/g & Baymard emphasize clarity of top tasks and nav.) 
+Nielsen Norman Group
+Baymard Institute
+
+Technical SEO & Schema (parent → sub-orgs)
+
+Add Organization with subOrganization for each of the 7 companies (and parentOrganization on child pages). This reflects your house-of-brands structure. 
+Schema.org
++1
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Findawise",
+  "url":"https://www.findawise.example",
+  "logo":"https://www.findawise.example/logo.png",
+  "subOrganization":[
+    {"@type":"Organization","name":"Findawise Automation Services","url":"https://www.findawise.example/automation"},
+    {"@type":"Organization","name":"Findawise Workflow Store","url":"https://www.findawise.example/workflows"},
+    {"@type":"Organization","name":"Findawise Digital Assets","url":"https://www.findawise.example/assets"},
+    {"@type":"Organization","name":"Findawise AI Agents","url":"https://www.findawise.example/agents"},
+    {"@type":"Organization","name":"Findawise Affiliate Hub","url":"https://www.findawise.example/deals"},
+    {"@type":"Organization","name":"Findawise Decision Platform","url":"https://www.findawise.example/guides"},
+    {"@type":"Organization","name":"Findawise Services (Tools)","url":"https://www.findawise.example/services"}
+  ]
+}
+</script>
+
+
+(Also add Google’s Organization structured data for richer results.) 
+Google for Developers
+
+Boss-Level Design Notes (so incumbents sweat)
+
+House-of-brands clarity (Companies first), not “features”: users find the right business fast. (Hick’s law: reduce/organize choices.) 
+Nielsen Norman Group
+
+Scannable copy everywhere: one-liners + bullets + action verbs; proven to increase usability. 
+Nielsen Norman Group
+
+Accessible mega-menu with hover delay & clear scope; never block the whole screen. 
+Baymard Institute
+Nielsen Norman Group
+
+Motion with restraint: pause/reduce; never degrade performance/LCP. 
+web.dev
++1
+
+Want it as a high-fidelity hero + layout?
+
+I can immediately generate a Next.js SSR homepage (hero video ready, accessible mega-menu, all sections + copy wired) or a Figma frame with the orbit-video storyboard and component specs. If you want the code, say “Ship the Next.js homepage,” and I’ll deliver it in this chat in one go.

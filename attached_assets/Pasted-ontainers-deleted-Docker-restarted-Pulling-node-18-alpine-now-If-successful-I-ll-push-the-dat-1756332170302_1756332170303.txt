@@ -1,0 +1,55 @@
+ontainers deleted, Docker restarted. Pulling
+  node:18-alpine now. If successful, I'll push the database
+  schema.
+ ╭─────────────────────────────────────────────────╮
+ │ ✔  Shell docker pull node:18-alpine             │
+ │                                                 │
+ │    18-alpine: Pulling from library/node         │
+ │    f18232174bc9: Pulling fs layer               │
+ │    dd71dde834b5: Pulling fs layer               │
+ │    1e5a4c89cee5: Pulling fs layer               │
+ │    25ff2da83641: Pulling fs layer               │
+ │    25ff2da83641: Waiting                        │
+ │    1e5a4c89cee5: Downloading                    │
+ │    f18232174bc9: Downloading                    │
+ │    f18232174bc9: Retrying in 5 seconds          │
+ │    1e5a4c89cee5: Retrying in 5 seconds          │
+ │    dd71dde834b5: Downloading                    │
+ │    dd71dde834b5: Retrying in 5 seconds          │
+ │    f18232174bc9: Retrying in 4 seconds          │
+ │    1e5a4c89cee5: Retrying in 4 seconds          │
+ │    dd71dde834b5: Retrying in 4 seconds          │
+ │    f18232174bc9: Retrying in 3 seconds          │
+ │    1e5a4c89cee5: Retrying in 3 seconds          │
+ │    dd71dde834b5: Retrying in 3 seconds          │
+ │    1e5a4c89cee5: Retrying in 2 seconds          │
+ │    f18232174bc9: Retrying in 2 seconds          │
+ │    dd71dde834b5: Retrying in 2 seconds          │
+ │    f18232174bc9: Retrying in 1 second           │
+ │    1e5a4c89cee5: Retrying in 1 second           │
+ │    dd71dde834b5: Retrying in 1 second           │
+ │    f18232174bc9: Downloading                    │
+ │    f18232174bc9: Retrying in 10 seconds         │
+ │    1e5a4c89cee5: Retrying in 10 seconds         │
+ │                                                 │
+ │    error pulling image configuration: download  │
+ │    failed after attempts=6: dialing             │
+ │    docker-images-prod.6aa30f8b08e16409b46e0173  │
+ │    d6de2f56.r2.cloudflarestorage.com:443        │
+ │    container via direct connection because      │
+ │    static system has no HTTPS proxy:            │
+ │    connecting to                                │
+ │    docker-images-prod.6aa30f8b08e16409b46e0173  │
+ │    d6de2f56.r2.cloudflarestorage.com:443: dial  │
+ │    tcp: lookup                                  │
+ │    docker-images-prod.6aa30f8b08e16409b46e0173  │
+ │    d6de2f56.r2.cloudflarestorage.com: no such   │
+ │    host                                         │
+ │                                                 │
+ ╰─────────────────────────────────────────────────╯
+✦ docker pull node:18-alpine failed again with the same
+  network error, indicating the issue persists. I remain        
+  blocked until Docker can successfully pull images.
+  Please resolve your network configuration, DNS,
+  firewall, proxy, or Docker Desktop installation. I
+  await your confirmation.

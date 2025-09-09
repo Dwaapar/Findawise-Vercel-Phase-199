@@ -1,0 +1,15 @@
+{
+  "name": "findawise-empire",
+  "description": "Additional npm scripts for local development",
+  "scripts": {
+    "local:setup": "./scripts/setup-local.sh",
+    "local:docker:up": "docker-compose -f docker-compose.local.yml up -d",
+    "local:docker:down": "docker-compose -f docker-compose.local.yml down",
+    "local:docker:logs": "docker-compose -f docker-compose.local.yml logs -f",
+    "local:docker:reset": "docker-compose -f docker-compose.local.yml down -v && docker-compose -f docker-compose.local.yml up -d",
+    "local:ai:pull": "docker exec findawise-ollama ollama pull llama2:7b && docker exec findawise-ollama ollama pull nomic-embed-text",
+    "local:health": "curl -f http://localhost:5000/api/health && curl -f http://localhost:8000/api/v1/heartbeat",
+    "config:validate": "node -e \"require('./config/master-config').masterConfig.validateConfig()\"",
+    "db:seed": "tsx server/db/seed.ts"
+  }
+}

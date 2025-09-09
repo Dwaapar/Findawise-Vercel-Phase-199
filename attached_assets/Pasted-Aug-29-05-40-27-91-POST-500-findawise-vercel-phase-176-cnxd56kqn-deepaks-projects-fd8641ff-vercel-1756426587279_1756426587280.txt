@@ -1,0 +1,30 @@
+Aug 29 05:40:27.91
+POST
+500
+findawise-vercel-phase-176-cnxd56kqn-deepaks-projects-fd8641ff.vercel.app
+/api/sessions/create
+Vercel handler error: Error [ERR_UNSUPPORTED_DIR_IMPORT]: Directory import '/var/task/server/routes' is not supported resolving ES modules imported from /var/task/server/index.js at finalizeResolution (node:internal/modules/esm/resolve:269:11) at moduleResolve (node:internal/modules/esm/resolve:866:10) at moduleResolveWithNodePath (node:internal/modules/esm/resolve:990:14) at defaultResolve (node:internal/modules/esm/resolve:1033:79) at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12) at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25) at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38) at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38) at ModuleJob._link (node:internal/modules/esm/module_job:137:49) { code: 'ERR_UNSUPPORTED_DIR_IMPORT', url: 'file:///var/task/server/routes' }
+Aug 29 05:40:27.74
+GET
+500
+findawise-vercel-phase-176-cnxd56kqn-deepaks-projects-fd8641ff.vercel.app
+/api/sessions/location
+Vercel handler error: Error [ERR_UNSUPPORTED_DIR_IMPORT]: Directory import '/var/task/server/routes' is not supported resolving ES modules imported from /var/task/server/index.js at finalizeResolution (node:internal/modules/esm/resolve:269:11) at moduleResolve (node:internal/modules/esm/resolve:866:10) at moduleResolveWithNodePath (node:internal/modules/esm/resolve:990:14) at defaultResolve (node:internal/modules/esm/resolve:1033:79) at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12) at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25) at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38) at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38) at ModuleJob._link (node:internal/modules/esm/module_job:137:49) { code: 'ERR_UNSUPPORTED_DIR_IMPORT', url: 'file:///var/task/server/routes' }
+Aug 29 05:40:21.72
+POST
+500
+findawise-vercel-phase-176-cnxd56kqn-deepaks-projects-fd8641ff.vercel.app
+/api/sessions/create
+Vercel handler error: Error [ERR_UNSUPPORTED_DIR_IMPORT]: Directory import '/var/task/server/routes' is not supported resolving ES modules imported from /var/task/server/index.js at finalizeResolution (node:internal/modules/esm/resolve:269:11) at moduleResolve (node:internal/modules/esm/resolve:866:10) at moduleResolveWithNodePath (node:internal/modules/esm/resolve:990:14) at defaultResolve (node:internal/modules/esm/resolve:1033:79) at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12) at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25) at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38) at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38) at ModuleJob._link (node:internal/modules/esm/module_job:137:49) { code: 'ERR_UNSUPPORTED_DIR_IMPORT', url: 'file:///var/task/server/routes' }
+Aug 29 05:40:21.36
+GET
+500
+findawise-vercel-phase-176-cnxd56kqn-deepaks-projects-fd8641ff.vercel.app
+/api/sessions/location
+Vercel handler error: Error [ERR_UNSUPPORTED_DIR_IMPORT]: Directory import '/var/task/server/routes' is not supported resolving ES modules imported from /var/task/server/index.js at finalizeResolution (node:internal/modules/esm/resolve:269:11) at moduleResolve (node:internal/modules/esm/resolve:866:10) at moduleResolveWithNodePath (node:internal/modules/esm/resolve:990:14) at defaultResolve (node:internal/modules/esm/resolve:1033:79) at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12) at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25) at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38) at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38) at ModuleJob._link (node:internal/modules/esm/module_job:137:49) { code: 'ERR_UNSUPPORTED_DIR_IMPORT', url: 'file:///var/task/server/routes' }
+Aug 29 05:40:21.34
+GET
+500
+findawise-vercel-phase-176-cnxd56kqn-deepaks-projects-fd8641ff.vercel.app
+/api/sessions/location
+Vercel handler error: Error [ERR_UNSUPPORTED_DIR_IMPORT]: Directory i

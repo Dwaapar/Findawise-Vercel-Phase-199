@@ -1,0 +1,38 @@
+{
+  "name": "autonomous-ai-cto",
+  "version": "1.0.0",
+  "description": "Autonomous AI CTO for fixing TypeScript errors with zero project degradation",
+  "main": "ai-cto.js",
+  "bin": {
+    "ai-cto": "./ai-cto.js"
+  },
+  "scripts": {
+    "start": "node ai-cto.js",
+    "fix-project": "node ai-cto.js",
+    "emergency-stop": "pkill -f ai-cto.js",
+    "check-models": "node check-ai-models.js",
+    "backup-project": "node backup-project.js"
+  },
+  "keywords": [
+    "ai",
+    "cto", 
+    "typescript",
+    "error-fixing",
+    "autonomous",
+    "project-doctor"
+  ],
+  "author": "Findawise Empire",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1",
+    "inquirer": "^8.2.6",
+    "commander": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "os": ["linux", "darwin", "win32"],
+  "preferGlobal": true
+}

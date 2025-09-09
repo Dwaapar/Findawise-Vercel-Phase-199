@@ -1,0 +1,366 @@
+Aug 29 01:23:00.94
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:57.39
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/affiliate/offers/0
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:57.39
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/overview/0
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:57.39
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/translations/en
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:57.39
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/affiliate/networks/0
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:55.95
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:55.10
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/translations/en
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:55.02
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/leads/overview
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:55.02
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/experiments
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:55.02
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/affiliate/networks
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:55.02
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/overview
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:50.98
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:49.33
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/translations/en
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:48.81
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/admin/user-insights
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:48.81
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/admin/conversion-flows
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:48.81
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/admin/behavior-heatmap
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:45.94
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:43.37
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/memory/federation/sync
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:41.12
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/memory/evolve
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:40.96
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:35.96
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:33.37
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/memory/nodes
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:33.37
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/memory/connections
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:33.37
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/memory/metrics
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:30.96
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:25.96
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:25.26
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/translations/en
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:24.77
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/admin/conversion-flows
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:24.77
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/admin/behavior-heatmap
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:24.76
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/admin/user-insights
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:23.57
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/translations/en
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:23.57
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/affiliate/networks/0
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:23.57
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/affiliate/offers/0
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:23.56
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/overview/0
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:20.95
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:19.19
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/translations/en
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:19.04
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/affiliate/networks
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:19.04
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/experiments
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:19.04
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/leads/overview
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:19.04
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/overview
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:17.95
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:17.46
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/health
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:16.90
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/llm-brain/metrics
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:15.97
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:13.43
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:11.91
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/health
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:10.93
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/analytics/events/batch
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:06.86
+POST
+500
+findawise-vercel-phase-172.vercel.app
+/api/sessions/create
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:05.96
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/health
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:05.96
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/llm-brain/metrics
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:22:05.90
+GET
+500
+findawise-vercel-phase-172.vercel.app
+/api/sessions/location
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:17:16.47
+POST
+500
+findawise-vercel-phase-172-glempa29r-deepaks-projects-fd8641ff.vercel.app
+/api/sessions/create
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:17:16.37
+POST
+500
+findawise-vercel-phase-172-glempa29r-deepaks-projects-fd8641ff.vercel.app
+/api/sessions/create
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:17:16.07
+GET
+500
+findawise-vercel-phase-172-glempa29r-deepaks-projects-fd8641ff.vercel.app
+/api/localization/cultural-profile/en
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue. ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:17:16.07
+GET
+500
+findawise-vercel-phase-172-glempa29r-deepaks-projects-fd8641ff.vercel.app
+/api/llm-brain/metrics
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:17:16.07
+GET
+500
+findawise-vercel-phase-172-glempa29r-deepaks-projects-fd8641ff.vercel.app
+/api/health
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue. ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:17:15.89
+GET
+500
+findawise-vercel-phase-172-glempa29r-deepaks-projects-fd8641ff.vercel.app
+/api/sessions/location
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue. ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:17:15.72
+GET
+500
+findawise-vercel-phase-172-glempa29r-deepaks-projects-fd8641ff.vercel.app
+/api/localization/cultural-profile/en
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:17:15.72
+GET
+500
+findawise-vercel-phase-172-glempa29r-deepaks-projects-fd8641ff.vercel.app
+/api/llm-brain/metrics
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue. ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:17:15.72
+GET
+500
+findawise-vercel-phase-172-glempa29r-deepaks-projects-fd8641ff.vercel.app
+/api/health
+ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/var/task/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension. at file:///var/task/api/index.js:35:23 at ModuleJob.run (node:internal/modules/esm/module_job:274:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26) at async d (/opt/rust/nodejs.js:16:20669) Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+Aug 29 01:17:15.64
+GET
+500
+findawise-vercel-phase-172-glempa29r-deepaks-projects-fd8641ff.vercel.app
+/api/sessions/location
+ReferenceError: exports is not defined in ES module scope This file i

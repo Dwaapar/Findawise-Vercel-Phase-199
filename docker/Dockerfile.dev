@@ -1,0 +1,39 @@
+FROM node:20-alpine
+
+# Install system dependencies
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    postgresql-client \
+    curl \
+    bash
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production && npm cache clean --force
+
+# Copy source code
+COPY . .
+
+# Create necessary directories
+RUN mkdir -p uploads logs backups .backups/plugins
+
+# Set proper permissions
+RUN chown -R node:node /app
+USER node
+
+# Expose ports
+EXPOSE 5000 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:5000/health || exit 1
+
+# Default command
+CMD ["npm", "run", "dev:full"]

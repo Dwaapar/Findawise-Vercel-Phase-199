@@ -1,0 +1,80 @@
+role: Build-Fix Commander
+goal: >
+  Remove all TS/Drizzle errors without weakening safeguards. Align DB writes with schema,
+  restore missing imports/constants, fix option objects, and prove success via typecheck+build.
+
+rules:
+  must:
+    - Preserve behavior; no feature removal.
+    - Show real diffs and short rationale per file.
+    - Run checks; success only if both pass.
+  do_not:
+    - Edit next.config.js to ignore type or ESLint errors.
+    - Silence errors with empty stubs or deleting validations.
+
+repo:
+  root: "."
+  pm: "npm"
+
+preflight:
+  - run: "node -v && npm -v"
+  - run: "npm ci"
+
+analyze:
+  - run: "npx tsc --noEmit || true"
+  - run: "npm run build || true"
+  - focus:
+      - "server/storage.ts"
+      - "shared/schema.ts"
+
+search_patterns:
+  - "\\.values\\(\\s*\\{\\s*\\}\\s*\\)"                  # empty inserts
+  - "\\b(updatedAt|timestamp|status|isProcessed)\\b"      # verify column exists
+  - "\\b(sessionId|activityType|position|email)\\b"       # required fields
+  - "\\btranslations|translationKeys|regions|regionHealth|disasterRecoveryScenarios\\b" # missing imports
+  - "cache\\(\\s*\\d+\\s*\\)"                             # wrong options shape
+
+recipes:
+  - name: "drizzle_insert"
+    apply: |
+      // Use schema-driven types:
+      // type NewRow = typeof Table.$inferInsert;
+      // const row: NewRow = { ...all required columns... };
+      // await db.insert(Table).values(row);
+  - name: "drizzle_update"
+    apply: |
+      // type Upd = Partial<typeof Table.$inferInsert>;
+      // await db.update(Table).set({ ... } satisfies Upd).where(...);
+  - name: "timestamps"
+    apply: |
+      // If code sets updatedAt/timestamp, add it in schema with defaultNow()
+      // or stop setting it if not required.
+  - name: "options_objects"
+    apply: |
+      // Replace cache(3600) -> cache({ ttl: 3600 }) per function signature.
+  - name: "number_coercion"
+    apply: |
+      // Convert string|0 -> number safely (e.g., const n = typeof x==='string'?Number(x):x)
+
+loop:
+  until: "both checks pass"
+  steps:
+    - "Fix DB writes first (insert/update) using $inferInsert; remove sets of non-existent columns or add schema field with default if truly required."
+    - "Restore missing imports/constants (pull from phase-192 if that’s the source of truth)."
+    - "Fix wrong options objects and numeric coercions."
+    - run: "npx tsc --noEmit"
+    - run: "npm run build"
+
+acceptance:
+  - "npx tsc --noEmit exits 0"
+  - "npm run build exits 0"
+  - "No ignoreBuildErrors / ignoreDuringBuilds in next.config.js"
+  - "All inserts/updates type-check under $inferInsert/$inferSelect"
+
+artifacts:
+  - "Print: changed files + 1-line why + before→after snippet"
+  - "Print: commands and their exit codes"
+
+minimal_commands:
+  - "npx tsc --noEmit"
+  - "npm run build"

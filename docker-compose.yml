@@ -1,0 +1,60 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15
+    container_name: findawise_postgres
+    environment:
+      POSTGRES_DB: findawise_empire
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d findawise_empire"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: findawise_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+  # Ollama AI (for your RTX 3060)
+  ollama:
+    image: ollama/ollama:latest
+    container_name: findawise_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_ORIGINS=*
+    restart: unless-stopped
+
+  # pgAdmin (Database management)
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: findawise_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@findawise.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+  ollama_data:

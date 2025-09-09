@@ -1,0 +1,100 @@
+
+> rest-express@1.0.0 build
+> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+
+vite v5.4.19 building for production...
+transforming...
+Browserslist: browsers data (caniuse-lite) is 11 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+/api/placeholder/1920/1080 referenced in /api/placeholder/1920/1080 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 3782 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/public/index.html                     3.24 kB │ gzip:   1.21 kB
+../dist/public/assets/index-CPbbxgju.css    195.50 kB │ gzip:  26.60 kB
+../dist/public/assets/index-Cb54Y_wf.js   2,473.68 kB │ gzip: 644.68 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 23.66s
+▲ [WARNING] Duplicate member "sanitizeConfig" in class body [duplicate-class-member]
+
+    server/services/pages/dynamicPageGenerator.ts:1506:10:
+      1506 │   private sanitizeConfig(config: any, level: 'basic' | 'strict' ...
+           ╵           ~~~~~~~~~~~~~~
+
+  The original member "sanitizeConfig" is here:
+
+    server/services/pages/dynamicPageGenerator.ts:1034:10:
+      1034 │   private sanitizeConfig(config: any): any {
+           ╵           ~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "getEmotionTheme" in class body [duplicate-class-member]
+
+    server/services/pages/dynamicPageGenerator.ts:1686:16:
+      1686 │   private async getEmotionTheme(emotion: EmotionType): Promise<a...
+           ╵                 ~~~~~~~~~~~~~~~
+
+  The original member "getEmotionTheme" is here:
+
+    server/services/pages/dynamicPageGenerator.ts:1357:16:
+      1357 │   private async getEmotionTheme(emotion: EmotionType): Promise<a...
+           ╵                 ~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "getLocalization" in class body [duplicate-class-member]
+
+    server/services/pages/dynamicPageGenerator.ts:1746:16:
+      1746 │   private async getLocalization(locale: string): Promise<any> {
+           ╵                 ~~~~~~~~~~~~~~~
+
+  The original member "getLocalization" is here:
+
+    server/services/pages/dynamicPageGenerator.ts:1417:16:
+      1417 │   private async getLocalization(locale: string): Promise<any> {
+           ╵                 ~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "validateGenerationRequest" in class body [duplicate-class-member]
+
+    server/services/pages/dynamicPageGenerator.ts:1786:10:
+      1786 │   private validateGenerationRequest(request: PageGenerationReque...
+           ╵           ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  The original member "validateGenerationRequest" is here:
+
+    server/services/pages/dynamicPageGenerator.ts:1451:10:
+      1451 │   private validateGenerationRequest(request: PageGenerationReque...
+           ╵           ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "recordPerformanceMetric" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2192:16:
+      2192 │   private async recordPerformanceMetric(configId: string, metric...
+           ╵                 ~~~~~~~~~~~~~~~~~~~~~~~
+
+  The original member "recordPerformanceMetric" is here:
+
+    server/services/config/centralConfigEngine.ts:1731:16:
+      1731 │   private async recordPerformanceMetric(configId: string, metric...
+           ╵                 ~~~~~~~~~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "triggerFederationSync" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2244:8:
+      2244 │   async triggerFederationSync(configId: string, syncType: 'push'...
+           ╵         ~~~~~~~~~~~~~~~~~~~~~
+
+  The original member "triggerFederationSync" is here:
+
+    server/services/config/centralConfigEngine.ts:1756:16:
+      1756 │   private async triggerFederationSync(configId: string, syncType...
+           ╵                 ~~~~~~~~~~~~~~~~~~~~~
+
+6 of 31 warnings shown (disable the message limit with --log-limit=0)
+
+  dist/index.js  5.1mb ⚠️
+
+⚡ Done in 409ms

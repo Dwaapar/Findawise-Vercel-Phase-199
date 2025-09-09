@@ -1,0 +1,77 @@
+# ------------------------
+# Node & Package Managers
+# ------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ------------------------
+# Build Output (Generated)
+# ------------------------
+dist/
+.next/
+.turbo/
+build/
+coverage/
+
+# ------------------------
+# Environment Variables
+# ------------------------
+.env
+.env.*
+!.env.example
+
+# ------------------------
+# OS / System Files
+# ------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------
+# IDE / Editor Settings
+# ------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------
+# Logs
+# ------------------------
+logs/
+*.log
+*.log.*
+
+# ------------------------
+# Archives / Packages
+# ------------------------
+*.tar.gz
+*.zip
+*.tgz
+
+# ------------------------
+# Temporary Files
+# ------------------------
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+
+# ------------------------
+# Cache
+# ------------------------
+.cache/
+npm-cache/
+.pnpm-store/
+.eslintcache
+.stylelintcache
+.husky/_
+
+# ------------------------
+# Testing Outputs
+# ------------------------
+jest-html-reporters-*
+test-results.xml

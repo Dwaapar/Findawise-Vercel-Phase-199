@@ -1,0 +1,129 @@
+Automation Services — “We Do It for You”
+
+👉 End-to-end automation design and delivery. We audit your processes, integrate your stack, and ship reliable workflows with dashboards, monitoring, and SLAs.
+
+Use cases: Lead routing, finance ops, ticket triage, KPI reporting.
+
+Value: Save 100s of hours, reduce errors, scale without headcount.
+
+CTA: “Book a 72h pilot build.”
+
+Workflow Store — Prebuilt Flows You Can Deploy Today
+
+👉 A catalog of plug-and-play automations: scraping, enrichment, outreach, finance, reporting.
+
+One-click deploy with secrets/env setup included.
+
+Always updated with patch notes and guides.
+
+Value: Buy once, run forever, extend as needed.
+
+CTA: “Browse 350+ workflows.”
+
+Digital Assets — Accelerators for Growth
+
+👉 Libraries of prompts, datasets, playbooks, design kits, and creative bundles.
+
+Prompt Packs for agents, SDRs, support.
+
+Datasets for fine-tuning or eval.
+
+Playbooks & templates for ops and marketing.
+
+Creative bundles (ads, landing sections, affiliate creatives).
+
+Value: Ship faster, skip reinvention.
+
+CTA: “Download assets → go live same day.”
+
+AI Agents — Managed + Self-Host Options
+
+👉 Agents that act, not just chat — integrated with tools, memory, and approvals.
+
+Managed service: We host and run it.
+
+Self-host: Deploy in your infra with our runbooks.
+
+Examples: SDR agent (qualify + book demos), Support agent (auto-resolve), Ops agent (reconcile & notify).
+
+Value: Reduce repetitive headcount tasks, add intelligent scale.
+
+CTA: “Deploy your first agent.”
+
+Affiliate Hub — Promote the Best Brands
+
+👉 Curated marketplace of vetted, high-EPC brands + dynamic creatives.
+
+Smart links: geo/device optimized.
+
+Dynamic creatives: rotate by conversion.
+
+Real-time dashboards: EPC, CVR, payouts.
+
+Value: Maximize affiliate revenue with no guesswork.
+
+CTA: “Open Affiliate Hub.”
+
+Decision Platform (Findawise) — End Choice Overload
+
+👉 Expert guides + comparisons + quizzes to help people choose wisely.
+
+Guides: “Best laptop for creators 2025” style.
+
+Comparisons: Interactive tables, pros/cons.
+
+Quizzes: Adaptive, personalized answers.
+
+Research prompts: Verify info yourself.
+
+Value: Clarity in chaos, plus monetization via affiliate offers.
+
+CTA: “Take the 2-minute quiz.”
+
+Services (Utility Layer) — Practical Tools for Individuals & Teams
+
+👉 Self-serve mini-products that solve everyday needs. Examples:
+
+Resume Maker: Upload your details, get ATS-friendly, designer-grade resumes instantly.
+
+Cover Letter Generator: Tailored to the job post in one click.
+
+Portfolio Builder: Quick portfolio sites for freelancers & creators.
+
+Email Optimizer: Rewrite cold emails or outreach messages for max conversion.
+
+Ad Copy Splitter: Generate ad variations from one idea.
+
+Content Calendar Maker: Auto-generate publishing calendars for LinkedIn, Instagram, or blogs.
+
+Value: Immediate, tangible outcomes people can use right away — keeps visitors engaged and builds trust.
+
+Monetization Options:
+
+Free tier (to capture emails)
+
+Premium templates or white-label assets
+
+Bundle into subscription alongside Workflow Store
+
+CTA Example: “Make your resume in 60 seconds → Free download.”
+
+🔗 How It All Connects
+
+Services → entry point (low-friction, free/cheap tools bring users in).
+
+Decision Platform → routes demand into Affiliate Hub (monetization).
+
+Automation + AI Agents → high-ticket services for businesses.
+
+Workflow Store + Digital Assets → mid-ticket products (scalable, repeat sales).
+
+You’re building a multi-layer empire funnel:
+
+Top of funnel: Services + Decision Platform → high traffic.
+
+Mid funnel: Workflow Store + Assets → one-off product sales.
+
+Bottom funnel: Automation + AI Agents → recurring enterprise retainers.
+
+Side monetization: Affiliate Hub → always-on revenue stream.

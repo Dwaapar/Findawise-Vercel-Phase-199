@@ -1,0 +1,81 @@
+
+AI Agents → Deploy Your First Agent
+
+Affiliate Hub → Open Affiliate Hub
+
+Decision Platform → Take the 2-Minute Quiz
+
+Services (Tools) → Explore Tools
+
+Accessibility, Performance, Compliance (baked in)
+
+WCAG 2.2 AA: visible focus, target size, focus not obscured by sticky headers; respect prefers-reduced-motion. 
+W3C
++1
+web.dev
+
+Hero media: encode/compress; autoplay only if muted playsinline; cap file size; supply poster + pause; test LCP (video can be LCP). 
+web.dev
++1
+
+Mega-menu: semantic <nav> + lists; don’t misuse ARIA menu; add hover delay and keep scope obvious. 
+MDN Web Docs
+Baymard Institute
+
+Affiliate disclosures: “clear and conspicuous”; updated Guides (2023). 
+Federal Register
+Federal Trade Commission
+
+Event Taxonomy (instrument on day 1)
+
+hero_pilot_click, mega_companies_open, company_card_click:{name}, solutions_tile_click:{name}, deal_reveal_click, case_study_open:{name}, newsletter_subscribe, search_submit, cta_footer_disclosure_open.
+
+(Measure scannable actions; NN/g & Baymard emphasize clarity of top tasks and nav.) 
+Nielsen Norman Group
+Baymard Institute
+
+Technical SEO & Schema (parent → sub-orgs)
+
+Add Organization with subOrganization for each of the 7 companies (and parentOrganization on child pages). This reflects your house-of-brands structure. 
+Schema.org
++1
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Findawise",
+  "url":"https://www.findawise.example",
+  "logo":"https://www.findawise.example/logo.png",
+  "subOrganization":[
+    {"@type":"Organization","name":"Findawise Automation Services","url":"https://www.findawise.example/automation"},
+    {"@type":"Organization","name":"Findawise Workflow Store","url":"https://www.findawise.example/workflows"},
+    {"@type":"Organization","name":"Findawise Digital Assets","url":"https://www.findawise.example/assets"},
+    {"@type":"Organization","name":"Findawise AI Agents","url":"https://www.findawise.example/agents"},
+    {"@type":"Organization","name":"Findawise Affiliate Hub","url":"https://www.findawise.example/deals"},
+    {"@type":"Organization","name":"Findawise Decision Platform","url":"https://www.findawise.example/guides"},
+    {"@type":"Organization","name":"Findawise Services (Tools)","url":"https://www.findawise.example/services"}
+  ]
+}
+</script>
+
+
+(Also add Google’s Organization structured data for richer results.) 
+Google for Developers
+
+Boss-Level Design Notes (so incumbents sweat)
+
+House-of-brands clarity (Companies first), not “features”: users find the right business fast. (Hick’s law: reduce/organize choices.) 
+Nielsen Norman Group
+
+Scannable copy everywhere: one-liners + bullets + action verbs; proven to increase usability. 
+Nielsen Norman Group
+
+Accessible mega-menu with hover delay & clear scope; never block the whole screen. 
+Baymard Institute
+Nielsen Norman Group
+
+Motion with restraint: pause/reduce; never degrade performance/LCP. 
+web.dev
++1
+

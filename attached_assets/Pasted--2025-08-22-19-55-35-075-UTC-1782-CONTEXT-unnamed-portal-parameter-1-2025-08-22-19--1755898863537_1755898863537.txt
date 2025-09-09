@@ -1,0 +1,30 @@
+
+2025-08-22 19:55:35.075 UTC [1782] CONTEXT:  unnamed portal parameter $1 = '...'
+
+2025-08-22 19:55:35.075 UTC [1782] STATEMENT:  insert into "api_alert_history" ("id", "alert_id", "rule_id", "diff_id", "event_id", "alert_type", "severity", "title", "message", "details", "channels_sent", "delivery_status", "delivery_attempts", "acknowledged", "acknowledged_by", "acknowledged_at", "response_time_seconds", "created_at") values ($1, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, $2)
+
+2025-08-22 19:55:35.185 UTC [1757] ERROR:  invalid input syntax for type integer: "Xpj6UfH7fXmx7lYaWjfs1"
+
+2025-08-22 19:55:35.185 UTC [1757] CONTEXT:  unnamed portal parameter $1 = '...'
+
+2025-08-22 19:55:35.185 UTC [1757] STATEMENT:  insert into "api_alert_history" ("id", "alert_id", "rule_id", "diff_id", "event_id", "alert_type", "severity", "title", "message", "details", "channels_sent", "delivery_status", "delivery_attempts", "acknowledged", "acknowledged_by", "acknowledged_at", "response_time_seconds", "created_at") values ($1, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, $2)
+
+2025-08-22 19:56:04.980 UTC [1786] ERROR:  invalid input syntax for type integer: "PlgK1pN6KT5Zkhgj0_SV6"
+
+2025-08-22 19:56:04.980 UTC [1786] CONTEXT:  unnamed portal parameter $1 = '...'
+
+2025-08-22 19:56:04.980 UTC [1786] STATEMENT:  insert into "api_analytics_summary" ("id", "summary_id", "period_type", "period_start", "period_end", "module_name", "total_diffs", "total_changes", "breaking_changes", "endpoints_added", "endpoints_removed", "endpoints_modified", "alerts_triggered", "critical_alerts", "alerts_acknowledged", "avg_response_time_seconds", "api_stability_score", "documentation_coverage", "compatibility_score", "schema_validation_time_ms", "diff_processing_time_ms", "alert_delivery_time_ms", "created_at") values ($1, default, default, $2, $3, default, $4, default, $5, default, default, default, default, default, default, default, default, default, default, default, default, default, $6)
+
+2025-08-22 19:56:05.080 UTC [1756] ERROR:  invalid input syntax for type integer: "PlgK1pN6KT5Zkhgj0_SV6"
+
+2025-08-22 19:56:05.080 UTC [1756] CONTEXT:  unnamed portal parameter $1 = '...'
+
+2025-08-22 19:56:05.080 UTC [1756] STATEMENT:  insert into "api_analytics_summary" ("id", "summary_id", "period_type", "period_start", "period_end", "module_name", "total_diffs", "total_changes", "breaking_changes", "endpoints_added", "endpoints_removed", "endpoints_modified", "alerts_triggered", "critical_alerts", "alerts_acknowledged", "avg_response_time_seconds", "api_stability_score", "documentation_coverage", "compatibility_score", "schema_validation_time_ms", "diff_processing_time_ms", "alert_delivery_time_ms", "created_at") values ($1, default, default, $2, $3, default, $4, default, $5, default, default, default, default, default, default, default, default, default, default, default, default, default, $6)
+
+2025-08-22 19:56:05.100 UTC [1813] ERROR:  invalid input syntax for type integer: "lnPokqQjcFnCiC43GkDRu"
+
+2025-08-22 19:56:05.100 UTC [1813] CONTEXT:  unnamed portal parameter $1 = '...'
+
+2025-08-22 19:56:05.100 UTC [1813] STATEMENT:  insert into "api_alert_history" ("id", "alert_id", "rule_id", "diff_id", "event_id", "alert_type", "severity", "title", "message", "details", "channels_sent", "delivery_status", "delivery_attempts", "acknowledged", "acknowledged_by", "acknowledged_at", "response_time_seconds", "created_at") values ($1, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, default, $2)
+
+2025-08-22 19:56:05.208 UTC [1814] ERROR:  invalid input syntax for type integer: "lnPokqQjcFnCiC43GkDRu"

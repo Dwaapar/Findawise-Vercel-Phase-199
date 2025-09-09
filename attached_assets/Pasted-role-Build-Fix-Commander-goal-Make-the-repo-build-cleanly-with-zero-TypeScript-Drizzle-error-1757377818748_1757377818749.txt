@@ -1,0 +1,76 @@
+role: Build-Fix Commander
+goal: >
+  Make the repo build cleanly with zero TypeScript/Drizzle errors, without degrading features.
+  Align DB writes with schema types, restore real imports/constants, correct option objects,
+  and prove success by passing both typecheck and production build.
+
+constraints:
+  do_not:
+    - "Do not set next.config.js typescript.ignoreBuildErrors=true or disable ESLint."
+    - "Do not remove validations or replace logic with empty stubs."
+  must:
+    - "Preserve behavior; add schema fields only when code truly requires them."
+    - "Explain each edit in a short rationale in AGENT_SUMMARY.md."
+
+persistence:  # survive context/token limits
+  plan_file: "AGENT_PLAN.md"        # running TODO / decisions
+  log_file: "AGENT_LOG.md"          # per-iteration notes & error snapshots
+  summary: "AGENT_SUMMARY.md"       # final diff rationale
+  state: "AGENT_STATE.json"         # simple JSON {step,index}
+
+preflight:
+  - run: "node -v && npm -v"
+  - run: "npm ci"
+
+gates:  # both must be 0 to finish
+  - run: "npx tsc --noEmit"
+  - run: "npm run build"
+
+focus_files:
+  - "server/storage.ts"
+  - "shared/schema.ts"
+
+search_patterns:
+  - "\\.values\\(\\s*\\{\\s*\\}\\s*\\)"                     # empty inserts
+  - "\\b(updatedAt|timestamp|status|isProcessed)\\b"        # verify exists in schema
+  - "\\b(sessionId|activityType|position|email)\\b"         # likely required fields
+  - "cache\\(\\s*\\d+\\s*\\)"                               # wrong options shape
+  - "\\btranslations|translationKeys|regions|regionHealth|disasterRecoveryScenarios\\b"  # missing imports
+
+recipes:
+  drizzle_insert: |
+    // Use schema-driven types so TS enforces shape:
+    // type NewRow = typeof Table.$inferInsert;  // or InferInsertModel<typeof Table>
+    // const row: NewRow = { ...all NOT NULL columns... };
+    // await db.insert(Table).values(row);
+  drizzle_update: |
+    // type Upd = Partial<typeof Table.$inferInsert>;
+    // await db.update(Table).set({ ... } satisfies Upd).where(...);
+  timestamps: |
+    // If code sets updatedAt/timestamp, add column with defaultNow() in schema; else stop setting it.
+  options_object: |
+    // Replace cache(3600) -> cache({ ttl: 3600 }) per function signature.
+  number_coercion: |
+    // Convert string|0 -> number at boundaries: const n = typeof x==='string' ? Number(x) : x;
+
+loop:
+  until: "both gates pass"
+  steps:
+    - "Write/append next actions to AGENT_PLAN.md and AGENT_STATE.json."
+    - "Fix DB writes using $inferInsert; remove sets of non-existent columns or add schema field with sensible default if truly required."
+    - "Restore real imports/constants (pull from phase-192 if that is the source of truth)."
+    - "Fix options objects and numeric coercions."
+    - run: "npx tsc --noEmit || true"      # capture errors to AGENT_LOG.md
+    - run: "npm run build || true"         # capture errors to AGENT_LOG.md
+    - "If errors remain, update AGENT_PLAN.md with a new micro-plan and continue."
+    - "Commit in small batches with messages referencing the fixed error class."
+
+success_criteria:
+  - "npx tsc --noEmit exits 0"
+  - "npm run build exits 0"
+  - "No ignoreBuildErrors/ignoreDuringBuilds present"
+  - "All inserts/updates type-check under $inferInsert/$inferSelect"
+
+finalize:
+  - "Produce AGENT_SUMMARY.md: changed files, 1-line rationale each, and before→after snippets."
+  - "Echo the exit codes of both gates."

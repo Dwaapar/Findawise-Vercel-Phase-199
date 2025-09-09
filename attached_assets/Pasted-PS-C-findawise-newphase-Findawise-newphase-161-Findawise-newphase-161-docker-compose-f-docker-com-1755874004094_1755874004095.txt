@@ -1,0 +1,13 @@
+PS C:\findawise newphase\Findawise-newphase-161\Findawise-newphase-161> docker-compose -f docker-compose.local.yml up -d
+time="2025-08-22T20:16:28+05:30" level=warning msg="C:\\findawise newphase\\Findawise-newphase-161\\Findawise-newphase-161\\docker-compose.local.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+[+] Running 7/8
+ ✔ Container findawise_ollama      Running                                                    0.0s 
+ ✔ Container findawise_postgres    Healthy                                                    0.5s 
+ ✔ Container findawise_qdrant      Running                                                    0.0s 
+ ✔ Container findawise_redis       Healthy                                                    0.5s 
+ ✔ Container findawise_grafana     Running                                                    0.0s 
+ ✔ Container findawise_pgadmin     Started                                                    0.2s 
+ - Container findawise_prometheus  Starting                                                   0.9s 
+ ✔ Container findawise_app         Started                                                    0.4s 
+Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting "/run/desktop/mnt/host/c/findawise newphase/Findawise-newphase-161/Findawise-newphase-161/monitoring/prometheus.yml" to rootfs at "/etc/prometheus/prometheus.yml": create mountpoint for /etc/prometheus/prometheus.yml mount: cannot create subdirectories in "/var/lib/docker/overlay2/f603d69ecf19f41634fb8e5b3cc17f5f164325ec35468fff99f2a1b2b95a91c5/merged/etc/prometheus/prometheus.yml": not a directory: unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+PS C:\findawise newphase\Findawise-newphase-161\Findawise-newphase-161> 

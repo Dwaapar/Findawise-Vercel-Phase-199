@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:16
+    container_name: findawise_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: findawise
+      POSTGRES_PASSWORD: findawise
+      POSTGRES_DB: findawise
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U findawise -d findawise"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data

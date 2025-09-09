@@ -1,0 +1,136 @@
+[04:31:55.462] Running build in Washington, D.C., USA (East) – iad1
+[04:31:55.463] Build machine configuration: 2 cores, 8 GB
+[04:31:55.478] Cloning github.com/Dwaapar/Findawise-vercel-phase-170 (Branch: main, Commit: 75e7f86)
+[04:31:55.616] Previous build caches not available
+[04:31:56.979] Cloning completed: 1.500s
+[04:31:58.059] Running "vercel build"
+[04:31:58.490] Vercel CLI 46.0.3
+[04:31:58.884] WARN! Due to `builds` existing in your configuration file, the Build and Development Settings defined in your Project Settings will not apply. Learn More: https://vercel.link/unused-build-settings
+[04:31:59.715] Installing dependencies...
+[04:32:01.261] npm warn skipping integrity check for git dependency ssh://git@github.com/dmarcos/three-bmfont-text.git
+[04:32:06.091] npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+[04:32:09.398] npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+[04:32:09.398] npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+[04:32:34.382] 
+[04:32:34.383] added 1270 packages in 34s
+[04:32:34.383] 
+[04:32:34.383] 267 packages are looking for funding
+[04:32:34.383]   run `npm fund` for details
+[04:32:34.461] Running "npm run build"
+[04:32:34.880] 
+[04:32:34.880] > rest-express@1.0.0 build
+[04:32:34.880] > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+[04:32:34.880] 
+[04:32:35.447] [36mvite v5.4.19 [32mbuilding for production...[36m[39m
+[04:32:35.507] transforming...
+[04:32:35.783] Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+[04:32:35.784]   npx update-browserslist-db@latest
+[04:32:35.784]   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[04:32:37.782] 
+[04:32:37.782] /api/placeholder/1920/1080 referenced in /api/placeholder/1920/1080 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[04:32:48.239] [32m✓[39m 3798 modules transformed.
+[04:32:48.845] rendering chunks...
+[04:32:49.715] computing gzip size...
+[04:32:49.779] [2m../dist/public/[22m[32mindex.html                          [39m[1m[2m    3.24 kB[22m[1m[22m[2m │ gzip:   1.20 kB[22m
+[04:32:49.780] [2m../dist/public/[22m[2massets/[22m[35mindex-BsAiJWnH.css           [39m[1m[2m  169.43 kB[22m[1m[22m[2m │ gzip:  24.23 kB[22m
+[04:32:49.780] [2m../dist/public/[22m[2massets/[22m[36mFunnelDashboard-DRfMkZ0f.js  [39m[1m[2m   21.26 kB[22m[1m[22m[2m │ gzip:   4.75 kB[22m
+[04:32:49.780] [2m../dist/public/[22m[2massets/[22m[36mindex-Bc20bV4I.js            [39m[1m[33m2,543.39 kB[39m[22m[2m │ gzip: 668.04 kB[22m
+[04:32:49.780] [33m
+[04:32:49.781] (!) Some chunks are larger than 500 kB after minification. Consider:
+[04:32:49.781] - Using dynamic import() to code-split the application
+[04:32:49.781] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[04:32:49.781] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[04:32:49.781] [32m✓ built in 14.31s[39m
+[04:32:49.870] ▲ [WARNING] Duplicate member "updateRegionConfig" in class body [duplicate-class-member]
+[04:32:49.871] 
+[04:32:49.871]     server/services/multiRegion/multiRegionLoadOrchestrator.ts:1290:8:
+[04:32:49.871]       1290 │   async updateRegionConfig(regionId: string, updateData: Partial...
+[04:32:49.871]            ╵         ~~~~~~~~~~~~~~~~~~
+[04:32:49.871] 
+[04:32:49.871]   The original member "updateRegionConfig" is here:
+[04:32:49.871] 
+[04:32:49.871]     server/services/multiRegion/multiRegionLoadOrchestrator.ts:713:2:
+[04:32:49.871]       713 │   updateRegionConfig(regionId: string, updates: Partial<RegionCon...
+[04:32:49.871]           ╵   ~~~~~~~~~~~~~~~~~~
+[04:32:49.871] 
+[04:32:49.871] ▲ [WARNING] Duplicate member "triggerFailover" in class body [duplicate-class-member]
+[04:32:49.871] 
+[04:32:49.872]     server/services/multiRegion/multiRegionLoadOrchestrator.ts:1393:8:
+[04:32:49.872]       1393 │   async triggerFailover(fromRegion: string, toRegion: string, re...
+[04:32:49.872]            ╵         ~~~~~~~~~~~~~~~
+[04:32:49.872] 
+[04:32:49.872]   The original member "triggerFailover" is here:
+[04:32:49.872] 
+[04:32:49.872]     server/services/multiRegion/multiRegionLoadOrchestrator.ts:636:16:
+[04:32:49.872]       636 │   private async triggerFailover(fromRegionId: string, reason: str...
+[04:32:49.872]           ╵                 ~~~~~~~~~~~~~~~
+[04:32:49.872] 
+[04:32:49.910] ▲ [WARNING] Duplicate member "getStorageStats" in class body [duplicate-class-member]
+[04:32:49.911] 
+[04:32:49.911]     server/services/semantic/vectorDatabaseAdapter.ts:1018:8:
+[04:32:49.911]       1018 │   async getStorageStats(): Promise<any> {
+[04:32:49.911]            ╵         ~~~~~~~~~~~~~~~
+[04:32:49.911] 
+[04:32:49.911]   The original member "getStorageStats" is here:
+[04:32:49.911] 
+[04:32:49.911]     server/services/semantic/vectorDatabaseAdapter.ts:747:8:
+[04:32:49.911]       747 │   async getStorageStats(): Promise<{
+[04:32:49.911]           ╵         ~~~~~~~~~~~~~~~
+[04:32:49.911] 
+[04:32:50.248] ▲ [WARNING] Duplicate member "detectDeviceType" in class body [duplicate-class-member]
+[04:32:50.248] 
+[04:32:50.249]     server/services/session/sessionEngineCore.ts:1514:10:
+[04:32:50.249]       1514 │   private detectDeviceType(userAgent: string): string {
+[04:32:50.249]            ╵           ~~~~~~~~~~~~~~~~
+[04:32:50.249] 
+[04:32:50.249]   The original member "detectDeviceType" is here:
+[04:32:50.249] 
+[04:32:50.249]     server/services/session/sessionEngineCore.ts:434:10:
+[04:32:50.250]       434 │   private detectDeviceType(deviceInfo: any): 'desktop' | 'mobile'...
+[04:32:50.250]           ╵           ~~~~~~~~~~~~~~~~
+[04:32:50.250] 
+[04:32:50.250] ▲ [WARNING] Duplicate member "getNeuronPerformanceMetrics" in class body [duplicate-class-member]
+[04:32:50.250] 
+[04:32:50.250]     server/storage.ts:3929:8:
+[04:32:50.251]       3929 │   async getNeuronPerformanceMetrics(): Promise<any> {
+[04:32:50.251]            ╵         ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[04:32:50.251] 
+[04:32:50.251]   The original member "getNeuronPerformanceMetrics" is here:
+[04:32:50.251] 
+[04:32:50.251]     server/storage.ts:3067:8:
+[04:32:50.251]       3067 │   async getNeuronPerformanceMetrics(): Promise<any> {
+[04:32:50.252]            ╵         ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[04:32:50.252] 
+[04:32:50.252] ▲ [WARNING] Duplicate member "calculateHealthTrend" in class body [duplicate-class-member]
+[04:32:50.252] 
+[04:32:50.252]     server/storage.ts:4844:16:
+[04:32:50.252]       4844 │   private async calculateHealthTrend(neuronId: string): Promise<...
+[04:32:50.253]            ╵                 ~~~~~~~~~~~~~~~~~~~~
+[04:32:50.253] 
+[04:32:50.253]   The original member "calculateHealthTrend" is here:
+[04:32:50.253] 
+[04:32:50.253]     server/storage.ts:3136:16:
+[04:32:50.254]       3136 │   private async calculateHealthTrend(neuronId: string): Promise<...
+[04:32:50.254]            ╵                 ~~~~~~~~~~~~~~~~~~~~
+[04:32:50.254] 
+[04:32:50.254] 6 of 111 warnings shown (disable the message limit with --log-limit=0)
+[04:32:50.254] 
+[04:32:50.255]   dist/index.js  5.1mb ⚠️
+[04:32:50.255] 
+[04:32:50.255] ⚡ Done in 400ms
+[04:32:50.578] Using TypeScript 5.9.2 (local user-provided)
+[04:32:59.420] api/index.ts(19,36): error TS7016: Could not find a declaration file for module '../dist/index.js'. '/vercel/path0/dist/index.js' implicitly has an 'any' type.
+[04:32:59.420] 
+[04:33:07.387] client/src/config/localization.ts(321,24): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+[04:33:07.388]   Type 'undefined' is not assignable to type 'string'.
+[04:33:07.388] 
+[04:33:07.494] client/src/config/financeConfig.ts(126,5): error TS2820: Type '"low-moderate"' is not assignable to type '"low" | "high" | "very-low" | "moderate" | "moderate-high"'. Did you mean '"moderate"'?
+[04:33:07.495] client/src/config/financeConfig.ts(127,5): error TS2322: Type '"short-medium term"' is not assignable to type '"short-term" | "medium-term" | "long-term"'.
+[04:33:07.495] 
+[04:33:35.805] Build Completed in /vercel/output [2m]
+[04:33:36.897] Deploying outputs...
+[04:33:51.707] Deployment completed
+[04:33:52.617] Creating build cache...
+[04:34:33.877] Created build cache: 41.250s
+[04:34:33.877] Uploading build cache [175.51 MB]
+[04:34:36.361] Build cache uploaded: 2.494s

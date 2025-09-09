@@ -1,0 +1,1 @@
+DATABASE_URL=postgresql://findawise_user:findawise@localhost:5432/findawise_empire

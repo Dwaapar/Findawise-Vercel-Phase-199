@@ -1,0 +1,61 @@
+name: Monorepo CI
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "backend/**"
+      - "frontend/**"
+      - "tests/**"
+      - "docs/**"
+  pull_request:
+    paths:
+      - "backend/**"
+      - "frontend/**"
+      - "tests/**"
+      - "docs/**"
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, '[skip ci]') == false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install deps
+        run: |
+          if [ -f backend/requirements.txt ]; then pip install -r backend/requirements.txt; fi
+      - name: Lint
+        run: |
+          if command -v flake8 >/dev/null 2>&1; then flake8 backend || true; else echo "flake8 not installed"; fi
+      - name: Test
+        run: |
+          if command -v pytest >/dev/null 2>&1; then pytest -q || true; else echo "pytest not installed"; fi
+
+  frontend:
+    runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, '[skip ci]') == false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install deps
+        run: |
+          if [ -f frontend/package.json ]; then cd frontend && npm ci; fi
+      - name: Lint
+        run: |
+          if [ -f frontend/package.json ]; then cd frontend && npm run lint || true; fi
+      - name: Test
+        run: |
+          if [ -f frontend/package.json ]; then cd frontend && npm test --silent || true; fi
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint docs
+        run: |
+          echo "Add markdownlint/vale here if needed."

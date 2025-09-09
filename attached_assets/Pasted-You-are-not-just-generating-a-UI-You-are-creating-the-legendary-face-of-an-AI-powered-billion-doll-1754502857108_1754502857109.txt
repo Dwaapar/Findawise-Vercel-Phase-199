@@ -1,0 +1,93 @@
+You are not just generating a UI. You are creating the legendary face of an AI-powered, billion-dollar self-evolving web empire called Findawise.
+
+The entire system is built as interconnected neurons (modules) that evolve over time using AI + real-time feedback loops. Each neuron is a self-scaling, logic-powered micro-app. This UI is the unified frontend layer that connects them all — like the skin over a living neural network.
+
+Design Rules (non-negotiable):
+
+Mobile-first, edge-optimized, ultra-fast
+
+Sleek futuristic layout (SpaceX × Apple × OpenAI aesthetic)
+
+Animations powered by Framer Motion
+
+Modular design: All sections must be reusable blocks (tailwind-based component library or atomic structure)
+
+Use glassmorphism, subtle gradients, neon edges, and animated SVGs
+
+Dark mode as default; light mode toggle optional
+
+Layouts should feel alive — hover, scroll, click interactions must evoke movement, curiosity, and energy
+
+Incorporate emotion logic UI variations (e.g., if fear detected → red alert theme; if trust detected → soft blue secure state)
+
+Sections to Build:
+
+🧠 Hero Section:
+
+Bold claim: “The World’s First Self-Evolving Affiliate Web Empire”
+
+AI-generated slogan based on trending emotion (inject emotion map support)
+
+Animated AI visual (SVG neural net pulsing or brain circuit evolving)
+
+CTA: “Enter the System” / “See How It Thinks”
+
+⚙️ Neuron Showcase Grid:
+
+Interactive card grid — each neuron shows: name, icon, status (active/inactive), last trained
+
+On hover: expand logic summary and link to subpage
+
+Filter: Content / Quiz / AI / Analytics / Traffic / Security
+
+📊 Live System Pulse Section:
+
+Live metrics with glowing data pulses: # pages, # offers running, current AI suggestions
+
+Includes scroll-triggered Lottie animations or live-generated data bursts
+
+🤖 AI Brain Log:
+
+Feed of recent AI-driven decisions or changes made by the system
+
+e.g. “Emotion Shift: Updated CTA for solar page”, “Discovered trending niche: AI Safety in Travel”
+
+🧬 Emotion-Driven CTA Strip:
+
+Section adapts CTA message based on detected scroll behavior + location
+
+CTA Examples: “Protect Your Rental Now” / “Get AI-Picked Solar Kits”
+
+📚 Dynamic Blog Carousel:
+
+Auto-pulls blog content previews
+
+Emotion tags + category filters
+
+Scroll momentum effect
+
+💼 Trust + Authority Zone:
+
+Logos of verified partners or AI certs
+
+Testimonials from users
+
+Security badges (custom-designed)
+
+🧠 AI Quiz Generator Preview:
+
+Allow demo of 1 question from quiz engine
+
+CTA: “Let AI Find the Right Solution for You”
+
+📦 Export + Dev Tool Panel:
+
+CLI-based UI for developers to fork/export the brain
+
+Show tech stack, GitHub stats, roadmap, commit feed
+
+🧠 Footer:
+
+Neural sitemap layout (like a synapse tree)
+
+Support, contact, GitHub, contributors, credits

@@ -1,0 +1,99 @@
+Workflow Store — Prebuilt Flows You Can Deploy Today
+One-liner: Plug-and-play automations (scraping, enrichment, outreach, finance, reporting).
+Notes: 1-click deploy with env/secrets; evergreen with patch notes and guides.
+Value: Buy once, run forever, extend as needed.
+CTA: Browse 350+ Workflows
+
+Digital Assets — Accelerators for Growth
+One-liner: Prompt packs, datasets, playbooks, design kits, creative bundles.
+Examples: Agent prompts (SDR/support), datasets (finetune/eval), playbooks, ad & landing creatives.
+Value: Ship faster; skip reinvention.
+CTA: Download Assets → Go Live Same Day
+
+AI Agents — Managed + Self-Host Options
+One-liner: Agents that act, not just chat—integrations, memory, approvals.
+Modes: Managed (we run) or self-host (runbooks).
+Examples: SDR (qualify + book), Support (auto-resolve), Ops (reconcile & notify).
+Value: Reduce repetitive headcount; add intelligent scale.
+CTA: Deploy Your First Agent
+
+Affiliate Hub — Promote the Best Brands
+One-liner: Vetted high-EPC brands + dynamic creatives.
+Features: Smart links (geo/device), creative rotation, real-time EPC/CVR/payouts, disclosures baked in.
+CTA: Open Affiliate Hub (keep disclosures clear & conspicuous). 
+Federal Trade Commission
+Federal Register
+
+Decision Platform — End Choice Overload
+One-liner: Expert guides, interactive comparisons, adaptive quizzes.
+Value: Clarity in chaos + monetization via verified offers.
+CTA: Take the 2-Minute Quiz
+
+Services (Tools) — Practical Utilities for Teams & Individuals
+One-liner: Self-serve mini-products that solve everyday needs.
+Examples: Resume Maker, Cover Letter, Portfolio Builder, Email Optimizer, Ad Copy Splitter, Content Calendar Maker.
+CTA: Explore Tools
+
+Content style: one punchy sentence + bullets + action-first CTA. That’s scannable, objective writing (proven to improve usability). 
+Nielsen Norman Group
+
+4) Empire OS (shared backbone)
+
+Pitch: One backbone, seven frontiers.
+Pillars: Offer Engine · Workflow Runtime · Agent Framework · Decision Brain · Analytics Fabric · Privacy & Compliance (consent, disclosures, WCAG).
+CTAs: Explore Empire OS · Read Security & Compliance
+(Place near top for B2B buyers who think platform first.) 
+web.dev
+
+5) Solutions by Outcome (buyer framing)
+
+Tiles: Lead Generation · Support Deflection · Finance Ops · Trust & Safety · Product Analytics · Content Ops — each routes to a solution page mapping relevant companies + playbooks + case studies to help champions “sell it internally.” 
+Google for Developers
+
+6) Featured Case Studies (cross-company)
+
+SaaS signups ↑43% — Decision Platform + Affiliate Hub + Offer Engine
+
+E-com CAC −28% — Workflow bundles + Agents for ops
+
+Ops 72h → 6h — Automation Services + playbooks
+Include Download 1-pager & “See Architecture” (exec-friendly PDFs). 
+Google for Developers
+
+7) Live Deals (ticker rail)
+
+“Today’s verified deals:” Brand — “63% off + 3 months free” · Reveal code · View deal (auto-scroll, pause on hover, lazy-load). 
+web.dev
+
+8) Thought Leadership
+
+3 latest posts: benchmarks (agents), automation ROI, affiliate compliance. CTA: Read the Blog
+
+9) Lead Magnet
+
+Title: Get the Empire Briefing
+Copy: Bi-weekly playbooks, benchmarks & real-world deals. No fluff.
+Form: Email ▢ Subscribe
+(Short copy + clear benefit—users scan.) 
+Nielsen Norman Group
+
+10) Footer (corporate, complete)
+
+About · Careers · Press · Affiliate Disclosure · Privacy · Terms · Cookies · Accessibility (WCAG 2.2) · Security · Contact.
+(Ensure landmarks and clear labels.) 
+a11y-style-guide.com
+
+Copy Deck (paste verbatim)
+
+Primary CTA (global): Book a 72h Pilot Build
+Secondary CTA: Explore our Companies
+Hero trust strip: Outcome-backed engagements · Transparent research & disclosures · Global-ready (security, privacy, SLAs)
+Section heads: Our Companies · Empire OS · Solutions · Case Studies · Today’s Verified Deals · Insights · Empire Briefing
+Company CTAs:
+
+Automation Services → Book a 72h Pilot Build
+
+Workflow Store → Browse 350+ Workflows
+
+Digital Assets → Download Assets → Go Live Same Day
+

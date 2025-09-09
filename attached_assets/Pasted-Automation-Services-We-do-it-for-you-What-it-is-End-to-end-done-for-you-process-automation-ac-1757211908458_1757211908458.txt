@@ -1,0 +1,205 @@
+Automation Services — “We do it for you”
+
+What it is: End-to-end, done-for-you process automation across ops, growth, support, finance, and data. We map your workflows, integrate your stack, and ship reliable automations with SLAs, monitoring, and runbooks.
+
+Who it’s for: Teams that want outcomes, not tooling — founders, COOs, RevOps, Support/Success, Finance Ops.
+
+What’s included
+
+Process mining & SOP design (swimlanes, failure paths, guardrails)
+
+System integration (CRM/ERP, billing, data warehouse, email, Slack)
+
+Automations (triggers, queues, retries, idempotency, alerts)
+
+Observability (dashboards, logs, on-call, error budgets)
+
+Security (least-privilege keys, secret rotation, data retention)
+
+Delivery model
+
+72-Hour Pilot: 1 high-value workflow automated, metrics wired (time saved, errors avoided).
+
+Scale-up: 5–20 workflows, dashboards, on-call, playbooks.
+
+Run & Improve: Monthly reliability + ROI reviews, backlog burn-down.
+
+Typical stack: Python/Node, Airflow/Temporal, n8n/Make/Zapier (when appropriate), Postgres/BigQuery, Kafka/SQS, Slack/Teams, HubSpot/Salesforce, Stripe/QuickBooks, REST/GraphQL.
+
+KPIs: Tasks automated/month, minutes saved/task, SLA success %, error rate, $ ROI.
+
+Pricing: Fixed-fee pilot → monthly retainer (tiered by # workflows/SLA). Infra billed at cost.
+
+Examples
+
+Lead intake → enrichment → routing → meeting booked
+
+Invoice ingestion → 3-way match → reconciliation → dispute escalation
+
+Support triage → classify → auto-reply → human-handoff with context
+
+What we need from you (day 0): Tool access, sample data, “happy path + failure path,” success KPI.
+
+Workflow Store — Prebuilt Flows
+
+What it is: A catalog of plug-and-play workflows (scrape, enrich, outreach, finance ops, QA, reporting) you can deploy in minutes and customize as needed.
+
+What’s included
+
+One-click deployment (Docker/Compose templates, env templates)
+
+Config UI (secrets, schedules, webhooks), schema + mapping
+
+Observability out of the box (logs, metrics, alert hooks)
+
+Versioned updates & patch notes
+
+Commercial license with modification rights
+
+Pricing: Per-workflow license or bundles; enterprise site-license available.
+
+Categories: Leadgen, Data Quality, Finance Ops, Support, RevOps, Compliance, Content Ops.
+
+KPIs: Time to first run (TTFR), runs/day, error rate, conversion lift (for GTM flows).
+
+Example flows
+
+“Scrape → Deduplicate → Enrich (Clearbit/PeopleDataLabs) → Sequence (Apollo/HubSpot)”
+
+“Refund detection → Ledger entry → Slack approvals → CRM note”
+
+“Daily KPI rollups → anomaly alerts → exec digest”
+
+What we need from you: Destination systems, field mappings, schedule, constraints.
+
+Digital Assets
+
+What it is: Ready-to-use assets that accelerate execution: prompt packs, datasets, playbooks, UI kits, and creative bundles aligned to growth and automation.
+
+What’s inside
+
+Prompt Packs: Tested agent prompts (intake, qualification, objection handling, summarization).
+
+Datasets: Cleaned seed datasets for training/eval (intents, FAQs, PII-scrubbed examples).
+
+Playbooks: SOPs, email/cadence templates, QA rubrics, escalation trees.
+
+UI Kits: Figma/Tailwind component libraries for ops dashboards and admin tools.
+
+Creative Bundles: Ad variations, landing page sections, offer angles for affiliates.
+
+Licensing: Commercial use, royalty-free. Optional exclusivity for custom packs.
+
+Use cases: Spin up agents faster, standardize QA, ship internal tools without design debt.
+
+KPIs: Time to deploy, CSAT, reply quality scores, CTR/CVR (for creative assets).
+
+AI Agents — Managed & Self-Host
+
+What it is: Production agents that do work (not just chat) — with tool use, retrieval, memory, approvals, and strict cost controls. Offered as managed service or self-hosted.
+
+Capabilities
+
+Tool-using action graphs (APIs, DB, scrapers, RPA)
+
+Retrieval-augmented generation (RAG) with citations
+
+Conversation memory & state machines
+
+Guardrails: policies, sandboxing, rate/cost caps, human-in-the-loop
+
+Audit logs, transcripts, replay & red-teaming
+
+Deployment options
+
+Managed: We host, monitor, and iterate (fastest time-to-value)
+
+Self-host: Your VPC/Kubernetes; we deliver infra code + runbooks
+
+Typical agents
+
+SDR agent: qualify, route, book meetings; sync to CRM
+
+Support agent: diagnose, resolve, escalate with context
+
+Ops agent: reconcile, enrich, file tickets, notify stakeholders
+
+KPIs: First-contact resolution, bookings/100 convos, avg handle time, cost/convo, deflection rate.
+
+Pricing: Per-agent + usage; enterprise flat-rate available. Pilots capped with success criteria.
+
+What we need from you: Tooling/API access, policy boundaries, success metrics, sandbox data.
+
+Affiliate Hub — Top Brands & Products to Promote
+
+What it is: A curated marketplace of high-EPC brands and products, dynamic creatives, and real-time tracking to maximize affiliate revenue.
+
+What’s included
+
+Curated offers with historical EPC/CR data
+
+Dynamic creatives (auto-rotate by performance; sizes for paid & organic)
+
+Smart links (geo/device rules, fallback offers)
+
+Real-time dashboards (clicks, CVR, AOV, EPC, payouts)
+
+Compliant disclosures, link hygiene, 404 guards
+
+Monetization models: CPS, CPL, rev-share. Consolidated payouts.
+
+Integrations: GA4, Postback/S2S, UTMs, major affiliate networks, Shopify/Stripe webhooks.
+
+KPIs: EPC, CVR, AOV, LTV, net margin after traffic cost.
+
+What we need from you: Traffic channels, audience segments, content inventory, geo targeting.
+
+Decision Platform — Findawise Guides
+
+What it is: A decision-assistance layer that kills choice overload. Expert guides, interactive filters, quizzes, and research prompts that route users to the right choice — and monetize via affiliates where appropriate.
+
+Experience
+
+Guides: “How to choose” playbooks with top picks + ‘why’.
+
+Comparisons: Tables, pros/cons, filters (budget, features).
+
+Quizzes: Short, adaptive flows to route users to the right guide/offer.
+
+Research Prompts: Copy-paste prompts to verify claims and dig deeper.
+
+Content ops
+
+Start with Tech, Travel, Finance (10–15 cornerstone guides).
+
+Each page interlinks to 3+ guides, 2+ blogs, 1+ tool — no dead ends.
+
+Updates quarterly or on major market changes.
+
+KPIs: Bounce → guide depth %, quiz completion %, CTR to recommendations, revenue per session.
+
+Monetization: Affiliate offers, lead gen, sponsorships for category leaders.
+
+What we need from you: Priority categories, brand guardrails, affiliate IDs, editorial standards.
+
+How the pieces connect (the empire flywheel)
+
+Decision Platform educates and routes demand → Affiliate Hub monetizes intent.
+
+Automation Services and AI Agents convert internal ops into margin → case studies feed Workflow Store.
+
+Workflow Store + Digital Assets accelerate delivery and create productized revenue.
+
+Call-to-Action blocks you can paste today
+
+Automation Services CTA: “Book a 72-hour pilot → we ship 1 high-impact automation with dashboards, alerts, and a hard ROI target.”
+
+Workflow Store CTA: “Browse 350+ production-tested workflows. One-click deploy. Enterprise license available.”
+
+Digital Assets CTA: “Download prompt packs, datasets, and UI kits to ship 3x faster.”
+
+AI Agents CTA: “Deploy a managed agent with guardrails and cost caps — or self-host in your VPC.”
+
+Affiliate Hub CTA: “Get access to vetted, high-EPC offers and dynamic creatives — start earning in days.”
+
+Decision Platform CTA: “Beat choice overload. Take the 2-minute quiz and get your best-fit recommendation.”
