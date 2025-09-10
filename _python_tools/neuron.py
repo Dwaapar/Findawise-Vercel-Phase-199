@@ -3,10 +3,12 @@ import os
 from typing import Any, Dict
 
 
-import requests
+import httpx
 from fastapi import FastAPI
+import logging
 
 app = FastAPI()
+logger = logging.getLogger(__name__)
 
 NEURON_ID = os.getenv("NEURON_ID", "python-neuron")
 FEDERATION_API = os.getenv("FEDERATION_API", "http://localhost:3000")
@@ -27,22 +29,23 @@ async def register() -> None:
         ],
     }
     try:
-        requests.post(f"{FEDERATION_API}/api/neuron/register", json=payload, timeout=5)
+        async with httpx.AsyncClient(timeout=5) as client:
+            await client.post(f"{FEDERATION_API}/api/neuron/register", json=payload)
     except Exception as exc:  # pragma: no cover - best effort
-        print(f"Registration failed: {exc}")
+        logger.warning("Registration failed: %s", exc)
 
 
 async def heartbeat() -> None:
     """Send periodic heartbeat messages."""
     while True:
         try:
-            requests.post(
-                f"{FEDERATION_API}/api/neuron/status",
-                json={"neuronId": NEURON_ID, "status": "active"},
-                timeout=5,
-            )
+            async with httpx.AsyncClient(timeout=5) as client:
+                await client.post(
+                    f"{FEDERATION_API}/api/neuron/status",
+                    json={"neuronId": NEURON_ID, "status": "active"},
+                )
         except Exception as exc:  # pragma: no cover - best effort
-            print(f"Heartbeat failed: {exc}")
+            logger.warning("Heartbeat failed: %s", exc)
         await asyncio.sleep(HEARTBEAT_INTERVAL)
 
 

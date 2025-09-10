@@ -15,6 +15,7 @@ uvicorn neuron:app --reload --port 8000
 ```
 
 The neuron registers with the federation at `FEDERATION_API` (default `http://localhost:3000`) and sends heartbeats every `HEARTBEAT_INTERVAL` seconds.
+The example uses an asynchronous `httpx` client so network calls don't block the event loop.
 
 ## What is an API-Only Neuron?
 
