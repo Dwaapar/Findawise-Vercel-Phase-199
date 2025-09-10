@@ -113,7 +113,6 @@ import { notificationRoutes } from "./routes/notifications";
 import { createTravelRoutes } from "./routes/travel";
 import { registerEducationRoutes } from "./routes/education";
 import { createAiToolsRoutes } from "./routes/aiToolsRoutes";
-import federationRouterBridge from "./routes/federation";
 import federationDashboardRouter from "./routes/federation-dashboard";
 import apiNeuronsRouter from "./routes/apiNeurons";
 import neuronFederationRouter, { checkAndRetireStaleNeurons } from "./routes/neuronFederation";
@@ -438,7 +437,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // ===========================================
   // SPECIALIZED API ROUTES
   // ===========================================
-  app.use('/api/federation-bridge', federationRouterBridge);
+  app.use('/api/federation', federationRouter);
+  app.use('/api/federation-bridge', federationRouter);
   app.use('/api/federation-dashboard', federationDashboardRouter);
   app.use('/api/notifications', notificationRoutes);
   app.use('/api/codex', codexRouter);
