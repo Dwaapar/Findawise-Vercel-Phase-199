@@ -278,6 +278,13 @@ class SessionManager {
   }
 
   /**
+   * Get user ID for current session
+   */
+  getUserId(): string | null {
+    return this.currentSession?.userId || null;
+  }
+
+  /**
    * Set user ID for current session
    */
   async setUserId(userId: string): Promise<void> {
