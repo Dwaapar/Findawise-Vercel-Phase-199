@@ -4,6 +4,18 @@
 
 This document provides a complete guide for building and deploying Python-based API-only neurons that integrate with the Findawise Empire Federation. API-only neurons are backend services, data processors, scrapers, ML models, or microservices that participate in the federation without a UI component.
 
+## Quickstart
+
+A minimal FastAPI neuron is provided at `_python_tools/neuron.py`. To run it locally:
+
+```bash
+cd _python_tools
+python -m pip install -r requirements-neuron.txt
+uvicorn neuron:app --reload --port 8000
+```
+
+The neuron registers with the federation at `FEDERATION_API` (default `http://localhost:3000`) and sends heartbeats every `HEARTBEAT_INTERVAL` seconds.
+
 ## What is an API-Only Neuron?
 
 An API-only neuron is a backend service that:
