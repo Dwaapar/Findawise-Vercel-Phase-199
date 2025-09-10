@@ -19,7 +19,8 @@
     "ai:tests": "python orchestrators/tests_gen.py > TESTS_PLAN.md",
     "ai:docs": "python orchestrators/docs_gen.py > DOCS_PLAN.md",
     "ai:design": "python orchestrators/design_viz.py > DESIGN_GUIDE.md",
-    "ai:ollama": "powershell -ExecutionPolicy Bypass -File scripts/start_ollama.ps1"
+    "ai:ollama": "powershell -ExecutionPolicy Bypass -File scripts/start_ollama.ps1",
+    "test": "vitest run"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -175,6 +176,7 @@
     "drizzle-kit": "^0.30.6",
     "esbuild": "^0.25.9",
     "postcss": "^8.4.47",
+    "supertest": "^7.1.4",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.20.4",
     "typescript": "^5.9.2",

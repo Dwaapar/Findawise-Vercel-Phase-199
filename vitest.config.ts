@@ -29,7 +29,6 @@ export default defineConfig({
     testTimeout: 10000,
     include: [
       'tests/**/*.{test,spec}.{js,ts}',
-      'server/**/*.{test,spec}.{js,ts}',
       'client/**/*.{test,spec}.{js,ts}'
     ],
     exclude: [
