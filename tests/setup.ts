@@ -5,13 +5,15 @@
 
 import { beforeAll, afterAll, beforeEach, afterEach } from 'vitest';
 
-// Global test setup
+// Set test environment variables immediately so modules can access them
+process.env.NODE_ENV = 'test';
+process.env.DATABASE_URL = 'postgresql://test:test@localhost:5432/test_db';
+
+console.log('🧪 Test environment initialized');
+
+// Global lifecycle hooks
 beforeAll(() => {
-  // Set test environment variables
-  process.env.NODE_ENV = 'test';
-  process.env.DATABASE_URL = 'postgresql://test:test@localhost:5432/test_db';
-  
-  console.log('🧪 Test environment initialized');
+  // Additional setup before tests run
 });
 
 afterAll(() => {
@@ -36,4 +38,5 @@ const mockLogger = {
 };
 
 // Mock external dependencies
+// @ts-ignore
 global.mockLogger = mockLogger;
