@@ -1,4 +1,5 @@
 import { pgTable, text, serial, integer, boolean, timestamp, varchar, jsonb, real } from "drizzle-orm/pg-core";
+import type { InferInsertModel } from "drizzle-orm";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -676,6 +677,11 @@ export type LeadActivity = typeof leadActivities.$inferSelect;
 
 export type InsertEmailCampaign = z.infer<typeof insertEmailCampaignSchema>;
 export type EmailCampaign = typeof emailCampaigns.$inferSelect;
+
+// Drizzle insert model types
+export type NewLeadCapture = InferInsertModel<typeof leadCaptures>;
+export type NewLeadFormAssignment = InferInsertModel<typeof leadFormAssignments>;
+export type NewLeadActivity = InferInsertModel<typeof leadActivities>;
 
 // ===========================================
 // AI/ML ORCHESTRATOR TABLES
