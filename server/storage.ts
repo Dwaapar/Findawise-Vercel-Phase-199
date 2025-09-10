@@ -1,5 +1,11 @@
-import { 
-  users, 
+import {
+  culturalMappings,
+  emotionProfiles,
+  culturalABTests
+} from "@shared/culturalEmotionTables";
+
+import {
+  users,
   affiliateNetworks,
   affiliateOffers,
   affiliateClicks,
@@ -414,7 +420,7 @@ import {
 } from "@shared/storefrontTables";
 
 import { db } from "./db";
-import { eq, and, desc, gte, lte, sql, count } from "drizzle-orm";
+import { eq, and, desc, gte, lte, sql, count, like, or, inArray } from "drizzle-orm";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -8461,9 +8467,9 @@ export class DatabaseStorage implements IStorage {
         .from(affiliateClicks)
         .where(and(
           eq(affiliateClicks.ipAddress, ipAddress),
-          gte(affiliateClicks.createdAt, cutoffTime)
+          gte(affiliateClicks.clickedAt, cutoffTime)
         ))
-        .orderBy(desc(affiliateClicks.createdAt));
+        .orderBy(desc(affiliateClicks.clickedAt));
 
       return recentClicks;
     } catch (error) {
@@ -8482,7 +8488,7 @@ export class DatabaseStorage implements IStorage {
   async logComplianceDecision(logEntry: any): Promise<void> {
     try {
       // Store in compliance audit system
-      await db.insert(globalComplianceAuditSystem).values({
+      await db.insert(complianceAuditSystem).values({
         complianceType: 'affiliate_redirect',
         entityId: `${logEntry.networkSlug}_${logEntry.offerSlug}`,
         auditData: {
@@ -8509,20 +8515,20 @@ export class DatabaseStorage implements IStorage {
   async getComplianceAuditData(startDate: Date, endDate: Date, networkSlug?: string): Promise<any[]> {
     try {
       let query = db.select()
-        .from(globalComplianceAuditSystem)
+        .from(complianceAuditSystem)
         .where(and(
-          eq(globalComplianceAuditSystem.complianceType, 'affiliate_redirect'),
-          gte(globalComplianceAuditSystem.auditDate, startDate),
-          lte(globalComplianceAuditSystem.auditDate, endDate)
+          eq(complianceAuditSystem.complianceType, 'affiliate_redirect'),
+          gte(complianceAuditSystem.auditDate, startDate),
+          lte(complianceAuditSystem.auditDate, endDate)
         ));
 
       if (networkSlug) {
         query = query.where(
-          like(globalComplianceAuditSystem.entityId, `${networkSlug}_%`)
+          like(complianceAuditSystem.entityId, `${networkSlug}_%`)
         );
       }
 
-      const auditData = await query.orderBy(desc(globalComplianceAuditSystem.auditDate));
+      const auditData = await query.orderBy(desc(complianceAuditSystem.auditDate));
 
       return auditData.map(audit => ({
         ...audit,
@@ -8550,10 +8556,10 @@ export class DatabaseStorage implements IStorage {
         totalClicks: sql<number>`count(*)`,
         uniqueClicks: sql<number>`count(distinct ${affiliateClicks.sessionId})`,
         conversionRate: sql<number>`avg(case when ${affiliateClicks.metadata}->>'converted' = 'true' then 1.0 else 0.0 end)`,
-        lastClick: sql<Date>`max(${affiliateClicks.createdAt})`
+        lastClick: sql<Date>`max(${affiliateClicks.clickedAt})`
       })
       .from(affiliateClicks)
-      .where(sql`${affiliateClicks.createdAt} >= ${cutoffDate}`)
+      .where(sql`${affiliateClicks.clickedAt} >= ${cutoffDate}`)
       .groupBy(affiliateClicks.offerId)
       .orderBy(desc(sql`count(*)`))
       .limit(limit);
@@ -8594,7 +8600,12 @@ export class DatabaseStorage implements IStorage {
       const daysBack = timeRange === '1d' ? 1 : timeRange === '7d' ? 7 : timeRange === '90d' ? 90 : 30;
       const cutoffDate = new Date(Date.now() - daysBack * 24 * 60 * 60 * 1000);
 
-      let clickQuery = db.select({
+      const conditions = [sql`${affiliateClicks.clickedAt} >= ${cutoffDate}`];
+      if (networkId) {
+        conditions.push(eq(affiliateOffers.networkId, networkId));
+      }
+
+      const stats = await db.select({
         networkId: affiliateOffers.networkId,
         totalClicks: sql<number>`count(*)`,
         uniqueClicks: sql<number>`count(distinct ${affiliateClicks.sessionId})`,
@@ -8602,15 +8613,9 @@ export class DatabaseStorage implements IStorage {
       })
       .from(affiliateClicks)
       .innerJoin(affiliateOffers, eq(affiliateClicks.offerId, affiliateOffers.id))
-      .where(sql`${affiliateClicks.createdAt} >= ${cutoffDate}`);
-
-      if (networkId) {
-        clickQuery = clickQuery.where(eq(affiliateOffers.networkId, networkId));
-      }
-
-      const stats = await clickQuery
-        .groupBy(affiliateOffers.networkId)
-        .orderBy(desc(sql`count(*)`));
+      .where(and(...conditions))
+      .groupBy(affiliateOffers.networkId)
+      .orderBy(desc(sql`count(*)`));
 
       // Get network details
       const networkStats = [];
@@ -8656,15 +8661,15 @@ export class DatabaseStorage implements IStorage {
 
       // Get daily conversion stats
       const dailyStats = await db.select({
-        date: sql<string>`date(${affiliateClicks.createdAt})`,
+        date: sql<string>`date(${affiliateClicks.clickedAt})`,
         totalClicks: sql<number>`count(*)`,
         conversions: sql<number>`count(case when ${affiliateClicks.metadata}->>'converted' = 'true' then 1 end)`,
         conversionRate: sql<number>`avg(case when ${affiliateClicks.metadata}->>'converted' = 'true' then 1.0 else 0.0 end)`
       })
       .from(affiliateClicks)
-      .where(sql`${affiliateClicks.createdAt} >= ${cutoffDate}`)
-      .groupBy(sql`date(${affiliateClicks.createdAt})`)
-      .orderBy(sql`date(${affiliateClicks.createdAt})`);
+      .where(sql`${affiliateClicks.clickedAt} >= ${cutoffDate}`)
+      .groupBy(sql`date(${affiliateClicks.clickedAt})`)
+      .orderBy(sql`date(${affiliateClicks.clickedAt})`);
 
       // Get top converting offers
       const topConverters = await this.getTopPerformingOffers(5, timeRange);
@@ -8932,7 +8937,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getSessionDataForNeuron(sessionId: string, neuronId: string): Promise<any> {
-    const session = await this.getUserSession(sessionId);
+    const session = await this.getSessionBySessionId(sessionId);
     if (!session) return null;
 
     const recentBehavior = await this.getSessionBehaviorEvents(sessionId, 10);
@@ -8952,7 +8957,7 @@ export class DatabaseStorage implements IStorage {
     for (const update of updates) {
       try {
         await db.update(userSessions)
-          .set({ ...update.data, updatedAt: new Date() })
+          .set({ ...(update.data as any), updatedAt: new Date() })
           .where(eq(userSessions.sessionId, update.sessionId));
         succeeded++;
       } catch (error) {
