@@ -1,5 +1,11 @@
-import { 
-  users, 
+import {
+  culturalMappings,
+  emotionProfiles,
+  culturalABTests
+} from "@shared/culturalEmotionTables";
+
+import {
+  users,
   affiliateNetworks,
   affiliateOffers,
   affiliateClicks,
