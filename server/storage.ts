@@ -3089,7 +3089,7 @@ export class DatabaseStorage implements IStorage {
         // Get latest analytics
         const analytics = await db.select().from(neuronAnalytics)
           .where(eq(neuronAnalytics.neuronId, neuron.neuronId))
-          .orderBy(desc(neuronAnalytics.timestamp))
+          .orderBy(desc(neuronAnalytics.date))
           .limit(1);
 
         // Get latest status
@@ -3176,7 +3176,7 @@ export class DatabaseStorage implements IStorage {
     try {
       const recentAnalytics = await db.select().from(neuronAnalytics)
         .where(eq(neuronAnalytics.neuronId, neuronId))
-        .orderBy(desc(neuronAnalytics.timestamp))
+        .orderBy(desc(neuronAnalytics.date))
         .limit(10);
 
       if (recentAnalytics.length < 2) return 'stable';
@@ -3605,7 +3605,7 @@ export class DatabaseStorage implements IStorage {
     try {
       // Get analytics for all neurons with recent data
       const analytics = await db.select().from(neuronAnalytics)
-        .orderBy(desc(neuronAnalytics.timestamp))
+        .orderBy(desc(neuronAnalytics.date))
         .limit(1000);
 
       // Group by neuron ID and get latest for each
