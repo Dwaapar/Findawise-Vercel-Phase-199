@@ -93,13 +93,13 @@ import {
   type LeadForm,
   type InsertLeadForm,
   type LeadCapture,
-  type InsertLeadCapture,
+  type NewLeadCapture,
   type LeadFormAssignment,
-  type InsertLeadFormAssignment,
+  type NewLeadFormAssignment,
   type LeadExperiment,
   type InsertLeadExperiment,
   type LeadActivity,
-  type InsertLeadActivity,
+  type NewLeadActivity,
   type EmailCampaign,
   type InsertEmailCampaign,
   type GlobalUserProfile,
@@ -479,21 +479,21 @@ export interface IStorage {
   deleteLeadForm(id: number): Promise<void>;
   
   // Lead Capture operations
-  captureLeadForm(leadCapture: InsertLeadCapture): Promise<LeadCapture>;
+  captureLeadForm(leadCapture: NewLeadCapture): Promise<LeadCapture>;
   getLeadCaptures(startDate?: Date, endDate?: Date): Promise<LeadCapture[]>;
   getLeadCapturesByForm(leadFormId: number): Promise<LeadCapture[]>;
   getLeadCapturesByEmail(email: string): Promise<LeadCapture[]>;
-  updateLeadCapture(id: number, leadCapture: Partial<InsertLeadCapture>): Promise<LeadCapture>;
+  updateLeadCapture(id: number, leadCapture: Partial<NewLeadCapture>): Promise<LeadCapture>;
   markLeadAsDelivered(id: number): Promise<void>;
   markLeadAsUnsubscribed(id: number): Promise<void>;
   
   // Lead Form Assignment operations
-  createLeadFormAssignment(assignment: InsertLeadFormAssignment): Promise<LeadFormAssignment>;
+  createLeadFormAssignment(assignment: NewLeadFormAssignment): Promise<LeadFormAssignment>;
   getLeadFormAssignments(pageSlug?: string): Promise<LeadFormAssignment[]>;
   deleteLeadFormAssignment(id: number): Promise<void>;
   
   // Lead Activity tracking
-  trackLeadActivity(activity: InsertLeadActivity): Promise<LeadActivity>;
+  trackLeadActivity(activity: NewLeadActivity): Promise<LeadActivity>;
   getLeadActivities(leadCaptureId: number): Promise<LeadActivity[]>;
   
   // Email Campaign operations
@@ -1630,7 +1630,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   // Lead Capture operations
-  async captureLeadForm(leadCapture: InsertLeadCapture): Promise<LeadCapture> {
+  async captureLeadForm(leadCapture: NewLeadCapture): Promise<LeadCapture> {
     const [newLeadCapture] = await db.insert(leadCaptures).values(leadCapture).returning();
     
     // Track lead capture activity
@@ -1680,7 +1680,7 @@ export class DatabaseStorage implements IStorage {
       .orderBy(desc(leadCaptures.createdAt));
   }
 
-  async updateLeadCapture(id: number, leadCapture: Partial<InsertLeadCapture>): Promise<LeadCapture> {
+  async updateLeadCapture(id: number, leadCapture: Partial<NewLeadCapture>): Promise<LeadCapture> {
     const [updatedLeadCapture] = await db
       .update(leadCaptures)
       .set({ ...leadCapture, updatedAt: new Date() })
@@ -1704,7 +1704,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   // Lead Form Assignment operations
-  async createLeadFormAssignment(assignment: InsertLeadFormAssignment): Promise<LeadFormAssignment> {
+  async createLeadFormAssignment(assignment: NewLeadFormAssignment): Promise<LeadFormAssignment> {
     const [newAssignment] = await db.insert(leadFormAssignments).values(assignment).returning();
     return newAssignment;
   }
@@ -1733,7 +1733,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   // Lead Activity tracking
-  async trackLeadActivity(activity: InsertLeadActivity): Promise<LeadActivity> {
+  async trackLeadActivity(activity: NewLeadActivity): Promise<LeadActivity> {
     const [newActivity] = await db.insert(leadActivities).values(activity).returning();
     return newActivity;
   }
