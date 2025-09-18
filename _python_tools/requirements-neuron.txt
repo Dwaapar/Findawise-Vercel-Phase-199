@@ -2,7 +2,7 @@
 # ==========================================
 
 # Core dependencies
-requests>=2.31.0
+requests>=2.32.4
 psutil>=5.9.0
 schedule>=1.2.0
 
@@ -12,3 +12,5 @@ sentry-sdk>=1.32.0        # For error tracking
 python-dotenv>=1.0.0      # For environment management
 pydantic>=2.0.0           # For data validation
 structlog>=23.1.0         # For structured logging
+urllib3>=2.5.0 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
