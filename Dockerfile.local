@@ -1,7 +1,7 @@
 # 🏆 FINDAWISE EMPIRE - LOCAL DEPLOYMENT DOCKERFILE
 # Optimized for local development with full feature support
 
-FROM node:20-bullseye-slim
+FROM node:20.19.5-trixie-slim
 
 # Set working directory
 WORKDIR /app
