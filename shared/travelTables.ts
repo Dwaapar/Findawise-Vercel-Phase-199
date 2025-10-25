@@ -69,7 +69,7 @@ export const travelArchetypes = pgTable("travel_archetypes", {
   travelStyle: varchar("travel_style", { length: 50 }),
   themeColors: jsonb("theme_colors"), // UI color scheme
   icon: text("icon"),
-  isActive: boolean("is_active").default(true),
+  isActive: boolean("is_active").default(true).notNull(),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 });
@@ -81,7 +81,7 @@ export const travelQuizQuestions = pgTable("travel_quiz_questions", {
   question: text("question").notNull(),
   options: jsonb("options").notNull(), // array of {text, value, archetype_weight}
   order: integer("order").notNull(),
-  isActive: boolean("is_active").default(true),
+  isActive: boolean("is_active").default(true).notNull(),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
@@ -121,7 +121,7 @@ export const travelOffers = pgTable("travel_offers", {
   priority: integer("priority").default(0),
   clicks: integer("clicks").default(0),
   conversions: integer("conversions").default(0),
-  isActive: boolean("is_active").default(true),
+  isActive: boolean("is_active").default(true).notNull(),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 });
@@ -142,7 +142,7 @@ export const travelItineraries = pgTable("travel_itineraries", {
   season: varchar("season", { length: 20 }), // best season
   featuredImage: text("featured_image"),
   gallery: jsonb("gallery"),
-  isPublic: boolean("is_public").default(true),
+  isPublic: boolean("is_public").default(true).notNull(),
   likes: integer("likes").default(0),
   saves: integer("saves").default(0),
   views: integer("views").default(0),
@@ -161,7 +161,7 @@ export const travelTools = pgTable("travel_tools", {
   description: text("description"),
   toolType: varchar("tool_type", { length: 50 }).notNull(), // budget, packing, visa, etc.
   config: jsonb("config"), // tool-specific configuration
-  isActive: boolean("is_active").default(true),
+  isActive: boolean("is_active").default(true).notNull(),
   order: integer("order").default(0),
   icon: text("icon"),
   createdAt: timestamp("created_at").defaultNow(),
@@ -181,7 +181,7 @@ export const travelUserSessions = pgTable("travel_user_sessions", {
   quizResults: jsonb("quiz_results"),
   deviceInfo: jsonb("device_info"),
   location: jsonb("location"),
-  isActive: boolean("is_active").default(true),
+  isActive: boolean("is_active").default(true).notNull(),
   lastActivity: timestamp("last_activity").defaultNow(),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
@@ -195,7 +195,7 @@ export const travelContentSources = pgTable("travel_content_sources", {
   sourceType: varchar("source_type", { length: 50 }).notNull(), // blog, api, social
   selectors: jsonb("selectors"), // CSS selectors for scraping
   lastScraped: timestamp("last_scraped"),
-  scrapingEnabled: boolean("scraping_enabled").default(true),
+  scrapingEnabled: boolean("scraping_enabled").default(true).notNull(),
   priority: integer("priority").default(0),
   tags: jsonb("tags"),
   createdAt: timestamp("created_at").defaultNow(),
@@ -221,68 +221,27 @@ export const travelAnalyticsEvents = pgTable("travel_analytics_events", {
 });
 
 // Zod schemas for validation
-export const insertTravelDestinationSchema = createInsertSchema(travelDestinations).omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-});
+export const insertTravelDestinationSchema = createInsertSchema(travelDestinations);
 
-export const insertTravelArticleSchema = createInsertSchema(travelArticles).omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-});
+export const insertTravelArticleSchema = createInsertSchema(travelArticles);
 
-export const insertTravelArchetypeSchema = createInsertSchema(travelArchetypes).omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-});
+export const insertTravelArchetypeSchema = createInsertSchema(travelArchetypes);
 
-export const insertTravelQuizQuestionSchema = createInsertSchema(travelQuizQuestions).omit({
-  id: true,
-  createdAt: true,
-});
+export const insertTravelQuizQuestionSchema = createInsertSchema(travelQuizQuestions);
 
-export const insertTravelQuizResultSchema = createInsertSchema(travelQuizResults).omit({
-  id: true,
-  createdAt: true,
-});
+export const insertTravelQuizResultSchema = createInsertSchema(travelQuizResults);
 
-export const insertTravelOfferSchema = createInsertSchema(travelOffers).omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-});
+export const insertTravelOfferSchema = createInsertSchema(travelOffers);
 
-export const insertTravelItinerarySchema = createInsertSchema(travelItineraries).omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-});
+export const insertTravelItinerarySchema = createInsertSchema(travelItineraries);
 
-export const insertTravelToolSchema = createInsertSchema(travelTools).omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-});
+export const insertTravelToolSchema = createInsertSchema(travelTools);
 
-export const insertTravelUserSessionSchema = createInsertSchema(travelUserSessions).omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-});
+export const insertTravelUserSessionSchema = createInsertSchema(travelUserSessions);
 
-export const insertTravelContentSourceSchema = createInsertSchema(travelContentSources).omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-});
+export const insertTravelContentSourceSchema = createInsertSchema(travelContentSources);
 
-export const insertTravelAnalyticsEventSchema = createInsertSchema(travelAnalyticsEvents).omit({
-  id: true,
-  createdAt: true,
-});
+export const insertTravelAnalyticsEventSchema = createInsertSchema(travelAnalyticsEvents);
 
 // Type exports
 export type TravelDestination = typeof travelDestinations.$inferSelect;
