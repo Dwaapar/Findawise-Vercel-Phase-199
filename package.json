@@ -74,7 +74,7 @@
     "ammojs": "^0.0.2",
     "ar.js": "^2.2.2",
     "archiver": "^7.0.1",
-    "axios": "^1.10.0",
+    "axios": "^1.13.5",
     "babylonjs": "^8.17.2",
     "babylonjs-loaders": "^8.17.2",
     "babylonjs-materials": "^8.17.2",
